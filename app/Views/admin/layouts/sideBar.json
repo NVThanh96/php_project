@@ -1,0 +1,131 @@
+{
+  "sideBar": [
+    {
+      "name": "admin",
+      "view": "Views/site/auth/login.php",
+      "path": "/admin",
+      "redirect": "/project_php/app",
+      "role": "",
+      "icon": "",
+      "chucNangTitle": "Show Admin",
+      "children": [
+        {
+          "name": "quanLyHeThong",
+          "view": "Views/site/auth/login.php",
+          "path": "/quanLyHeThong",
+          "redirect": "/project_php/app/admin/quanLyHeThong",
+          "role": "admin",
+          "icon": "nav-icon fas fa-tachometer-alt",
+          "chucNangTitle": "Quản lý Hệ Thống",
+          "children": [
+            {
+              "name": "list",
+              "view": "Modules/quanLyHeThong/Views/list.php",
+              "path": "/list",
+              "redirect": "/project_php/app/admin/quanLyHeThong/list",
+              "role": "admin",
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Người Dùng"
+            },
+            {
+              "name": "add",
+              "view": "Modules/quanLyHeThong/Views/add.php",
+              "path": "/add",
+              "redirect": "/project_php/app/admin/quanLyHeThong/add",
+              "role": "admin",
+              "icon": "fa-solid fa-plus",
+              "chucNangTitle": "Thêm Người Dùng"
+            },
+            {
+              "name": "roles",
+              "view": "Modules/quanLyHeThong/Views/listRole.php",
+              "path": "/roles",
+              "redirect": "/project_php/app/admin/quanLyHeThong/listRole",
+              "role": ["admin","manager"],
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Phân Quyền"
+            },
+            {
+              "name": "roles",
+              "view": "Modules/quanLyHeThong/Views/listRole.php",
+              "path": "/roles",
+              "redirect": "/project_php/app/admin/quanLyHeThong/listRole",
+              "role": ["admin","manager"],
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Phân Quyền"
+            }
+          ]
+        },
+        {
+          "name": "quanLyHopDong",
+          "view": "Views/site/auth/login.php",
+          "path": "/quanLyHopDong",
+          "redirect": "/project_php/app/admin/quanLyHopDong",
+          "role": "manager ptpm2",
+          "icon": "fa-solid fa-folder-open",
+          "chucNangTitle": "Quản lý Hợp Đồng",
+          "children": [
+            {
+              "name": "list",
+              "view": "Modules/quanLyHopDong/Views/list.php",
+              "path": "/list",
+              "redirect": "/project_php/app/admin/quanLyHopDong/list",
+              "role": "manager ptpm2",
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Hợp Đồng"
+            }
+          ]
+        },
+        {
+          "name": "quanLyNhanVien",
+          "view": "Views/site/auth/login.php",
+          "path": "/quanLyNhanVien",
+          "redirect": "/project_php/app/admin/quanLyNhanVien",
+          "role": "manager lh",
+          "icon": "fa-solid fa-users ",
+          "chucNangTitle": "Quản lý Nhân Viên",
+          "children": [
+            {
+              "name": "list",
+              "view": "Modules/quanLyNhanVien/Views/list.php",
+              "path": "/list",
+              "redirect": "/project_php/app/admin/quanLyNhanVien/list",
+              "role": "manager lh",
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Nhân Viên"
+            },
+            {
+              "name": "add",
+              "view": "Modules/quanLyNhanVien/Views/add.php",
+              "path": "/add",
+              "redirect": "/project_php/app/admin/quanLyNhanVien/add",
+              "role": "manager lh",
+              "icon": "fa-solid fa-plus",
+              "chucNangTitle": "Thêm Nhân Viên"
+            }
+          ]
+        },
+        {
+          "name": "quanLyLinhVuc",
+          "view": "Views/site/auth/login.php",
+          "path": "/quanLyLinhVuc",
+          "redirect": "/project_php/app/admin/quanLyLinhVuc",
+          "role": "manager tt",
+          "icon": "nav-icon fas fa-tachometer-alt",
+          "chucNangTitle": "Quản lý Lĩnh Vực",
+          "children": [
+            {
+              "name": "list",
+              "view": "Modules/quanLyLinhVuc/Views/list.php",
+              "path": "/list",
+              "redirect": "/project_php/app/admin/quanLyLinhVuc/list",
+              "role": "manager tt",
+              "icon": "fa-solid fa-list",
+              "chucNangTitle": "Danh Sách Lĩnh Vực"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

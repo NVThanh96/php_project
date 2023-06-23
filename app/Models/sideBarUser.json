@@ -1,0 +1,160 @@
+[
+  {
+    "name": "QlcnCuocThi",
+    "path": "/qlcn/cuocthi",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản lý cuộc thi sinh viên",
+      "icon": "edit",
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "QlclCuocThiQlDangKyDeTai",
+        "path": "/qlcn/cuocthi/qldangkydetai",
+        "component": null,
+        "redirect": "noRedirect",
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+          "title": "Quản lý đăng ký đề tài",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": null,
+          "component": null,
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": [
+          {
+            "name": "QlcnCuocThiDangKyDeTai",
+            "path": "dangkydetai",
+            "component": null,
+            "redirect": "/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+            "hidden": false,
+            "alwaysShow": false,
+            "props": null,
+            "meta": {
+              "title": "Đăng ký đề tài",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": null,
+              "component": null,
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": [
+              {
+                "name": "QlcnCuocThiDangKyDeTaiList",
+                "path": "list",
+                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiList\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"list\"}",
+                "meta": {
+                  "title": "Danh sách Đăng ký đề tài",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+              {
+                "name": "QlcnCuocThiDangKyDeTaiCreate",
+                "path":"create",
+                "component": "skhcn/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiList\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"create\"}",
+                "meta": {
+                  "title": "Đăng ký đề tài tham dự vòng thi cấp thành phố",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+              {
+                "name": "QlcnCuocThiDangKyDeTaiEdit",
+                "path":"edit/:id(\\d+)",
+                "component": "/project_php/app/core/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiList\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"edit\"}",
+                "meta": {
+                  "title": "Cập nhật Đăng ký đề tài tham dự vòng thi cấp thành phố",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+
+              {
+                "name": "QlcnCuocThiDangKyDeTaiPopupDetail",
+                "path":"detail",
+                "component": null,
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                  "title": "Popup chi tiết Đăng ký đề tài",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": null,
+                  "component": null,
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

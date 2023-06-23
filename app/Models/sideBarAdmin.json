@@ -1,0 +1,630 @@
+[
+  {
+    "name": "CoreHeThong",
+    "path": "/core/quanLyHeThong",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản Lý Hệ Thống",
+      "icon": null,
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "CoreUser",
+        "path": "user",
+        "component": null,
+        "redirect": "/core/quanLyHeThong/user/list",
+        "hidden": true,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+          "title": "Danh sách tài khoản",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": null,
+          "component": null,
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": [
+          {
+            "name": "CoreUserList",
+            "path": "list",
+            "component": "/project_php/app/core/quanLyHeThong/user/list",
+            "redirect": null,
+            "hidden": false,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreUserList\",\"formTitle\":\"Danh sách tài khoản\",\"formType\":\"list\"}",
+            "meta": {
+              "title": "Danh sách tài khoản",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/user/list",
+              "component": "/project_php/app/core/quanLyHeThong/user/list",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          },
+          {
+            "name": "CoreUserCreate",
+            "path": "create",
+            "component": "/project_php/app/core/quanLyHeThong/user/create",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreUserCreate\",\"formTitle\":\"Đăng ký tài khoản\",\"formType\":\"create\"}",
+            "meta": {
+              "title": "Đăng ký tài khoản",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/user/list",
+              "component": "/project_php/app/core/quanLyHeThong/user/create",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          },
+          {
+            "name": "CoreUserEdit",
+            "path": "edit/:id(\\d+)",
+            "component": "/project_php/app/core/quanLyHeThong/user/create",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreUserEdit\",\"formTitle\":\"Cập nhật tài khoản\",\"formType\":\"edit\"}",
+            "meta": {
+              "title": "Cập nhật tài khoản",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/user/list",
+              "component": "/project_php/app/core/quanLyHeThong/user/edit",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "CoreRole",
+        "path": "role",
+        "component": null,
+        "redirect": "/core/quanLyHeThong/role/list",
+        "hidden": true,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+          "title": "Phân quyền",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": null,
+          "component": null,
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": [
+          {
+            "name": "CoreRoleList",
+            "path": "list",
+            "component": "/project_php/app/core/quanLyHeThong/role/list",
+            "redirect": null,
+            "hidden": false,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreRoleList\",\"formTitle\":\"Danh sách phân quyền\",\"formType\":\"list\"}",
+            "meta": {
+              "title": "Danh sách phân quyền",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/role/list",
+              "component": "/project_php/app/core/quanLyHeThong/role/list",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          },
+          {
+            "name": "CoreRoleCreate",
+            "path": "create",
+            "component": "/project_php/app/core/quanLyHeThong/role/create",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreRoleCreate\",\"formTitle\":\"Đăng ký tài khoản\",\"formType\":\"create\"}",
+            "meta": {
+              "title": "Đăng ký tài khoản",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/role/list",
+              "component": "/project_php/app/core/quanLyHeThong/role/create",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          },
+          {
+            "name": "CoreRoleEdit",
+            "path": "edit/:id(\\d+)",
+            "component": "/project_php/app/core/quanLyHeThong/role/edit",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"CoreRoleEdit\",\"formTitle\":\"Cập nhật phân quyền\",\"formType\":\"edit\"}",
+            "meta": {
+              "title": "Cập nhật phân quyền",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": "/core/quanLyHeThong/role/list",
+              "component": "/project_php/app/core/quanLyHeThong/role/edit",
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "QlLinhVuc",
+    "path": "/core/quanLyLinhVuc",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản Lý Lĩnh Vực",
+      "icon": null,
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "QlLinhVucList",
+        "path": "list",
+        "component": "/project_php/app/core/quanLyLinhVuc/list",
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlLinhVucList\",\"formTitle\":\"Danh sách Lĩnh Vực\",\"formType\":\"list\"}",
+        "meta": {
+          "title": "Danh sách Lĩnh Vực",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyLinhVuc/list",
+          "component": "/project_php/app/core/quanLyLinhVuc/list",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlLinhVucCreate",
+        "path": "create",
+        "component": "/project_php/app/core/quanLyLinhVuc/create",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlLinhVucCreate\",\"formTitle\":\"Đăng ký Lĩnh Vực\",\"formType\":\"create\"}",
+        "meta": {
+          "title": "Đăng ký Lĩnh Vực",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyLinhVuc/list",
+          "component": "/project_php/app/core/quanLyLinhVuc/create",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlLinhVucEdit",
+        "path": "edit/:id(\\d+)",
+        "component": "/project_php/app/core/quanLyLinhVuc/edit",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlLinhVucEdit\",\"formTitle\":\"Cập nhật Lĩnh Vực\",\"formType\":\"edit\"}",
+        "meta": {
+          "title": "Cập nhật Lĩnh Vực",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyHeThong/role/list",
+          "component": "/project_php/app/core/quanLyLinhVuc/edit",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      }
+    ]
+  },
+
+  {
+    "name": "QlHopdong",
+    "path": "/core/quanLyHopDong",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản Lý Hợp Đồng",
+      "icon": null,
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "QlHopDongList",
+        "path": "list",
+        "component": "/project_php/app/core/quanLyHopDong/list",
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlHopDongList\",\"formTitle\":\"Danh sách Hợp Đồng\",\"formType\":\"list\"}",
+        "meta": {
+          "title": "Danh sách Hợp Đồng",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyHopDong/list",
+          "component": "/project_php/app/core/quanLyHopDong/list",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlHopDongCreate",
+        "path": "create",
+        "component": "/project_php/app/core/quanLyHopDong/create",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlHopDongCreate\",\"formTitle\":\"Đăng ký Hợp Đồng\",\"formType\":\"create\"}",
+        "meta": {
+          "title": "Đăng ký Hợp Đồng",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyHopDong/list",
+          "component": "/project_php/app/core/quanLyHopDong/create",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlHopDongEdit",
+        "path": "edit/:id(\\d+)",
+        "component": "/project_php/app/core/quanLyHopDong/edit",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlHopDongEdit\",\"formTitle\":\"Cập nhật Hợp Đồng\",\"formType\":\"edit\"}",
+        "meta": {
+          "title": "Cập nhật Hợp Đồng",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyHopDong/list",
+          "component": "/project_php/app/core/quanLyHopDong/edit",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      }
+    ]
+  },
+
+  {
+    "name": "QlNhanVien",
+    "path": "/core/quanLyNhanVien",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản Lý Nhân Viên",
+      "icon": null,
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "QlNhanVienList",
+        "path": "list",
+        "component": "/project_php/app/core/quanLyNhanVien/list",
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlNhanVienList\",\"formTitle\":\"Danh sách Nhân Viên\",\"formType\":\"list\"}",
+        "meta": {
+          "title": "Danh sách Nhân viên",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyNhanVien/list",
+          "component": "/project_php/app/core/quanLyNhanVien/list",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlNhanVienCreate",
+        "path": "create",
+        "component": "/project_php/app/core/quanLyNhanVien/create",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlNhanVienCreate\",\"formTitle\":\"Đăng ký Nhân Viên\",\"formType\":\"create\"}",
+        "meta": {
+          "title": "Đăng ký Nhân Viên",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyNhanVien/list",
+          "component": "/project_php/app/core/quanLyNhanVien/create",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      },
+      {
+        "name": "QlNhanVienEdit",
+        "path": "edit/:id(\\d+)",
+        "component": "/project_php/app/core/quanLyNhanVien/edit",
+        "redirect": null,
+        "hidden": true,
+        "alwaysShow": false,
+        "props": "{\"backRouter\":\"QlNhanVienEdit\",\"formTitle\":\"Cập nhật Nhân Viên\",\"formType\":\"edit\"}",
+        "meta": {
+          "title": "Cập nhật Nhân Viên",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": "/core/quanLyNhanVien/list",
+          "component": "/project_php/app/core/quanLyNhanVien/edit",
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "QlcnCuocThi",
+    "path": "/qlcn/cuocthi",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+      "title": "Quản lý cuộc thi sinh viên",
+      "icon": "edit",
+      "noCache": false,
+      "affix": false,
+      "breadcrumb": false,
+      "activeMenu": null,
+      "component": null,
+      "link": null,
+      "isIframe": false,
+      "roles": []
+    },
+    "children": [
+      {
+        "name": "QlclCuocThiQlDangKyDeTai",
+        "path": "/qlcn/cuocthi/qldangkydetai",
+        "component": null,
+        "redirect": "noRedirect",
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+          "title": "Quản lý đăng ký đề tài",
+          "icon": null,
+          "noCache": false,
+          "affix": false,
+          "breadcrumb": false,
+          "activeMenu": null,
+          "component": null,
+          "link": null,
+          "isIframe": false,
+          "roles": []
+        },
+        "children": [
+          {
+            "name": "QlcnCuocThiDangKyDeTai",
+            "path": "dangkydetai",
+            "component": null,
+            "redirect": "/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+            "hidden": false,
+            "alwaysShow": false,
+            "props": null,
+            "meta": {
+              "title": "Đăng ký đề tài",
+              "icon": null,
+              "noCache": false,
+              "affix": false,
+              "breadcrumb": false,
+              "activeMenu": null,
+              "component": null,
+              "link": null,
+              "isIframe": false,
+              "roles": []
+            },
+            "children": [
+              {
+                "name": "QlcnCuocThiDangKyDeTaiList",
+                "path": "list",
+                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiList\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"list\"}",
+                "meta": {
+                  "title": "Danh sách Đăng ký đề tài",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+              {
+                "name": "QlcnCuocThiDangKyDeTaiCreate",
+                "path": "create",
+                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiCreate\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"create\"}",
+                "meta": {
+                  "title": "Đăng ký đề tài tham dự vòng thi cấp thành phố",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+              {
+                "name": "QlcnCuocThiDangKyDeTaiEdit",
+                "path": "edit/:id(\\d+)",
+                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlcnCuocThiDangKyDeTaiEdit\",\"formTitle\":\"Đăng ký đề tài\",\"formType\":\"edit\"}",
+                "meta": {
+                  "title": "Cập nhật Đăng ký đề tài tham dự vòng thi cấp thành phố",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
+                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              },
+              {
+                "name": "QlcnCuocThiDangKyDeTaiPopupDetail",
+                "path": "detail",
+                "component": null,
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                  "title": "Popup chi tiết Đăng ký đề tài",
+                  "icon": null,
+                  "noCache": false,
+                  "affix": false,
+                  "breadcrumb": false,
+                  "activeMenu": null,
+                  "component": null,
+                  "link": null,
+                  "isIframe": false,
+                  "roles": []
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

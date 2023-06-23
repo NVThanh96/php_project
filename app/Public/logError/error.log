@@ -1,0 +1,335 @@
+Exception: 
+----Lỗi đường dẫn---- Not Found : 404 Kiểm tra lại đường dẫn api của bạn: /uaa/tokends
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:42
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('{"timestamp":"2...', 1687232248.9302)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(126): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thất bại----
+Thời gian thực hiện: 0.39124417304993 giây
+Vui lòng kiểm tra lại username và password
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:55
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('', 1687232290.54)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(130): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----False----
+Thời gian thực hiện: 0.39262294769287 giây
+Vui lòng kiểm tra lại username và password
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:55
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('', 1687232417.7845)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(130): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}
+----Thành Công----
+Thời gian thực hiện: 0.39070701599121 giây
+Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.44847917556763 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:47
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687232454.0003)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.38801002502441 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:47
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687233626.775)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.46490907669067 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687308734.5142)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.50389909744263 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687342744.9748)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.46931910514832 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687342766.6575)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.43185806274414 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687342841.9704)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.50166916847229 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687342875.221)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.45230102539062 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687342889.1968)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(148): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.45986199378967 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687343025.6072)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.50094294548035 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687398763.9451)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.49483609199524 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687399804.6282)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.47996401786804 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687400301.4716)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.4570631980896 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687401529.2037)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.45556402206421 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687401607.5278)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.55184102058411 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687401674.9257)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.63673806190491 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687403496.1438)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.57024121284485 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687403524.9018)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.43951606750488 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687404698.8424)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.45259404182434 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687417572.4814)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.4100821018219 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687419395.316)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.4728319644928 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687421264.6463)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.43511390686035 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687425682.877)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_user', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_user', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.49719595909119 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687425694.1201)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.47095012664795 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687427370.3526)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 0.44269800186157 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687427732.7314)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 15.938561916351 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687482069.2584)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}Exception: 
+----Thành Công----
+Thời gian thực hiện: 15.937751054764 giây
+ in C:\wamp64\www\project_php\app\Utils\requestAPI.php:46
+Stack trace:
+#0 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(112): RequestAPI->check('eyJ0eXAiOiJKV1Q...', 1687482587.8593)
+#1 C:\wamp64\www\project_php\app\Modules\login\Models\loginDB.php(147): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#2 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(33): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\project_php\app\Modules\login\Controllers\login.php(13): Login->login()
+#4 C:\wamp64\www\project_php\app\Core\Router.php(85): Login->__construct()
+#5 C:\wamp64\www\project_php\app\index.php(6): Router->run()
+#6 {main}
