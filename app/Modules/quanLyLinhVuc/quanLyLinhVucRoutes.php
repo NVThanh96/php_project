@@ -1,6 +1,5 @@
 <?php
 $folderName = basename(__DIR__);
-$path = \Utils\Util::exportPath($folderName); // lấy tên theo đường dẫn
 
 // tự động thêm Controller
 $controllerLink = dirname(__DIR__) . '\*\Controllers\*.php';
@@ -15,10 +14,8 @@ foreach ($controllerFiles as $value){
 // tự động thêm Models
 $modelsLink = dirname(__DIR__) . '\*\Models\*.php';
 $modelsArray = glob($modelsLink, GLOB_NOSORT | GLOB_BRACE);
-
 $searchKeyword = $folderName;
 $searchResults = array();
-
 foreach ($modelsArray as $model) {
     if (strpos($model, $searchKeyword) !== false) {
         $searchResults[] = $model;
@@ -29,14 +26,14 @@ foreach ($searchResults as $value){
     include $value;
 }
 
-$uriDefault = '/project_php/app/core/' .$path;
-$controller = ucfirst($path);
+$uriDefault = $Default .'/' . $folderName;
+$controller = ucfirst($folderName);
 
-${$path . 'Routes'} = [
+
+${$folderName . 'Routes'} = [
     $uriDefault . "/list"   => $controller . '::list',
     $uriDefault . "/create"    => $controller . '::create',
     $uriDefault . "/add" => $controller . '::add',
     $uriDefault . "/edit"   => $controller . '::edit',
     $uriDefault . "/update" => $controller . '::update'
 ];
-

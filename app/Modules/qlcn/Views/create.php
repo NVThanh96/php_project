@@ -1,3 +1,5 @@
+<?php include "Views/adnimation/animationLoading.php" ?>
+
 <?php include "Views/admin/layouts/header.php" ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">

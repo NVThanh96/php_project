@@ -41,6 +41,5 @@ class Login
     function logout()
     {
         include('Modules/login/Views/logout.php');
-
     }
 }

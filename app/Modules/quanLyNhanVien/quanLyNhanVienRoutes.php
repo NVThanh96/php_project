@@ -1,6 +1,5 @@
 <?php
 $folderName = basename(__DIR__);
-$path = \Utils\Util::exportPath($folderName); // lấy tên theo đường dẫn
 
 // tự động thêm Controller
 $controllerLink = dirname(__DIR__) . '\*\Controllers\*.php';
@@ -30,10 +29,11 @@ foreach ($searchResults as $value){
 }
 
 
-$uriDefault = "/project_php/app/core/" .$path;
-$controller = ucfirst($path);
+$uriDefault = $Default . '/' . $folderName;
+$controller = ucfirst($folderName);
 
-${$path . 'Routes'} = [
+
+${$folderName . 'Routes'} = [
     $uriDefault             => $controller . '::show',
     $uriDefault . "/list"   => $controller . '::list',
     $uriDefault . "/create"    => $controller . '::create',

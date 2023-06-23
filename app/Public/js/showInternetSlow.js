@@ -7,6 +7,6 @@ function executeExample() {
             showConfirmButton: false,
             timer: 3000
         });
-    }, 1000); // Delay the execution by 5000 milliseconds (5 seconds)
+    }, 5000); // Delay the execution by 5000 milliseconds (5 seconds)
 
 }

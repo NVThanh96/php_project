@@ -30,8 +30,10 @@ foreach ($searchResults as $value){
     include $value;
 }
 
-$uriDefault = "/project_php/app/core/" . $folderName;
+$uriDefault = $Default . $folderName;
 $controller = ucfirst($folderName);
+
+
 
 ${$folderName . 'Routes'} = [
     $uriDefault             => $controller . '::show',

@@ -195,10 +195,3 @@
     </div>
 </div>
 
-<script>
-    // Hide the loading spinner and display the content when the page is loaded
-    window.addEventListener('load', function () {
-        document.querySelector('.loading').style.display = 'none';
-        document.querySelector('.content-wrapper').style.display = 'block';
-    });
-</script>

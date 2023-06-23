@@ -35,17 +35,10 @@
         height: auto;
         border-radius: 5px;
     }
+
      .container h2{
          margin: 20px
      }
-    .popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 20px;
-    }
 
     /* Close button styles */
     .popup .popup-content button {
@@ -53,14 +46,12 @@
     }
     .swal2-popup {
         width: 28%;
-
     }
 </style>
-<?php include "Public/config/config.php"; ?>
 <?php include "Views/adnimation/animationLoading.php" ?>
+<?php include "Public/config/config.php"; ?>
 <?php include "Views/admin/layouts/navBar.php" ?>
 <?php include "Views/admin/layouts/sideBar.php" ?>
-
 
 <head>
     <title>Hello <?php echo ucfirst($_SESSION["email"]) ?></title>

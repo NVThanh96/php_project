@@ -21,12 +21,11 @@ class Admin
     public
     function home()
     {
-        if (isset($_SESSION['username']) || isset($_SESSION['role'])) {
+        if (isset($_SESSION['username'])) {
             include('Views/admin/index.php');
         } else {
             $message_error = "Vui lòng đăng nhập trước!";
-            include("Views/site/auth/login.php");
-
+            include("Modules/login/Views/login.php");
         }
     }
 

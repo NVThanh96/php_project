@@ -5,7 +5,7 @@ include "Public/config/config.php"
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/project_php/app/admin" class="brand-link">
+    <a href="/JobDnict/php_project/app/admin" class="brand-link">
         <img src="<?php echo ($_SERVER['REQUEST_URI'] !== '/project_php/app/admin') ? '/project_php/app/Public/dist/img/AdminLTELogo.png' : 'Public/dist/img/AdminLTELogo.png'; ?>"
              alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">TDEV</span>
@@ -49,7 +49,7 @@ include "Public/config/config.php"
                         <ul class="nav nav-treeview">
                             <?php foreach ($child['children'] as $child1) : ?>
                                 <li class="nav-item">
-                                    <a href="<?php echo $child1['component']; ?>" class="nav-link">
+                                    <a href="<?php echo $Default .  $child1['component']; ?>" class="nav-link">
                                         <i class="<?php echo $child1['icon']; ?>"></i>
                                         <p><?php echo $child1['moTa']; ?></p>
                                     </a>
@@ -57,16 +57,16 @@ include "Public/config/config.php"
                                         <ul class="nav nav-treeview">
                                             <?php foreach ($child1['children'] as $child2) : ?>
                                                 <li class="nav-item">
-                                                    <a href="<?php echo  $child2['component']??''; ?>" class="nav-link">
-                                                        <i class="<?php echo $child2['icon']; ?>"></i>
+                                                    <a href="<?php echo  $Default . $child2['component']??''; ?>" class="nav-link">
+                                                        <i class="<?php echo   $child2['icon']; ?>"></i>
                                                         <p><?php echo $child2['moTa']; ?></p>
                                                     </a>
                                                     <?php if (isset($child2['children']) && !empty($child2['children'])) : ?>
                                                         <ul class="nav nav-treeview">
                                                             <?php foreach ($child2['children'] as $child3) : ?>
                                                                 <li class="nav-item">
-                                                                    <a href="<?php echo  $child3['component']??''; ?>" class="nav-link">
-                                                                        <i class="<?php echo $child3['icon']; ?>"></i>
+                                                                    <a href="<?php echo $Default .  $child3['component']??''; ?>" class="nav-link">
+                                                                        <i class="<?php  echo  $child3['icon']; ?>"></i>
                                                                         <p><?php echo $child3['moTa']; ?></p>
                                                                     </a>
                                                                 </li>

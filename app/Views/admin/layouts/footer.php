@@ -6,8 +6,7 @@
         <b>Version</b> 3.2.0
     </div>
 </footer>
-
-
+<script><?php include('Public/js/showLoading') ?></script>
 <!-- jQuery -->
 <script src="/project_php/app/Public/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

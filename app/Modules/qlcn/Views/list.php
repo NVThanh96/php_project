@@ -1,5 +1,7 @@
+<?php include "Views/adnimation/animationLoading.php" ?>
+
 <?php include "Views/admin/layouts/header.php" ?>
-<div class="content-wrapper">
+<div class="content-wrapper content">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">

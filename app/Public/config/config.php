@@ -1,4 +1,5 @@
 <?php
+$Default = '/JobDnict/php_project/app';
 
 $totalHopDong = (new Utils\Util)->countHopDong();
 $totalUser = (new Utils\Util)->countUser();
@@ -10,12 +11,12 @@ $pathJson = LoginDB::getSideBar($token); // sử dụng token để đọc dữ 
 $sideBar = json_decode($pathJson, true); // giải mã đoạn code json
 $readFileJson = $sideBar['coreMenuDatas'] ?? '' ; // đọc dữ liệu chỉ lấy trong 'coreMenuDatas
 $str = $_SERVER['PATH_INFO'] ?? ''; // lấy đường dẫn truy cập
-$result = ltrim($str, '/');// xóa dấy '/' đầu tiên
+$result = $str;// xóa dấy '/' đầu tiên
 
 $queue = $readFileJson;
 while (!empty($queue)) {
     $node = array_shift($queue);
-    if ($node['component'] === '/project_php/app/'.lcfirst($result)){
+    if ($node['component'] === $result){
         return $node;
     }
     if (isset($node['children']) && is_array($node['children'])) {

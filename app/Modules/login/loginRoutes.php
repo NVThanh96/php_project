@@ -22,7 +22,7 @@ foreach ($modelsFiles as $value){
     }
 }
 
-$uriDefault = '/project_php/app/'. $folderName;
+$uriDefault =  $Default . $folderName;
 $controller = ucfirst($folderName);
 
 ${$folderName . 'Routes'} = [

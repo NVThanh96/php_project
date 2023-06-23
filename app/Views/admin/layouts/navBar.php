@@ -143,7 +143,7 @@
             </a>
         </li>-->
         <div class="d-lg-flex col-lg-3 justify-content-lg-end" style="margin-left: 20px">
-            <a class="btn btn-danger" href="/project_php/app/admin/logout">Logout</a>
+            <a class="btn btn-danger" href="login?action=btnLogout">Logout</a>
         </div>
     </ul>
 </nav>

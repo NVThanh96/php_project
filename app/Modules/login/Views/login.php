@@ -99,7 +99,7 @@
 <div class="container">
 
 </div>
-<form name="frmUser" id="frmUser" method="post" action="/project_php/app/login?action=btnLogin" align="center">
+<form name="frmUser" id="frmUser" method="post" action="login?action=btnLogin" align="center">
     <div class="message">
         <?php
         if ($message_error ? $message_error : '') {
@@ -126,7 +126,7 @@
     <button type="submit" name="submit" class="btn btn-success" onclick="executeExample('customPosition')">
         Đăng Nhập
     </button>
-    <a type="reset" class="btn btn-danger" href="/project_php/app/">Quay Lại</a>
+    <a type="reset" class="btn btn-danger" href="/JobDnict/php_project/app/">Quay Lại</a>
 
 </form>
 

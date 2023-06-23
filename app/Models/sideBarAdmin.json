@@ -1,7 +1,7 @@
 [
   {
     "name": "CoreHeThong",
-    "path": "/core/quanLyHeThong",
+    "path": "/quanLyHeThong",
     "component": null,
     "redirect": "noRedirect",
     "hidden": false,
@@ -24,7 +24,7 @@
         "name": "CoreUser",
         "path": "user",
         "component": null,
-        "redirect": "/core/quanLyHeThong/user/list",
+        "redirect": "/quanLyHeThong/user/list",
         "hidden": true,
         "alwaysShow": false,
         "props": null,
@@ -44,7 +44,7 @@
           {
             "name": "CoreUserList",
             "path": "list",
-            "component": "/project_php/app/core/quanLyHeThong/user/list",
+            "component": "/quanLyHeThong/user/list",
             "redirect": null,
             "hidden": false,
             "alwaysShow": false,
@@ -55,8 +55,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/user/list",
-              "component": "/project_php/app/core/quanLyHeThong/user/list",
+              "activeMenu": "/quanLyHeThong/user/list",
+              "component": "/quanLyHeThong/user/list",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -66,7 +66,7 @@
           {
             "name": "CoreUserCreate",
             "path": "create",
-            "component": "/project_php/app/core/quanLyHeThong/user/create",
+            "component": "/quanLyHeThong/user/create",
             "redirect": null,
             "hidden": true,
             "alwaysShow": false,
@@ -77,8 +77,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/user/list",
-              "component": "/project_php/app/core/quanLyHeThong/user/create",
+              "activeMenu": "/quanLyHeThong/user/list",
+              "component": "/quanLyHeThong/user/create",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -88,7 +88,7 @@
           {
             "name": "CoreUserEdit",
             "path": "edit/:id(\\d+)",
-            "component": "/project_php/app/core/quanLyHeThong/user/create",
+            "component": "/quanLyHeThong/user/create",
             "redirect": null,
             "hidden": true,
             "alwaysShow": false,
@@ -99,8 +99,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/user/list",
-              "component": "/project_php/app/core/quanLyHeThong/user/edit",
+              "activeMenu": "/quanLyHeThong/user/list",
+              "component": "/quanLyHeThong/user/edit",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -113,7 +113,7 @@
         "name": "CoreRole",
         "path": "role",
         "component": null,
-        "redirect": "/core/quanLyHeThong/role/list",
+        "redirect": "/quanLyHeThong/role/list",
         "hidden": true,
         "alwaysShow": false,
         "props": null,
@@ -133,7 +133,7 @@
           {
             "name": "CoreRoleList",
             "path": "list",
-            "component": "/project_php/app/core/quanLyHeThong/role/list",
+            "component": "/quanLyHeThong/role/list",
             "redirect": null,
             "hidden": false,
             "alwaysShow": false,
@@ -144,8 +144,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/role/list",
-              "component": "/project_php/app/core/quanLyHeThong/role/list",
+              "activeMenu": "/quanLyHeThong/role/list",
+              "component": "/quanLyHeThong/role/list",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -155,7 +155,7 @@
           {
             "name": "CoreRoleCreate",
             "path": "create",
-            "component": "/project_php/app/core/quanLyHeThong/role/create",
+            "component": "/quanLyHeThong/role/create",
             "redirect": null,
             "hidden": true,
             "alwaysShow": false,
@@ -166,8 +166,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/role/list",
-              "component": "/project_php/app/core/quanLyHeThong/role/create",
+              "activeMenu": "/quanLyHeThong/role/list",
+              "component": "/quanLyHeThong/role/create",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -177,7 +177,7 @@
           {
             "name": "CoreRoleEdit",
             "path": "edit/:id(\\d+)",
-            "component": "/project_php/app/core/quanLyHeThong/role/edit",
+            "component": "/quanLyHeThong/role/edit",
             "redirect": null,
             "hidden": true,
             "alwaysShow": false,
@@ -188,8 +188,8 @@
               "noCache": false,
               "affix": false,
               "breadcrumb": false,
-              "activeMenu": "/core/quanLyHeThong/role/list",
-              "component": "/project_php/app/core/quanLyHeThong/role/edit",
+              "activeMenu": "/quanLyHeThong/role/list",
+              "component": "/quanLyHeThong/role/edit",
               "link": null,
               "isIframe": false,
               "roles": []
@@ -203,7 +203,7 @@
 
   {
     "name": "QlLinhVuc",
-    "path": "/core/quanLyLinhVuc",
+    "path": "/quanLyLinhVuc",
     "component": null,
     "redirect": "noRedirect",
     "hidden": false,
@@ -225,7 +225,7 @@
       {
         "name": "QlLinhVucList",
         "path": "list",
-        "component": "/project_php/app/core/quanLyLinhVuc/list",
+        "component": "/quanLyLinhVuc/list",
         "redirect": null,
         "hidden": false,
         "alwaysShow": false,
@@ -236,8 +236,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyLinhVuc/list",
-          "component": "/project_php/app/core/quanLyLinhVuc/list",
+          "activeMenu": "/quanLyLinhVuc/list",
+          "component": "/quanLyLinhVuc/list",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -247,7 +247,7 @@
       {
         "name": "QlLinhVucCreate",
         "path": "create",
-        "component": "/project_php/app/core/quanLyLinhVuc/create",
+        "component": "/quanLyLinhVuc/create",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -258,8 +258,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyLinhVuc/list",
-          "component": "/project_php/app/core/quanLyLinhVuc/create",
+          "activeMenu": "/quanLyLinhVuc/list",
+          "component": "/quanLyLinhVuc/create",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -269,7 +269,7 @@
       {
         "name": "QlLinhVucEdit",
         "path": "edit/:id(\\d+)",
-        "component": "/project_php/app/core/quanLyLinhVuc/edit",
+        "component": "/quanLyLinhVuc/edit",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -280,8 +280,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyHeThong/role/list",
-          "component": "/project_php/app/core/quanLyLinhVuc/edit",
+          "activeMenu": "/quanLyHeThong/role/list",
+          "component": "/quanLyLinhVuc/edit",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -293,7 +293,7 @@
 
   {
     "name": "QlHopdong",
-    "path": "/core/quanLyHopDong",
+    "path": "/quanLyHopDong",
     "component": null,
     "redirect": "noRedirect",
     "hidden": false,
@@ -315,7 +315,7 @@
       {
         "name": "QlHopDongList",
         "path": "list",
-        "component": "/project_php/app/core/quanLyHopDong/list",
+        "component": "/quanLyHopDong/list",
         "redirect": null,
         "hidden": false,
         "alwaysShow": false,
@@ -326,8 +326,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyHopDong/list",
-          "component": "/project_php/app/core/quanLyHopDong/list",
+          "activeMenu": "/quanLyHopDong/list",
+          "component": "/quanLyHopDong/list",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -337,7 +337,7 @@
       {
         "name": "QlHopDongCreate",
         "path": "create",
-        "component": "/project_php/app/core/quanLyHopDong/create",
+        "component": "/quanLyHopDong/create",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -348,8 +348,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyHopDong/list",
-          "component": "/project_php/app/core/quanLyHopDong/create",
+          "activeMenu": "/quanLyHopDong/list",
+          "component": "/quanLyHopDong/create",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -359,7 +359,7 @@
       {
         "name": "QlHopDongEdit",
         "path": "edit/:id(\\d+)",
-        "component": "/project_php/app/core/quanLyHopDong/edit",
+        "component": "/quanLyHopDong/edit",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -370,8 +370,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyHopDong/list",
-          "component": "/project_php/app/core/quanLyHopDong/edit",
+          "activeMenu": "/quanLyHopDong/list",
+          "component": "/quanLyHopDong/edit",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -383,7 +383,7 @@
 
   {
     "name": "QlNhanVien",
-    "path": "/core/quanLyNhanVien",
+    "path": "/quanLyNhanVien",
     "component": null,
     "redirect": "noRedirect",
     "hidden": false,
@@ -405,7 +405,7 @@
       {
         "name": "QlNhanVienList",
         "path": "list",
-        "component": "/project_php/app/core/quanLyNhanVien/list",
+        "component": "/quanLyNhanVien/list",
         "redirect": null,
         "hidden": false,
         "alwaysShow": false,
@@ -416,8 +416,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyNhanVien/list",
-          "component": "/project_php/app/core/quanLyNhanVien/list",
+          "activeMenu": "/quanLyNhanVien/list",
+          "component": "/quanLyNhanVien/list",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -427,7 +427,7 @@
       {
         "name": "QlNhanVienCreate",
         "path": "create",
-        "component": "/project_php/app/core/quanLyNhanVien/create",
+        "component": "/quanLyNhanVien/create",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -438,8 +438,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyNhanVien/list",
-          "component": "/project_php/app/core/quanLyNhanVien/create",
+          "activeMenu": "/quanLyNhanVien/list",
+          "component": "/quanLyNhanVien/create",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -449,7 +449,7 @@
       {
         "name": "QlNhanVienEdit",
         "path": "edit/:id(\\d+)",
-        "component": "/project_php/app/core/quanLyNhanVien/edit",
+        "component": "/quanLyNhanVien/edit",
         "redirect": null,
         "hidden": true,
         "alwaysShow": false,
@@ -460,8 +460,8 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/core/quanLyNhanVien/list",
-          "component": "/project_php/app/core/quanLyNhanVien/edit",
+          "activeMenu": "/quanLyNhanVien/list",
+          "component": "/quanLyNhanVien/edit",
           "link": null,
           "isIframe": false,
           "roles": []
@@ -536,7 +536,7 @@
               {
                 "name": "QlcnCuocThiDangKyDeTaiList",
                 "path": "list",
-                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -548,7 +548,7 @@
                   "affix": false,
                   "breadcrumb": false,
                   "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
-                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
+                  "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/list",
                   "link": null,
                   "isIframe": false,
                   "roles": []
@@ -558,7 +558,7 @@
               {
                 "name": "QlcnCuocThiDangKyDeTaiCreate",
                 "path": "create",
-                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -570,7 +570,7 @@
                   "affix": false,
                   "breadcrumb": false,
                   "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
-                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
+                  "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/create",
                   "link": null,
                   "isIframe": false,
                   "roles": []
@@ -580,7 +580,7 @@
               {
                 "name": "QlcnCuocThiDangKyDeTaiEdit",
                 "path": "edit/:id(\\d+)",
-                "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -592,7 +592,7 @@
                   "affix": false,
                   "breadcrumb": false,
                   "activeMenu": "/qlcn/cuocthi/qldangkydetai/dangkydetai",
-                  "component": "/project_php/app/tts/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
+                  "component": "/qlcn/cuocthi/qldangkydetai/dangkydetai/edit",
                   "link": null,
                   "isIframe": false,
                   "roles": []

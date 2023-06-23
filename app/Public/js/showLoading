@@ -1,0 +1,7 @@
+var contentWrapper = document.querySelector('.content-wrapper');
+contentWrapper.style.display = 'none';
+
+window.addEventListener('load', function () {
+    document.querySelector('.loading').style.display = 'none';
+    document.querySelector('.content-wrapper').style.display = 'block';
+});

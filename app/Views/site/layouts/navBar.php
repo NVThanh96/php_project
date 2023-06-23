@@ -45,7 +45,7 @@
 
     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
         <li>
-            <a href="/project_php/app" class="nav-link text-secondary">
+            <a href="/JobDnict/php_project/app" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#home"></use>
                 </svg>
@@ -54,7 +54,7 @@
         </li>
         <li>
 
-            <a href="/project_php/app/student" class="nav-link text-secondary">
+            <a href="student" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#speedometer2"></use>
                 </svg>
@@ -62,7 +62,7 @@
             </a>
         </li>
         <li>
-            <a href="/project_php/app/api" class="nav-link text-secondary">
+            <a href="api" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#table"></use>
                 </svg>
@@ -79,7 +79,7 @@
         </li>
         <?php if (isset($_SESSION['username'])): ?>
             <li>
-                <a href="/project_php/app/information" class="nav-link text-secondary">
+                <a href="information" class="nav-link text-secondary">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                         <use xlink:href="#people-circle"></use>
                     </svg>
@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li style="padding: 6px">
-                <a style="padding: 0px 4px" href="/project_php/app/logout" class="nav-link text-secondary">
+                <a style="padding: 0px 4px" href="logout" class="nav-link text-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -100,7 +100,7 @@
             </li>
         <?php else: ?>
             <li>
-                <a href="/project_php/app/login" class="nav-link text-secondary">
+                <a href="login" class="nav-link text-secondary">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                         <use xlink:href="#people-circle"></use>
                     </svg>
