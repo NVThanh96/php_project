@@ -1,0 +1,491 @@
+[
+    {
+        "name": "quanLyHopDong",
+        "path": "\/quanLyHopDong",
+        "component": null,
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Qu\u1ea3n L\u00fd H\u1ee3p \u0110\u1ed3ng",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "Create",
+                "path": "\\quanLyHopDong\\Views\\create.php",
+                "component": "\\quanLyHopDong\\Views\\create.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyHopDong\\Views\\create.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Edit",
+                "path": "\\quanLyHopDong\\Views\\edit.php",
+                "component": "\\quanLyHopDong\\Views\\edit.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyHopDong\\Views\\edit.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Hi123",
+                "path": "\\quanLyHopDong\\Views\\hi123",
+                "component": "\\quanLyHopDong\\Views\\hi123",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyHopDong\\Views\\hi123",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Hi12345678",
+                "path": "\\quanLyHopDong\\Views\\hi12345678",
+                "component": "\\quanLyHopDong\\Views\\hi12345678",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyHopDong\\Views\\hi12345678",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "List",
+                "path": "\\quanLyHopDong\\Views\\list.php",
+                "component": "\\quanLyHopDong\\Views\\list.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyHopDong\\Views\\list.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "quanLyLinhVuc",
+        "path": "\/quanLyLinhVuc",
+        "component": null,
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Qu\u1ea3n L\u00fd L\u0129nh V\u1ef1c",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "Create",
+                "path": "\\quanLyLinhVuc\\Views\\create.php",
+                "component": "\\quanLyLinhVuc\\Views\\create.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyLinhVuc\\Views\\create.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Edit",
+                "path": "\\quanLyLinhVuc\\Views\\edit.php",
+                "component": "\\quanLyLinhVuc\\Views\\edit.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyLinhVuc\\Views\\edit.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "List",
+                "path": "\\quanLyLinhVuc\\Views\\list.php",
+                "component": "\\quanLyLinhVuc\\Views\\list.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyLinhVuc\\Views\\list.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "quanLyNhanSu",
+        "path": "\/quanLyNhanSu",
+        "component": null,
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Qu\u1ea3n L\u00fd Nh\u00e2n S\u1ef1",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "Create",
+                "path": "\\quanLyNhanSu\\Views\\create.php",
+                "component": "\\quanLyNhanSu\\Views\\create.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "T\u1ea1o m\u1edbi h\u1ee3p \u0111\u1ed3ng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanSu\\Views\\create.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Edit",
+                "path": "\\quanLyNhanSu\\Views\\edit.php",
+                "component": "\\quanLyNhanSu\\Views\\edit.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "C\u1eadp nh\u1eadt h\u1ee3p \u0111\u1ed3ng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanSu\\Views\\edit.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "List",
+                "path": "\\quanLyNhanSu\\Views\\list.php",
+                "component": "\\quanLyNhanSu\\Views\\list.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "Danh s\u00e1ch h\u1ee3p \u0111\u1ed3ng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanSu\\Views\\list.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Views1",
+                "path": "\\quanLyNhanSu\\Views\\Views1",
+                "component": "\\quanLyNhanSu\\Views\\Views1",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": null,
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanSu\\Views\\Views1",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": [
+                    {
+                        "name": "Create",
+                        "path": "Create",
+                        "component": "\\quanLyNhanSu\\Views\\Views1\/create.php",
+                        "redirect": null,
+                        "hidden": true,
+                        "alwaysShow": false,
+                        "props": null,
+                        "meta": {
+                            "title": "T\u1ea1o m\u1edbi h\u1ee3p \u0111\u1ed3ng",
+                            "icon": null,
+                            "noCache": false,
+                            "affix": false,
+                            "breadcrumb": false,
+                            "activeMenu": "\\quanLyNhanSu\\Views\\Views1",
+                            "component": "\\quanLyNhanSu\\Views\\Views1\/create.php",
+                            "link": null,
+                            "isIframe": false,
+                            "roles": []
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "Edit",
+                        "path": "Edit",
+                        "component": "\\quanLyNhanSu\\Views\\Views1\/edit.php",
+                        "redirect": null,
+                        "hidden": true,
+                        "alwaysShow": false,
+                        "props": null,
+                        "meta": {
+                            "title": "C\u1eadp nh\u1eadt h\u1ee3p \u0111\u1ed3ng",
+                            "icon": null,
+                            "noCache": false,
+                            "affix": false,
+                            "breadcrumb": false,
+                            "activeMenu": "\\quanLyNhanSu\\Views\\Views1",
+                            "component": "\\quanLyNhanSu\\Views\\Views1\/edit.php",
+                            "link": null,
+                            "isIframe": false,
+                            "roles": []
+                        },
+                        "children": []
+                    },
+                    {
+                        "name": "List",
+                        "path": "List",
+                        "component": "\\quanLyNhanSu\\Views\\Views1\/list.php",
+                        "redirect": null,
+                        "hidden": true,
+                        "alwaysShow": false,
+                        "props": null,
+                        "meta": {
+                            "title": "Danh s\u00e1ch h\u1ee3p \u0111\u1ed3ng",
+                            "icon": null,
+                            "noCache": false,
+                            "affix": false,
+                            "breadcrumb": false,
+                            "activeMenu": "\\quanLyNhanSu\\Views\\Views1",
+                            "component": "\\quanLyNhanSu\\Views\\Views1\/list.php",
+                            "link": null,
+                            "isIframe": false,
+                            "roles": []
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "quanLyNhanVien",
+        "path": "\/quanLyNhanVien",
+        "component": null,
+        "redirect": null,
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Qu\u1ea3n L\u00fd Nh\u00e2n Vi\u00ean",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "Create",
+                "path": "\\quanLyNhanVien\\Views\\create.php",
+                "component": "\\quanLyNhanVien\\Views\\create.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "T\u1ea1o m\u1edbi nh\u00e2n vi\u00ean",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanVien\\Views\\create.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "Edit",
+                "path": "\\quanLyNhanVien\\Views\\edit.php",
+                "component": "\\quanLyNhanVien\\Views\\edit.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "C\u1eadp nh\u1eadt nh\u00e2n vi\u00ean",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanVien\\Views\\edit.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "List",
+                "path": "\\quanLyNhanVien\\Views\\list.php",
+                "component": "\\quanLyNhanVien\\Views\\list.php",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": null,
+                "meta": {
+                    "title": "Danh s\u00e1ch nh\u00e2n vi\u00ean",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": null,
+                    "component": "\\quanLyNhanVien\\Views\\list.php",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    }
+]
