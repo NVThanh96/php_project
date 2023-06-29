@@ -1,4 +1,7 @@
 <?php
+use Utils\Util;
+
+$title = 'Quản lý Nhân Viên';
 $folderName = basename(__DIR__);
 
 // tự động thêm Controller

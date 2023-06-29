@@ -26,15 +26,5 @@ while (!empty($queue)) {
     }
 }
 
-// tiêu đề của mỗi trang
-$titleAdd = 'Thêm ';
-$titleUpdate = 'Cập nhật ';
-$titleList = 'Danh sách ';
-
-// con của quản lý hệ thông nên ko nhận theo $name đc
-$titleListRole = 'Danh sách Chức Vụ';
-$titleAddRole = 'Thêm Chức Vụ';
-$titleUpdateRole = 'Cập nhật Chức Vụ';
-
 
 

@@ -1,6 +1,5 @@
 <?php
 
-use models\LinhVucDB;
 use Utils\Util;
 
 include "Public/config/config.php";
@@ -38,7 +37,8 @@ class quanLyLinhVuc
 
     public function list()
     {
-        $this->index();
+            $this->index();
+
     }
 
     public function error()
@@ -53,7 +53,12 @@ class quanLyLinhVuc
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
-        include('Modules/' . $path . '/Views/create.php');
+        $checkAccess = Util::checkAccess();
+        if (isset($checkAccess)) {
+            include('Modules/' . $path . '/Views/create.php');
+        } else {
+            $this->error();
+        }
     }
 
     public function add()

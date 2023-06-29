@@ -38,9 +38,9 @@ $routeAdmin = [
 // đường dẫn truy cập vào các file có trong modules và lấy các file .php ở trong folder
 $directory = dirname(__DIR__) . '\Modules\*/*.php';
 $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+
 $allRoutes = [];
 foreach ($moduleFiles as $file) {
-
     //include Routes Modules\quanLyNhanVien/quanLyNhanVienRoutes.php
     include $file;
     // auto truy cập vào và lấy mảng ra và gộp lại

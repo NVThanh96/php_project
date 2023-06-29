@@ -204,29 +204,6 @@ class Util
         return $path;
     }*/
 
-    // đường dẫn và so sánh với tên sẽ hiển thị ra
-    public static function getName($path)
-    {
-        switch ($path) {
-            case 'quanLyHeThong':
-                return "Người Dùng";
-                break;
-            case 'quanLyHopDong':
-                return "Hợp Đồng";
-                break;
-            case 'quanLyLinhVuc':
-                return "Lĩnh vực";
-                break;
-            case 'quanLyNhanVien':
-                return "Nhân Viên";
-                break;
-                case 'qlcn':
-                return "Công nghệ";
-                break;
-            default:
-                break;
-        }
-    }
 
     //là chức năng nếu sai đường dẫn thì trả về
     public static function abort()

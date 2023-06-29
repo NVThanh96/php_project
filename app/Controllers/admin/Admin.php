@@ -21,7 +21,7 @@ class Admin
     public
     function home()
     {
-        if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['token'])) {
             include('Views/admin/index.php');
         } else {
             $message_error = "Vui lòng đăng nhập trước!";

@@ -2,7 +2,6 @@
 include "Public/config/config.php"
 ?>
 
-
 <html>
 <head>
     <?php include "Views/admin/layouts/header.php" ?>

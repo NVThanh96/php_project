@@ -1,4 +1,5 @@
 <?php
+$title = 'Quản lý Lĩnh Vực';
 $folderName = basename(__DIR__);
 
 // tự động thêm Controller

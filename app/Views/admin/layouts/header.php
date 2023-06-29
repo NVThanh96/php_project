@@ -45,7 +45,7 @@
         float: right;
     }
     .swal2-popup {
-        width: 28%;
+        width: 32%;
     }
 </style>
 <?php include "Views/adnimation/animationLoading.php" ?>

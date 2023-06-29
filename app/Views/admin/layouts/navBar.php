@@ -17,7 +17,7 @@
 
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/project_php/app/" class="nav-link">
+            <a href="<?php echo $Default; ?>" class="nav-link">
                 <i class="fa-solid fa-tv"></i>
             </a>
         </li>
@@ -105,6 +105,7 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
             </div>
         </li>
+
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -137,13 +138,15 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
-        <!--<li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/login?action=showLog" role="button">
+                <i class="fas fa-exclamation"></i>
             </a>
-        </li>-->
+        </li>
+
         <div class="d-lg-flex col-lg-3 justify-content-lg-end" style="margin-left: 20px">
-            <a class="btn btn-danger" href="login?action=btnLogout">Logout</a>
+            <a class="btn btn-danger" href="<?php echo $Default?>/login?action=btnLogout">Logout</a>
         </div>
     </ul>
 </nav>

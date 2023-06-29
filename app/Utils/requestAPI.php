@@ -27,9 +27,15 @@ class RequestAPI
         return $response;
     }
 
-    public function check($token, $startTime)
+    public function checkAPI($token, $startTime)
     {
-
+        $directory1 = dirname(__DIR__) . '\Public\logError\*.log';
+        $moduleFiles1 = glob($directory1, GLOB_NOSORT | GLOB_BRACE);
+        foreach ($moduleFiles1 as $value) {
+            if (strpos($value, 'error') !== false) {
+                echo $value;
+            }
+        }
         $responseData = json_decode($token, true);
         $status = $responseData['status'] ?? '';
         $error = $responseData['error'] ?? '';
@@ -38,12 +44,12 @@ class RequestAPI
         if (isset($status) && !empty($status)) {
             $errorLogMessage = PHP_EOL . '----Lỗi đường dẫn---- ' . $error . " : " . $status . " Kiểm tra lại đường dẫn api của bạn: " . $path . PHP_EOL;
             header('location: login');
-            error_log(new Exception($errorLogMessage), 3, 'C:/wamp64/www/project_php/app/Public/logError/error.log');
+            error_log(new Exception($errorLogMessage), 3, $value);
         } else if ($token) {
             $endTime = microtime(true); // Record the end time
             $executionTime = $endTime - $startTime; // Calculate the execution time
             $time = PHP_EOL . "----Thành Công----" . PHP_EOL . "Thời gian thực hiện: " . $executionTime . " giây" . PHP_EOL;
-            error_log(new Exception($time), 3, 'C:/wamp64/www/project_php/app/Public/logError/error.log');
+            error_log(new Exception($time), 3, $value);
         } else {
             $endTime = microtime(true); // Record the end time
             $executionTime = $endTime - $startTime; // Calculate the execution time
@@ -51,7 +57,7 @@ class RequestAPI
             $time = PHP_EOL . "----False----" . PHP_EOL . "Thời gian thực hiện: " . $executionTime . " giây" . PHP_EOL;
             $errorLogMessage = "Vui lòng kiểm tra lại username và password" . PHP_EOL;
             $combine = $time . $errorLogMessage;
-            error_log(new Exception($combine), 3, 'C:/wamp64/www/project_php/app/Public/logError/error.log');
+            error_log(new Exception($combine), 3, $value);
         }
 
     }

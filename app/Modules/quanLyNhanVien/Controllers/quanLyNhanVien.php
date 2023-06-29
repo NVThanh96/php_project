@@ -1,7 +1,5 @@
 <?php
 
-use models\NhanVienDB;
-use Utils\Util;
 
 class quanLyNhanVien
 {

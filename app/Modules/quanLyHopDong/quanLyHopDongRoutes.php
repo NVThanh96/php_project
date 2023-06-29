@@ -1,7 +1,9 @@
 <?php
+use Utils\Util;
+$title = 'Quản lý Hợp Đồng';
 
 $folderName = basename(__DIR__);
-$path = \Utils\Util::exportPath($folderName); // lấy tên theo đường dẫn
+$path = Util::exportPath($folderName); // lấy tên theo đường dẫn
 
 // tự động thêm Controller
 $controllerLink = dirname(__DIR__) . '\*\Controllers\*.php';

@@ -1,6 +1,5 @@
 <?php
 
-namespace models;
 class NhanVienDB
 {
 
@@ -139,8 +138,11 @@ class NhanVienDB
             return $values;
         } catch (\PDOException $e) {
             echo "Database Invalid: " . $e->getMessage();
-
         }
+    }
+
+    public static function getTitle(){
+        return 'Quản Lý Nhân Viên';
     }
 
 }

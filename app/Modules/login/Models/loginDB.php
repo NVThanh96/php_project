@@ -109,7 +109,7 @@ class LoginDB
         $request = new RequestAPI();
         $response  = $request->getApi('','','','',$token);
 
-        $request->check($token,$startTime);
+        $request->checkAPI($token,$startTime);
 
         return $response;
     }
@@ -136,7 +136,7 @@ class LoginDB
             $sideBarDecode = json_decode($sideBar, true);
             $_SESSION['email'] = $sideBarDecode['email'];
 
-            foreach ($sideBarDecode['roles'] as $index => $role) {
+            foreach ($sideBarDecode['roles'] as $role) {
                 $_SESSION['role'] = $role;
             }
             $_SESSION['rolelinhvuc'] = $sideBarDecode['roles'][0] ?? '';

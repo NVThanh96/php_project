@@ -1,6 +1,5 @@
 <?php
 
-namespace models;
 class LinhVucDB
 {
 
@@ -125,9 +124,10 @@ class LinhVucDB
             return $values;
         } catch (\PDOException $e) {
             echo "Database Invalid: " . $e->getMessage();
-
         }
     }
-
+    public static function getTitle(){
+        return 'Quản Lý Lĩnh Vực';
+    }
 }
 

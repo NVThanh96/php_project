@@ -1,6 +1,5 @@
 <?php
 
-use models\HopDongDB;
 use Utils\Util;
 
 class QuanLyHopDong
@@ -55,8 +54,19 @@ class QuanLyHopDong
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
-        include('Modules/' . $path . '/Views/create.php');
+        $checkAccess = Util::checkAccess();
+        if (isset($checkAccess)) {
+            include('Modules/' . $path . '/Views/create.php');
+        } else {
+            $this->error();
+        }
+
     }
+    public function error()
+    {
+        include('Views/errors/404.php');
+    }
+
 
     public function add()
     {
@@ -81,7 +91,12 @@ class QuanLyHopDong
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         $values = HopDongDB::getValuesByID($id);
-        include('Modules/' . $path . '/Views/edit.php');
+        $checkAccess = Util::checkAccess();
+        if (isset($checkAccess)) {
+            include('Modules/' . $path . '/Views/edit.php');
+        } else {
+            $this->error();
+        }
     }
 
     public function update()

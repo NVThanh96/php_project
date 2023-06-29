@@ -24,6 +24,11 @@ class Login
         include('Modules/login/Views/login.php');
     }
 
+    public function showLog()
+    {
+        include('Modules/login/Views/login.php');
+    }
+
     public function login()
     {
         $username = filter_input(INPUT_POST, 'username');

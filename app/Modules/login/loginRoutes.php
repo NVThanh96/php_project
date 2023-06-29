@@ -29,4 +29,5 @@ ${$folderName . 'Routes'} = [
     $uriDefault                 => 'Login::',
     $uriDefault . '/btnLogin'   => 'Login::btnLogin',
     $uriDefault . '/btnLogout'  => 'Login::btnLogout',
+    $uriDefault . '/showLog'  => 'Login::showLog',
 ];
