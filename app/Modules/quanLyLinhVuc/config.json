@@ -1,0 +1,91 @@
+[
+    {
+        "name": "QlLinhVuc",
+        "path": "\/quanLyLinhVuc",
+        "component": null,
+        "redirect": "noRedirect",
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Quản Lý Lĩnh Vực",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "QlLinhVucList",
+                "path": "list",
+                "component": "\/quanLyLinhVuc\/list",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlLinhVucList\",\"formTitle\":\"Danh sách Lĩnh Vực\",\"formType\":\"list\"}",
+                "meta": {
+                    "title": "Danh sách Lĩnh Vực",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyLinhVuc\/list",
+                    "component": "\/quanLyLinhVuc\/list",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlLinhVucCreate",
+                "path": "create",
+                "component": "\/quanLyLinhVuc\/create",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlLinhVucCreate\",\"formTitle\":\"Đăng ký Lĩnh Vực\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Đăng ký Lĩnh Vực",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyLinhVuc\/list",
+                    "component": "\/quanLyLinhVuc\/create",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlLinhVucEdit",
+                "path": "edit",
+                "component": "\/quanLyLinhVuc\/edit",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlLinhVucEdit\",\"formTitle\":\"Cập nhật Lĩnh Vực\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Cập nhật Lĩnh Vực",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHeThong\/role\/list",
+                    "component": "\/quanLyLinhVuc\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    }
+]

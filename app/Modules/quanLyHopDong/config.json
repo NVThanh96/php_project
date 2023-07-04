@@ -1,0 +1,91 @@
+[
+    {
+        "name": "QlNhanVien",
+        "path": "\/quanLyNhanVien",
+        "component": null,
+        "redirect": "noRedirect",
+        "hidden": false,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Quản Lý Nhân Viên",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "QlNhanVienList",
+                "path": "list",
+                "component": "\/quanLyNhanVien\/list",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlNhanVienList\",\"formTitle\":\"Danh sách Nhân Viên\",\"formType\":\"list\"}",
+                "meta": {
+                    "title": "Danh sách Nhân viên",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyNhanVien\/list",
+                    "component": "\/quanLyNhanVien\/list",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlNhanVienCreate",
+                "path": "create",
+                "component": "\/quanLyNhanVien\/create",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlNhanVienCreate\",\"formTitle\":\"Đăng ký Nhân Viên\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Đăng ký Nhân Viên",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyNhanVien\/list",
+                    "component": "\/quanLyNhanVien\/create",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlNhanVienEdit",
+                "path": "edit",
+                "component": "\/quanLyNhanVien\/edit",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlNhanVienEdit\",\"formTitle\":\"Cập nhật Nhân Viên\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Cập nhật Nhân Viên",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyNhanVien\/list",
+                    "component": "\/quanLyNhanVien\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    }
+]
