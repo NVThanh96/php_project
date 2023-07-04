@@ -22,6 +22,7 @@ foreach ($modelsFiles as $value){
     }
 }
 
+
 $uriDefault =  $Default . $folderName;
 $controller = ucfirst($folderName);
 
@@ -29,5 +30,4 @@ ${$folderName . 'Routes'} = [
     $uriDefault                 => 'Login::',
     $uriDefault . '/btnLogin'   => 'Login::btnLogin',
     $uriDefault . '/btnLogout'  => 'Login::btnLogout',
-    $uriDefault . '/showLog'  => 'Login::showLog',
 ];

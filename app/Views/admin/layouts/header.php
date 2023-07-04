@@ -20,6 +20,10 @@
 <!-- summernote -->
 <link rel="stylesheet" href="/project_php/app/Public/plugins/summernote/summernote-bs4.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Include JavaScript library for additional functionality -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!--ion icons -->
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -28,6 +32,7 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <!-- css for charts -->
+
 <style>
     .chart-responsive {
         width: 100%;

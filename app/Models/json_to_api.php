@@ -24,24 +24,7 @@ function path()
     return $paths;
 }
 
-function pathFromParent($parent)
-{
-    $directory = $parent . '\*';
-    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    $paths = [];
-    foreach ($moduleFiles as $key => $value) {
-        if (basename($moduleFiles[$key]) !== 'Readme.txt' && basename(strpos($moduleFiles[$key], 'login') === false)) {
-            $paths[] = $value;
-        }
-    }
 
-    /*  $result = [];
-      foreach ($paths as $path) {
-          $foldername = basename($path);
-          $result[] = '/' . $foldername;
-      }*/
-    return $paths;
-}
 
 function getViewsFromModule($RootModule)
 {
@@ -63,11 +46,6 @@ function getViewsFromModule($RootModule)
     return $views;
 }
 
-function getTitle($Module_name, $File_name)
-{
-    return $$Module_name . "_" . $$File_name;
-}
-
 /*var_dump(path());
 $arrPathRoot = path();
 foreach ($arrPathRoot as $str_obj) {
@@ -75,16 +53,26 @@ foreach ($arrPathRoot as $str_obj) {
    /* var_dump($arrViewByModule);*/
 
 
+function pathFromParent($parent)
+{
+    $directory = $parent . '\*';
+    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+    $paths = [];
+    foreach ($moduleFiles as $key => $value) {
+        if (basename($moduleFiles[$key]) !== 'Readme.txt' && basename(strpos($moduleFiles[$key], 'login') === false)) {
+            $paths[] = $value;
+        }
+    }
+    return $paths;
+}
 
-function getConfig($path)
+/*function getConfig($path)
 {
     $directory = $path . '/config.json';
     $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
     foreach ($moduleFiles as $value){
         $json = file_get_contents($value);
-
         $json_data = json_decode($json, true);
-
         return $json_data;
     }
     return null;
@@ -92,13 +80,15 @@ function getConfig($path)
 
 $baseFolder = dirname(__DIR__) . '/Modules';
 $arrB = pathFromParent($baseFolder);
+
 $result = [];
 
 foreach ($arrB as $item) {
+    //chỉ lấy những file có config ở trong
     $result[] = getConfig($item);
 }
 
-echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);*/
 
 
 /*function writeToJson()

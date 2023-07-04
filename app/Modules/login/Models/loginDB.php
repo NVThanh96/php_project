@@ -91,6 +91,7 @@ class LoginDB
         return $token;
     }
 
+    // get sidebar theo tài khoản đăng nhập vào
     public static function getSideBar($token)
     {
         $request = new RequestAPI();
@@ -121,7 +122,6 @@ class LoginDB
     {
         $token = self::getToken($username, $password);
         $responseData = json_decode($token, true);
-
         if ($responseData['status']??'') {
             self::getResponse($username, $password);
         } else if (empty($token)) {

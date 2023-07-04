@@ -10,9 +10,6 @@ class Admin
                 case 'home':
                     $this->home();
                     break;
-                case 'logout':
-                    $this->logout();
-                    break;
                 default:
                     break;
             }
@@ -28,11 +25,4 @@ class Admin
             include("Modules/login/Views/login.php");
         }
     }
-
-    public
-    function logout()
-    {
-        include("Views/admin/logout.php");
-    }
-
 }

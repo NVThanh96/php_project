@@ -24,16 +24,10 @@ class Login
         include('Modules/login/Views/login.php');
     }
 
-    public function showLog()
-    {
-        include('Modules/login/Views/login.php');
-    }
-
     public function login()
     {
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
-
         if (!empty($username) && !empty($password)){
             LoginDB::loginWithApi($username, $password);
         }else{
@@ -45,6 +39,8 @@ class Login
     public
     function logout()
     {
+        $startTime = microtime(true); // Record the start time
+        $endTime = microtime(true); // Record the end time
         include('Modules/login/Views/logout.php');
     }
 }
