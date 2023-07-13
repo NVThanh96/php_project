@@ -17,7 +17,8 @@ document.getElementById("uploadForm").addEventListener("submit", function (event
 
 
     // Add an additional check for existing filenames
-    const existingFilenames = ["quanLyThongTin", "filename2.zip", "filename3.zip"]; // Replace with your existing filenames
+    const existingFilenames = ["quanLyThongTin2", "filename2.zip", "filename3.zip"]; // Replace with your existing filenames
+
     if (existingFilenames.includes(fileNameWithoutExtension)) {
         Swal.fire({
             title: "Error!",
@@ -47,7 +48,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (event
             });
             setTimeout(() => {
                 messageContainer.style.display = "none";
-                document.getElementById("a").style.display = "block";
+                window.location.replace("http://localhost:8080/JobDnict/php_project/app/someFunction/listPlugin");
             }, 4000);
         })
         .catch(error => {

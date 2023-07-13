@@ -1,0 +1,9 @@
+    /*for search */
+#search_hidden{
+    float: right;
+    margin: 10px 40px
+}
+/*************/
+    .rotate-animation {
+        animation: rotate 2s ease-in-out;
+    }

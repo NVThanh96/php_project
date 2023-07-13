@@ -27,7 +27,7 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo $DefaultSomeFunction; ?>/uploadPlugin" class="nav-link">
+            <a href="<?php echo $DefaultSomeFunction; ?>/upload" class="nav-link">
                 <i class="fa-solid fa-upload"></i>
             </a>
         </li>
@@ -164,7 +164,7 @@
 
 
         <div class="d-lg-flex col-lg-3 justify-content-lg-end" style="margin-left: 20px">
-            <a class="btn btn-danger" href="<?php echo $Default?>login?action=btnLogout">Logout</a>
+            <a class="btn btn-danger" href="<?php echo $Default?>/login?action=btnLogout">Logout</a>
         </div>
     </ul>
 </nav>

@@ -1,0 +1,263 @@
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-left {
+    animation: fadeInLeft 2s ease-in;
+    opacity: 0;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+label {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+label:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+input[type="file"] {
+    margin-top: 15%;
+}
+
+#upload {
+    font-style: normal;
+}
+
+.upload-file input {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+h6 {
+    color: #45556f;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.form_field{
+    display: flex;
+    width: 60%;
+}
+
+.upload-details {
+    border: 2px dashed;
+    margin-top: 193px;
+    margin-left: 761px;
+    width: 40%;
+    padding-top: 10px;
+}
+
+.upload-details ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 50%;
+}
+
+.upload-details ul li {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 6% 0px;
+    padding: 0 30px;
+}
+
+.upload-details ul li p {
+    line-height: 20px;
+    font-size: 18px;
+    color: #cbdaef;
+}
+
+
+.shadow {
+    position: relative;
+    left: 25%;
+    width: 50%;
+}
+
+.shadow::before, .shadow::after {
+    top: 0;
+    content: " ";
+    display: block;
+}
+
+.shadow::before {
+    width: 100%;
+    position: relative;
+    background-color: #2a3342;
+    opacity: .6;
+    height: 10px;
+    border-end-end-radius: 50%;
+}
+
+.shadow::after {
+    width: 100%;
+
+    position: absolute;
+    background-color: #2a3342;
+    opacity: .3;
+    height: 20px;
+}
+
+
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-flicker {
+    -webkit-animation: flickerAnimation 1s infinite;
+    -moz-animation: flickerAnimation 1s infinite;
+    -o-animation: flickerAnimation 1s infinite;
+    animation: flickerAnimation 1s infinite;
+}
+
+i.fa {
+    color: #cbdaef;
+    display: inline-block;
+    border-radius: 60px;
+    border: 1px solid #cbdaef;
+    padding: 15px;
+    font-size: 140%;
+    margin-right: 20px;
+}
+
+.ready {
+    color: #56f9ba !important;
+}
+
+i.ready {
+    border-color: #56f9ba !important;
+}
+
+.slow-spin {
+    -webkit-animation: fa-spin 6s infinite linear;
+    animation: fa-spin 6s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/*label.innerHTML = fileName + ' <svg  style="fill: rgb(113,196,151); stroke: #e70418; stroke-width: 2" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM96 48c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm-6.3 71.8c3.7-14 16.4-23.8 30.9-23.8h14.8c14.5 0 27.2 9.7 30.9 23.8l23.5 88.2c1.4 5.4 2.1 10.9 2.1 16.4c0 35.2-28.8 63.7-64 63.7s-64-28.5-64-63.7c0-5.5 .7-11.1 2.1-16.4l23.5-88.2zM112 336c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H112z"/></svg>';*/
+
+
+.fa-cloud-arrow-up{
+    margin: 0px 15px 0 ;
+    color: white;font-size: 80px
+}
+
+.files{
+    background: transparent;
+    color: white;
+}
+.container-fluid{
+    position: relative;
+    width: 1600px!important;
+}
+
+.content {
+    width: 100%;
+    margin-top: 94px;
+    margin-left: 56%;
+}
+.content ul li {
+    list-style-type: none;
+    font-size: 23px;
+}

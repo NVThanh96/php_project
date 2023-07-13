@@ -52,28 +52,26 @@ foreach ($arrPathRoot as $str_obj) {
     $arrViewByModule = getViewsFromModule($str_obj);
    /* var_dump($arrViewByModule);*/
 
-
 function pathFromParent($parent)
 {
-    $directory = $parent . '\*';
+    $directory = $parent . '/*';
     $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
     $paths = [];
     foreach ($moduleFiles as $key => $value) {
-        if (basename($moduleFiles[$key]) !== 'Readme.txt' && basename(strpos($moduleFiles[$key], 'login') === false)) {
+        if (basename($moduleFiles[$key]) !== 'Readme.txt' && strpos($moduleFiles[$key], 'login') === false) {
             $paths[] = $value;
         }
     }
     return $paths;
 }
 
-/*function getConfig($path)
+function getConfig($path)
 {
     $directory = $path . '/config.json';
     $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    foreach ($moduleFiles as $value){
+    foreach ($moduleFiles as $value) {
         $json = file_get_contents($value);
-        $json_data = json_decode($json, true);
-        return $json_data;
+        return json_decode($json, true);
     }
     return null;
 }
@@ -84,11 +82,17 @@ $arrB = pathFromParent($baseFolder);
 $result = [];
 
 foreach ($arrB as $item) {
-    //chỉ lấy những file có config ở trong
-    $result[] = getConfig($item);
+    // chỉ lấy những file có config ở trong
+    $config = getConfig($item);
+    if ($config !== null) {
+        $result[] = $config;
+    }
 }
 
-echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);*/
+$output = json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+$formattedOutput = '<pre>' . $output . '</pre>';
+
+echo $formattedOutput;
 
 
 /*function writeToJson()

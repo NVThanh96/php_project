@@ -280,7 +280,7 @@
           "noCache": false,
           "affix": false,
           "breadcrumb": false,
-          "activeMenu": "/quanLyHeThong/role/list",
+          "activeMenu": "/quanLyHeThong/list",
           "component": "/quanLyLinhVuc/edit",
           "link": null,
           "isIframe": false,

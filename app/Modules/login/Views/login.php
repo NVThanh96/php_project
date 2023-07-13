@@ -15,120 +15,73 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title Page</title>
-
+    <title>Trung Tâm Số</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-image: linear-gradient(to right, rgba(33, 150, 243, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8), rgba(33, 150, 243, 0.8)), url('Public/images/login.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            animation: gradientAnimation 10s infinite;
-            margin-top: 4.5%;
-            margin-left: 2.5%;
-        }
-
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 30% 30%;
-            }
-            50% {
-                background-position: 100% 10%;
-            }
-            100% {
-                background-position: 30% 30%;
-            }
-        }
-
-        form {
-            width: 430px;
-            margin: 8% auto;
-            background-color: rgb(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 7px;
-        }
-
-        .container {
-            margin-bottom: 20px;
-        }
-
-        .message {
-            color: red;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        h3 {
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 23px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-        }
-
-        input[type="submit"],
-        input[type="reset"] {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1e2933;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            background-color: #4cd989;
-        }
-
-
+        <?php include "Modules/login/Public/css/style.css"?>
     </style>
+
 </head>
 <body>
 
-<div class="container">
+
+    <div <div class="row login">
+
+        <!--<i class="infinity"></i>-->
+        <div class="col-sm-9 left">
+            <img style="width: 100%" class="img" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\img1.png")); ?>'>
+            <img class="icon1" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\icon11.png")); ?>'>
+            <img class="icon2" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\icon22.png")); ?>'>
+            <img class="icon3" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\global.png")); ?>'>
+            <img class="icon4" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\chart.png")); ?>'>
+
+        </div>
+        <div class="col-sm-3">
+            <div class="input-login">
+                <a type="reset" href="/JobDnict/php_project/app/"><i class="fa-solid fa-arrow-left"></i></a>
+
+                <form name="frmUser" id="frmUser" method="post" action="login?action=btnLogin">
+                    <div class="message">
+                        <?php
+                        if ($message_error ? $message_error : '') {
+                            echo $message_error;
+                        }
+                        ?>
+                    </div>
+                    <input type="hidden" name="session_token" value="{your session token value}">
+                    <h3><i class="fa-brands fa-envira"></i>
+                        Đăng nhập</h3>
+                    <hr style="border: black 1px solid">
+
+                    <div class="form-group">
+                        <label for="">Tên Đăng Nhập</label>
+                        <input type="text" name="username" class="form-control" placeholder="Enter username">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Mật Khẩu</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <br>
+                    <!--<button type="submit" name="submit" class="btn btn-success">Đăng Nhập</button>-->
+                    <button style="    font-size: 20px;
+width: 100%" type="submit" name="submit" class="btn btn-success" onclick="executeExample('customPosition')">
+                        <i class="fa-solid fa-key"></i> Đăng Nhập
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
 
 </div>
-<form name="frmUser" id="frmUser" method="post" action="login?action=btnLogin" align="center">
-    <div class="message">
-        <?php
-        if ($message_error ? $message_error : '') {
-            echo $message_error;
-        }
-        ?>
-    </div>
-    <input type="hidden" name="session_token" value="{your session token value}">
-
-    <h3 align="center">Đăng nhập</h3>
-
-    <div class="form-group">
-        <label for="">Tên Đăng Nhập</label>
-        <input type="text" name="username" class="form-control" placeholder="Enter username">
-    </div>
-
-    <div class="form-group">
-        <label for="">Mật Khẩu</label>
-        <input type="password" name="password" class="form-control" placeholder="Enter password">
-    </div>
-
-    <br>
-    <!--<button type="submit" name="submit" class="btn btn-success">Đăng Nhập</button>-->
-    <button type="submit" name="submit" class="btn btn-success" onclick="executeExample('customPosition')">
-        Đăng Nhập
-    </button>
-    <a type="reset" class="btn btn-danger" href="/JobDnict/php_project/app/">Quay Lại</a>
-
-</form>
 
 <script>
     <?php include('Public/js/showInternetSlow.js') ?>

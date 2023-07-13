@@ -89,7 +89,7 @@ include "Public/config/config.php";
                                                 if ($folderMota == $folderConfig) {
                                                     $json = file_get_contents($value);
                                                     $json_data = json_decode($json, true);
-                                                    $check = ($json_data[0]['hidden'] === true) ? true : false;
+                                                    $check = ($json_data['hidden'] === true) ? true : false;
                                                     $linkText = $check ? 'Re-active' : 'Active';
                                                     $linkUrl = "changeActive?file=" . urlencode($value);
                                                     echo "<a href='$linkUrl'>$linkText</a>";
@@ -100,15 +100,15 @@ include "Public/config/config.php";
 
 
                                         <td class="text-center">
+                                            <?php $a = dirname($item) ?>
+                                            <?php $escapedFolderPath = rawurlencode($a); ?>
+
                                             <button style="color:red; border: none;background-color: transparent;"
-                                                    onclick="deleteFolder('<?php echo dirname($item) ?>')">
-                                                <?php
-                                                //dùng để mã hóa đường dẫn trên
-                                                $escapedFolderPath = json_encode(dirname($item));
-                                                ?>
+                                                    onclick="deleteFolder('<?php echo $escapedFolderPath ?>')">
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         </td>
+
                                     </tr>
 
                                 <?php endforeach; ?>
@@ -132,9 +132,8 @@ include "Public/config/config.php";
 </script>
 
 <script>
-    var escapedFolderPath = <?php echo $escapedFolderPath; ?>;
-
-    function deleteFolder(folderPath) {
+    function deleteFolder(FolderPath) {
+        var escapedFolderPath = FolderPath.replace(/\\/g, "\\\\");
         Swal.fire({
             title: 'Confirmation',
             text: 'Are you sure you want to delete this folder?',

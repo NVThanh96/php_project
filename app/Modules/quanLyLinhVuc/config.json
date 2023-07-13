@@ -1,7 +1,6 @@
-[
     {
         "name": "QlLinhVuc",
-        "path": "\/quanLyLinhVuc",
+        "path": "/quanLyLinhVuc",
         "component": null,
         "redirect": "noRedirect",
         "hidden": false,
@@ -23,7 +22,7 @@
             {
                 "name": "QlLinhVucList",
                 "path": "list",
-                "component": "\/quanLyLinhVuc\/list",
+                "component": "/quanLyLinhVuc/list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -34,8 +33,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyLinhVuc\/list",
-                    "component": "\/quanLyLinhVuc\/list",
+                    "activeMenu": "/quanLyLinhVuc/list",
+                    "component": "/quanLyLinhVuc/list",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -45,7 +44,7 @@
             {
                 "name": "QlLinhVucCreate",
                 "path": "create",
-                "component": "\/quanLyLinhVuc\/create",
+                "component": "/quanLyLinhVuc/create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -56,8 +55,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyLinhVuc\/list",
-                    "component": "\/quanLyLinhVuc\/create",
+                    "activeMenu": "/quanLyLinhVuc/list",
+                    "component": "/quanLyLinhVuc/create",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -67,7 +66,7 @@
             {
                 "name": "QlLinhVucEdit",
                 "path": "edit",
-                "component": "\/quanLyLinhVuc\/edit",
+                "component": "/quanLyLinhVuc/edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -78,8 +77,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyHeThong\/role\/list",
-                    "component": "\/quanLyLinhVuc\/edit",
+                    "activeMenu": "/quanLyHeThong/list",
+                    "component": "/quanLyLinhVuc/edit",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -88,4 +87,3 @@
             }
         ]
     }
-]

@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap"); /* Works for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Works for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.contentDate {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.datepicker {
+    text-align: center;
+    align-items: center;
+}
+
+.container{
+margin: 0;
+}
+.contentRight input {
+    font-size: 20px;
+    width: 30%;
+    margin-top: -1%;
+    text-align: right;
+    background: transparent;
+    margin-left: 50%;
+    border: none;
+}
+
+.contentRight p {
+    width: 100px;
+}
+
+
+/*upload file */
+#files-area {
+    border: 1px dashed black;
+}
+
+.file-block {
+    border-radius: 10px;
+    background-color: rgba(144, 163, 203, 0.2);
+    margin: 5px;
+    color: initial;
+    display: inline-flex;
+}
+
+.file-block > span.name {
+    padding-right: 10px;
+    width: max-content;
+    display: inline-flex;
+}
+
+.file-delete {
+    display: flex;
+    width: 24px;
+    color: initial;
+    background-color: #6eb4ff00;
+    font-size: large;
+    justify-content: center;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.file-delete:hover {
+    background-color: rgba(144, 163, 203, 0.2);
+    border-radius: 10px;
+}
+
+.file-delete > span {
+    transform: rotate(45deg);
+}
+

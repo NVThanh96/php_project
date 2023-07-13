@@ -141,9 +141,5 @@ class NhanVienDB
         }
     }
 
-    public static function getTitle(){
-        return 'Quản Lý Nhân Viên';
-    }
-
 }
 

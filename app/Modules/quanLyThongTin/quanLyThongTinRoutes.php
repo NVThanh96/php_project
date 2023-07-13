@@ -1,8 +1,7 @@
 <?php
 use Utils\Util;
 
-$title = 'Quản lý Nhân Viên';
-$folderName = basename(__DIR__);
+$folderName = basename(__DIR__) ?? '';
 
 // tự động thêm Controller
 $controllerLink = dirname(__DIR__) . '\*\Controllers\*.php';
@@ -32,16 +31,37 @@ foreach ($searchResults as $value){
 }
 
 
-$uriDefault = $Default .'/'. $folderName;
+$uriDefault = $Default . $folderName;
 $controller = ucfirst($folderName);
 
 
-${$folderName . 'Routes'} = [
-    $uriDefault             => $controller . '::show',
-    $uriDefault . "/list"   => $controller . '::list',
-    $uriDefault . "/create"    => $controller . '::create',
-    $uriDefault . "/add" => $controller . '::add',
-    $uriDefault . "/edit"   => $controller . '::edit',
-    $uriDefault . "/update" => $controller . '::updateNhanVien'
-];
+$configLink = dirname(__FILE__) . '\*.json';
+$configArray = glob($configLink, GLOB_NOSORT | GLOB_BRACE);
+foreach ($configArray as $key => $value) {
+    $json = file_get_contents($value);
+    $json_data = json_decode($json, true);
+    $children = $json_data['children'];
+
+    $searchValue = basename($_SERVER['PATH_INFO'] ??'');
+    $result = false;
+
+    foreach ($children as $key1 => $child) {
+        if ($searchValue === $child['path']) {
+            $result = $key1;
+            break;
+        }
+    }
+
+    if ($result !== false) {
+        $route = $uriDefault . '/' . $children[$result]['path'];
+        ${$folderName . 'Routes'} = [
+            $route => $controller . '::' . $children[$result]['path'],
+        ];
+    } else {
+        ${$folderName . 'Routes'} = [
+            $uriDefault . "/add" => $controller . '::add',
+            $uriDefault . "/update" => $controller . '::updateNhanVien',
+        ];
+    }
+}
 

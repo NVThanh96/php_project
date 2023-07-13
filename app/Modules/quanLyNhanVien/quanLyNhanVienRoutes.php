@@ -1,5 +1,6 @@
 <?php
-$folderName = basename(__DIR__);
+
+$folderName = basename(__DIR__) ?? '';
 
 // tự động thêm Controller
 $controllerLink = dirname(__DIR__) . '\*\Controllers\*.php';
@@ -27,7 +28,7 @@ foreach ($searchResults as $value) {
     $a = explode('.', basename($value));
     include $value;
 }
-$uriDefault = $Default . '/' . $folderName;
+$uriDefault = $Default . $folderName;
 $controller = ucfirst($folderName);
 
 $configLink = dirname(__FILE__) . '\*.json';
@@ -35,15 +36,17 @@ $configArray = glob($configLink, GLOB_NOSORT | GLOB_BRACE);
 foreach ($configArray as $key => $value) {
     $json = file_get_contents($value);
     $json_data = json_decode($json, true);
-    $children = $json_data[$key]['children'];
+    $children = $json_data['children'] ?? '';
 
-    $searchValue = basename($_SERVER['PATH_INFO']);
+    $searchValue = basename($_SERVER['PATH_INFO'] ?? '');
     $result = false;
+    if (!empty($children)) {
 
-    foreach ($children as $key1 => $child) {
-        if ($searchValue === $child['path']) {
-            $result = $key1;
-            break;
+        foreach ($children as $key1 => $child) {
+            if ($searchValue === $child['path']) {
+                $result = $key1;
+                break;
+            }
         }
     }
 

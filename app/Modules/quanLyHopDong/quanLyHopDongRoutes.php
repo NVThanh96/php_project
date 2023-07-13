@@ -1,8 +1,7 @@
 <?php
 use Utils\Util;
-$title = 'Quản lý Hợp Đồng';
 
-$folderName = basename(__DIR__);
+$folderName = basename(__DIR__)??'';
 $path = Util::exportPath($folderName); // lấy tên theo đường dẫn
 
 // tự động thêm Controller
@@ -40,15 +39,17 @@ $configArray = glob($configLink, GLOB_NOSORT | GLOB_BRACE);
 foreach ($configArray as $value) {
     $json = file_get_contents($value);
     $json_data = json_decode($json, true);
-    $children = $json_data[0]['children'];
+    $children = $json_data['children'] ?? '';
 
-    $searchValue = basename($_SERVER['PATH_INFO']);
+    $searchValue = basename($_SERVER['PATH_INFO'] ?? '');
     $result = false;
 
-    foreach ($children as $key => $child) {
-        if ($searchValue === $child['path']) {
-            $result = $key;
-            break;
+    if (!empty($children)){
+        foreach ($children as $key => $child) {
+            if ($searchValue === $child['path']) {
+                $result = $key;
+                break;
+            }
         }
     }
 
@@ -61,6 +62,8 @@ foreach ($configArray as $value) {
         ${$folderName . 'Routes'} = [
             $uriDefault . "/add" => $controller . '::add',
             $uriDefault . "/update" => $controller . '::update',
+            $uriDefault . "/search" => $controller . '::search',
+            $uriDefault . "/searchHD" => $controller . '::searchHD',
         ];
     }
 }

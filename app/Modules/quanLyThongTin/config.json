@@ -1,10 +1,9 @@
-[
     {
         "name": "QlThongTin",
-        "path": "\/quanLyThongTin",
+        "path": "/quanLyThongTin",
         "component": null,
         "redirect": "noRedirect",
-        "hidden": false,
+        "hidden": true,
         "alwaysShow": false,
         "props": null,
         "meta": {
@@ -23,7 +22,7 @@
             {
                 "name": "QlThongTinList",
                 "path": "list",
-                "component": "\/quanLyThongTin\/list",
+                "component": "/quanLyThongTin/list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -34,8 +33,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/list",
+                    "activeMenu": "/quanLyThongTin/list",
+                    "component": "/quanLyThongTin/list",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -45,7 +44,7 @@
             {
                 "name": "QlThongTinCreate",
                 "path": "create",
-                "component": "\/quanLyThongTin\/create",
+                "component": "/quanLyThongTin/create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -56,8 +55,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/create",
+                    "activeMenu": "/quanLyThongTin/list",
+                    "component": "/quanLyThongTin/create",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -67,7 +66,7 @@
             {
                 "name": "QlThongTinEdit",
                 "path": "edit",
-                "component": "\/quanLyThongTin\/edit",
+                "component": "/quanLyThongTin/edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -78,8 +77,8 @@
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/edit",
+                    "activeMenu": "/quanLyThongTin/list",
+                    "component": "/quanLyThongTin/edit",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -88,4 +87,3 @@
             }
         ]
     }
-]

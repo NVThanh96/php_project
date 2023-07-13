@@ -39,6 +39,7 @@ include "Public/config/config.php"
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <?php if (isset($readFileJson)):?>
                 <?php foreach ($readFileJson as $child) : ?>
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link ">
@@ -83,6 +84,7 @@ include "Public/config/config.php"
                         </ul>
                     </li>
                 <?php endforeach; ?>
+            <?php endif;?>
             </ul>
         </nav>
 

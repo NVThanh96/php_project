@@ -1,10 +1,5 @@
 <?php
 
-use Utils\Util;
-
-include "Public/config/config.php";
-
-
 class quanLyLinhVuc
 {
     public function __construct()
@@ -37,8 +32,11 @@ class quanLyLinhVuc
 
     public function list()
     {
+        if (!empty($_SESSION['email'])) {
             $this->index();
-
+        } else {
+            $this->error();
+        }
     }
 
     public function error()
@@ -53,7 +51,11 @@ class quanLyLinhVuc
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
+        if (!empty($_SESSION['email'])) {
             include('Modules/' . $path . '/Views/create.php');
+        } else {
+            $this->error();
+        }
     }
 
     public function add()
@@ -70,7 +72,11 @@ class quanLyLinhVuc
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
-        include('Modules/' . $path . '/Views/edit.php');
+        if (!empty($_SESSION['email'])) {
+            include('Modules/' . $path . '/Views/edit.php');
+        } else {
+            $this->error();
+        }
     }
 
     public

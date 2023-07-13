@@ -21,67 +21,61 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 // sau đó bỏ vào trong $routes để lấy được controller
 $routes = [
-    $uriDefault . '' => 'Home::',
+    $uriDefault => 'Home::',
     $uriDefault . 'student' => 'Student::',
     $uriDefault . 'api' => 'API::',
     $uriDefault . 'information' => 'Information::',
 ];
 $routeAdmin = [
     $uriDefault . 'admin' => 'Admin::home',
-    $uriDefault . 'logout' => 'Admin::logout',
 ];
 
 
 $directoryConfig = dirname(__DIR__) . '/Modules/*/config.json';
 $moduleFilesConfig = glob($directoryConfig, GLOB_NOSORT | GLOB_BRACE);
-$result = [];
+
+$directory = dirname(__DIR__) . '\Modules\*/*.php';
+$moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+
+$arrSearch = [];
+$allRoutes = [];
 
 foreach ($moduleFilesConfig as $value) {
     $json = file_get_contents($value);
     $json_data = json_decode($json, true);
 
     if (isset($json_data[0]['hidden']) && $json_data[0]['hidden'] === true) {
-        $folderPath = dirname($value);
+        $isHaveConfigTrue[] = basename(dirname($value));
     }
 }
+$check = isset($isHaveConfigTrue) ? $isHaveConfigTrue : [];
+foreach ($check as $value) {
+    $arrSearch[] = $value;
+}
 
-// đường dẫn truy cập vào các file có trong modules và lấy các file .php ở trong folder
-$directory = dirname(__DIR__) . '\Modules\*/*.php';
-$moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-$allRoutes = [];
 
 foreach ($moduleFiles as $file) {
     //include Routes Modules\quanLyNhanVien/quanLyNhanVienRoutes.php
     include $file;
+    $arr = basename(dirname($file));
 
-
-    // auto truy cập vào và lấy mảng ra và gộp lại
-    // lệnh này lấy được quanLyHeThong và quanLyHopDong nối với Routes
-
-
-        if (basename(dirname($file)) !== basename($folderPath ??'')) {
-
-            $routeVariable = basename($file, '.php');
-
-            // Check if tồn tại và là 1 mảng thì kết hợp mảng đó lại
-            if (isset($$routeVariable) && is_array($$routeVariable)) {
-                $allRoutes = array_merge($allRoutes, $$routeVariable);
-            }
-
-
+    if (array_search($arr,$arrSearch) === false) {
+        $routeVariable = basename($file, '.php');
+        // Check if tồn tại và là 1 mảng thì kết hợp mảng đó lại
+        if (isset($$routeVariable) && is_array($$routeVariable)) {
+            $allRoutes = array_merge($allRoutes, $$routeVariable);
+        }
     }
 }
-$extendRoutes = $allRoutes;
 
+$extendRoutes = $allRoutes;
 
 /*dùng để gọp tất cả các mảng lại với nhau*/
 $combinedRoutes = array_merge($routes, $routeAdmin, $extendRoutes);
 
-
 if (array_key_exists($uri, $combinedRoutes)) {
     //lấy đường dẫn và so sánh với mảng và trả về controller
     $handler = $combinedRoutes[$uri];
-
     if (strpos($handler, '::') !== false) {
         [$controllerClass, $method] = explode('::', $handler);
 

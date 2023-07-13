@@ -16,24 +16,15 @@
         </div>
     </div>
 
-    <div class="card-body">
+    <div class="card-body" style="background-color: #f4f6f9">
         <div class="row">
-            <p>Hợp đồng</p>
+            <p style="color: black">Hợp đồng</p>
             <div class="col-md-4">
                 <div class="chart-responsive"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                     <canvas id="pieChart" ></canvas>
                 </div>
 
             </div>
-
-            <div style="margin-top: 10%" class="col-md-1">
-                <ul class="chart-legend clearfix">
-                    <li><i class="far fa-circle text-success"></i> Hoàn Thành</li>
-                    <li><i class="far fa-circle text-warning"></i> Đang Thực Hiện</li>
-                    <li><i class="far fa-circle text-danger"></i> Chưa Thực hiện</li>
-                </ul>
-            </div>
-
         </div>
         <div class="row">
 
@@ -59,7 +50,7 @@ $user =  \Utils\Util::countUsers();
     var pieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Hoàn Thành', 'Đang Thực Hiện', 'Chưa Thực hiện'],
+            labels: ['Đã Hoàn Thành', 'Đang Thực Hiện', 'Tạm Dừng'],
             datasets: [{
                 data: [<?php echo $done?>, <?php echo $working?>, <?php echo $notWorking ?> ], // Example data, you should replace it with your actual data
                 backgroundColor: [
@@ -75,7 +66,14 @@ $user =  \Utils\Util::countUsers();
             // You can also customize other options as needed
         }
     });
+
+    // CSS style to change label color to white
+    var legendItems = document.querySelectorAll('#pieChart .chartjs-render-monitor ul li span');
+    for (var i = 0; i < legendItems.length; i++) {
+        legendItems[i].style.color = 'white';
+    }
 </script>
+
 
 <script>
     // Chart.js code to create a pie chart

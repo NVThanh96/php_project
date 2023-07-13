@@ -1,197 +1,145 @@
 <style>
-
-    :root{
-        --primaryColor : #744253;
-        --lightPink : #F3D9DC;
-        --darkPink : #C78283;
-    }
-
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .line{
-        height: 16px;
-        width: 150px;
-        border-radius: 20px;
-        background-color: var(--primaryColor);
-    }
-    .loader{
-        display: flex;
-        flex-direction: row;
-        gap: 28px;
-    }
-    .one-loader{
+    .wrap {
         position: relative;
-        height: 125px;
-    }
-    .v-line{
-        width: 4px;
-        height: 100px;
-        background-color: var(--primaryColor);
-        position: absolute;
+        top: 40%;
+        left: 2%;
+        width: 150px;
+        margin: 0 auto;
     }
 
-    .circle{
-        width: 25px;
-        height: 25px;
+    .loader {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border: 15px solid;
         border-radius: 50%;
-        background-color: var(--lightPink);
+        border-top-color: rgba(44,44,44,0);
+        border-right-color: rgba(55,55,55,0);
+        border-bottom-color: rgba(66,66,66,0);
+        border-left-color: rgba(33,33,33,0);
+        animation: loadEr 3s infinite;
+    }
+
+    @keyframes loadEr {
+        0% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+
+        }
+        10.4% {
+            border-top-color: rgba(44,44,44,0.5);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+        }
+        20.8% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+        }
+        31.2% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0.5);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+        }
+        41.6% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+            transform: rotate(40deg);
+        }
+        52% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0.5);
+            border-left-color: rgba(33,33,33,0);
+        }
+        62.4% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0);
+        }
+        72.8% {
+            border-top-color: rgba(44,44,44,0);
+            border-right-color: rgba(55,55,55,0);
+            border-bottom-color: rgba(66,66,66,0);
+            border-left-color: rgba(33,33,33,0.5);
+        }
+    }
+
+    .loaderbefore {
+        width: 50px;
+        height:50px;
+        border: 15px solid #ddd;
+        border-radius: 50%;
         position: absolute;
-        border: 2px solid var(--darkPink);
-        bottom: 0;
-        left: -12.5px;
+        top: 0;
+        z-index: 9;
     }
 
-    .circle::before{
-        content: '';
+    .circular {
         position: absolute;
-        background-color: #fff;
-        height: 12.5px;
-        width: 4px;
-        border-radius: 100%;
-        transform: rotate(45deg);
-        left: 4px;
+        top: -15px;
+        left: -15px;
+        width: 70px;
+        height: 70px;
+        border: 20px solid;
+        border-radius: 50%;
+        border-top-color: #333;
+        border-left-color: #fff;
+        border-bottom-color: #333;
+        border-right-color: #fff;
+        opacity: 0.2;
+        animation: poof 5s infinite;
+    }
+    @keyframes poof {
+        0% {transform: scale(1,1) rotate(0deg); opacity: 0.2;}
+        50% {transform: scale(4,4) rotate(360deg); opacity: 0;}
+    }
+    .another {
+        opacity: 0.1;
+        transform: rotate(90deg);
+        animation: poofity 5s infinite;
+        animation-delay: 1s;
+    }
+    @keyframes poofity {
+        0% {transform: scale(1,1) rotate(90deg); opacity: 0.1;}
+        50% {transform: scale(4,4) rotate(-360deg); opacity: 0;}
     }
 
-    .h1-loading{
-        color: var(--darkPink);
-        animation: load .5s alternate infinite linear;
+    .text {
+        position: absolute;
+        top: 95px;
+        left: 8px;
+        font-family: Arial;
+        text-transform: uppercase;
+        color: #888;
+        animation: opaa 10s infinite;
     }
-
-    /* Animation */
-    .first-line{
-        animation: move-line 1s infinite;
+    @keyframes opaa {
+        0% {opacity: 1;}
+        10% {opacity: 0.5}
+        15% {opacity: 1;}
+        30% {opacity: 1;}
+        65% {opacity: 0.3;}
+        90% {opacity: 0.8;}
     }
-
-    .first-circle{
-        animation: move-circle 1s infinite;
-    }
-
-    .last-line{
-        animation: move-line-last 1s infinite;
-        animation-delay: .5s;
-    }
-
-    .last-circle{
-        animation: move-circle-last 1s infinite;
-        animation-delay: .5s;
-    }
-
-    .middle-circle{
-        animation: shake-circle .5s infinite;
-        animation-delay: .5s;
-    }
-
-    .middle-line{
-        animation: shake-line .5s infinite;
-        animation-delay: .5s;
-    }
-
-    @keyframes load{
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-
-    @keyframes move-circle{
-        25% {
-            transform: translateX(-70px) translateY(-40px);
-        }
-        50% {
-            transform: translateX(0) translateY(0);
-        }
-    }
-
-    @keyframes move-line{
-        25% {
-            transform: rotate(40deg) translateX(-40px);
-        }
-        50% {
-            transform: rotate(0) translateX(0);
-        }
-    }
-
-    @keyframes move-circle-last{
-        25% {
-            transform: translateX(70px) translateY(-40px);
-        }
-        50% {
-            transform: translateX(0) translateY(0);
-        }
-    }
-
-    @keyframes move-line-last{
-        25% {
-            transform: rotate(-40deg) translateX(40px);
-        }
-        50% {
-            transform: rotate(0) translateX(0);
-        }
-    }
-
-    @keyframes shake-circle{
-        16% {
-            transform: translateX(-1px);
-        }
-        32% {
-            transform: translateX(1px);
-        }
-        50% {
-            transform: translateX(0);
-        }
-    }
-    @keyframes shake-line{
-        16% {
-            transform: rotate(1deg) translateX(-1px);
-        }
-        32% {
-            transform: rotate(-1deg) translateX(1px);
-        }
-        50% {
-            transform: rotate(0) translateX(0);
-        }
-    }
-
 </style>
 
-<div class="loading">
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
-
-    <div class="container">
-        <div class="line"></div>
-        <div class="loader">
-            <div class="one-loader first">
-                <div class="v-line first-line"></div>
-                <div class="circle first-circle"></div>
-            </div>
-            <div class="one-loader">
-                <div class="v-line middle-line"></div>
-                <div class="circle middle-circle"></div>
-            </div>
-            <div class="one-loader">
-                <div class="v-line middle-line"></div>
-                <div class="circle middle-circle"></div>
-            </div>
-            <div class="one-loader">
-                <div class="v-line middle-line"></div>
-                <div class="circle middle-circle"></div>
-            </div>
-            <div class="one-loader last">
-                <div class="v-line last-line"></div>
-                <div class="circle last-circle"></div>
-            </div>
-        </div>
-        <h1 class="h1-loading">Loading</h1>
-    </div>
+<div class="wrap">
+    <div class="loader"></div>
+    <div class="loaderbefore"></div>
+    <div class="circular"></div>
+    <div class="circular another"></div>
+    <div class="text">Loading</div>
 </div>
+
 

@@ -32,7 +32,8 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <!-- css for charts -->
-
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet">
 <style>
     .chart-responsive {
         width: 100%;
@@ -61,3 +62,9 @@
 <head>
     <title>Hello <?php echo ucfirst($_SESSION["email"]) ?></title>
 </head>
+
+<!--dùng cho create.php của hợp đồng -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!---->

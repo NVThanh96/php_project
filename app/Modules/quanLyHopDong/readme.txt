@@ -45,7 +45,7 @@ Folder Controller bao gồm các function ()
         + $path = Utils\Util::exportPath();             // lấy đường dẫn
 
     - 1 số chức năng được gọi thêm vào từ HopDongDB
-        + HopDongDB::get_hop_dong_page($page_number, $items_per_page, $flag_delete); // lấy tất cả giá trị của hơp đồng và có paginate
+        + HopDongDB::get_hop_dong_page($page_number, $items_per_page, $daxoa); // lấy tất cả giá trị của hơp đồng và có paginate
         + HopDongDB::createHopDong();                                                // tạo mới hợp đồng
         + HopDongDB::getValuesByID($id);                                             // lấy giá trị theo $id
         + HopDongDB::editHopDong($id);                                               // chỉnh sửa theo $id

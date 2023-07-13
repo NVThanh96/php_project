@@ -9,7 +9,7 @@ class Util
     {
         try {
             $db = \Connection::getDB();
-            $query = "SELECT COUNT(*) AS total FROM hop_dong WHERE `flag_delete` = 1";
+            $query = "SELECT COUNT(*) AS total FROM hop_dong WHERE `daxoa` = 0";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetch(\PDO::FETCH_ASSOC);
@@ -25,7 +25,7 @@ class Util
     {
         try {
             $db = \Connection::getDB();
-            $query = "SELECT COUNT(*) AS total FROM `hop_dong` WHERE `tinh_trang_hop_dong` = 'Dang thuc hien'";
+            $query = "SELECT COUNT(*) AS total FROM `hop_dong` WHERE `trang_thai` = '3'";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetch(\PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ class Util
     {
         try {
             $db = \Connection::getDB();
-            $query = "SELECT COUNT(*) AS total FROM `hop_dong` WHERE `tinh_trang_hop_dong` = 'Chua thuc hien'";
+            $query = "SELECT COUNT(*) AS total FROM `hop_dong` WHERE `trang_thai` = '2'";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetch(\PDO::FETCH_ASSOC);
@@ -57,7 +57,7 @@ class Util
     {
         try {
             $db = \Connection::getDB();
-            $query = "SELECT COUNT(*) AS total1 FROM `hop_dong` WHERE `tinh_trang_hop_dong` = 'Hoan thanh'";
+            $query = "SELECT COUNT(*) AS total1 FROM `hop_dong` WHERE `trang_thai` = '1'";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetch(\PDO::FETCH_ASSOC);

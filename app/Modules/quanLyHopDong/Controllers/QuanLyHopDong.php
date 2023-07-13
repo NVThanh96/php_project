@@ -7,31 +7,32 @@ class QuanLyHopDong
     public function __construct()
     {
         $action = filter_input(INPUT_POST, 'action') ?? filter_input(INPUT_GET, 'action') ?? 'login';
-            switch ($action) {
-                case 'show':
-                    $this->show();
-                    break;
-                case 'list':
-                    $this->list();
-                    break;
-                case 'create':
-                    $this->create();
-                    break;
-                case 'add':
-                    $this->add();
-                    break;
-                case 'edit':
-                    $this->edit();
-                    break;
-                case 'update':
-                    $this->update();
-                    break;
-                case 'deleteSoft':
-                    $this->softDeleteHopDong();
-                    break;
-                default:
-                    break;
+        switch ($action) {
+            case 'show':
+                $this->show();
+                break;
+            case 'list':
+                $this->list();
+                break;
+            case 'create':
+                $this->create();
+                break;
+            case 'add':
+                $this->add();
+                break;
+            case 'edit':
+                $this->edit();
+                break;
+            case 'update':
+                $this->update();
+                break;
+            case 'deleteSoft':
+                $this->softDeleteHopDong();
+                break;
+            default:
+                break;
         }
+
     }
 
     public function show()
@@ -39,25 +40,31 @@ class QuanLyHopDong
         $totalHopDong = (new Util)->countHopDong();
         $totalUser = (new Util)->countUser();
         $totalNhanVien = (new Util)->countNhanVien();
-
         include('Views/admin/index.php');
     }
 
     public function list()
     {
-        $this->index();
+        if (!empty($_SESSION['email'])) {
+            $this->index();
+        } else {
+            $this->error();
+        }
     }
 
     public function create()
     {
-        $list_linh_vuc = HopDongDB::getListLinhVuc(); // Replace `getListLinhVuc()` with your actual method to fetch the list
+        $list_phong_ban = HopDongDB::getListPhongBan(); // Replace `getListLinhVuc()` with your actual method to fetch the list
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
-        $checkAccess = Util::checkAccess();
+        if (!empty($_SESSION['email'])) {
             include('Modules/' . $path . '/Views/create.php');
-
+        } else {
+            $this->error();
+        }
     }
+
     public function error()
     {
         include('Views/errors/404.php');
@@ -66,8 +73,13 @@ class QuanLyHopDong
 
     public function add()
     {
-        HopDongDB::createHopDong();
-        $this->index();
+        // Create an instance of the SomeFunctionDB class
+        $createHopDong = new HopDongDB();
+
+        // Handle the file upload and get the message
+        $createHopDong->createHopDong();
+
+        header('location:list' );
     }
 
     public function edit()
@@ -81,14 +93,17 @@ class QuanLyHopDong
         $selected_linh_vuc_id = is_array($record) ? $record['id'] : null;
 
         // Get the list of "Lĩnh Vực" to populate the dropdown
-        $list_linh_vuc = HopDongDB::getListLinhVuc();
+        $list_linh_vuc = HopDongDB::getListPhongBan();
 
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         $values = HopDongDB::getValuesByID($id);
-        $checkAccess = Util::checkAccess();
+        if (!empty($_SESSION['email'])) {
             include('Modules/' . $path . '/Views/edit.php');
+        } else {
+            $this->error();
+        }
     }
 
     public function update()
@@ -105,22 +120,35 @@ class QuanLyHopDong
         $path = \Utils\Util::exportPath($folderName);
 
         $page_number = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-        // số lượng giá trị sẽ hiện thị trong 1 bảng
+        // số lượng giá trị sẽ hiển thị trong 1 bảng
         $items_per_page = 6;
-        $flag_delete = 0;
+        $daxoa = 0;
+        $search = isset($_GET['search']) ? $_GET['search'] : '';
+        $searchPB = isset($_GET['search_phong_ban']) ? $_GET['search_phong_ban'] : '';
+        $searchTT = isset($_GET['search_trang_thai']) ? $_GET['search_trang_thai'] : '';
+        $searchOption = isset($_GET['thoi_gian_ket_thuc']) ? $_GET['thoi_gian_ket_thuc'] : '';
 
-        $result = HopDongDB::get_hop_dong_page($page_number, $items_per_page, $flag_delete);
+        $searchStart = isset($_GET['thoi_gian_thuc_hien']) ? $_GET['thoi_gian_thuc_hien'] : '';
+        $searchEnd = isset($_GET['thoi_gian_ket_thuc']) ? $_GET['thoi_gian_ket_thuc'] : '';
+        $searchOption = isset($_GET['option']) ? $_GET['option'] : '';
 
-        $list_hop_dong = $result['hopDong'];
-        $total_pages = $result['total_pages'];
+        $result = HopDongDB::get_hop_dong_page($page_number, $items_per_page, $daxoa, $search, $searchPB, $searchTT, $searchStart, $searchEnd, $searchOption);
+
+        $list_hop_dong = $result['hopDong'] ?? '';
+        $total_pages = $result['total_pages'] ?? '';
         $pathInfor = $_SERVER['PATH_INFO'];
         $scriptName = dirname($_SERVER['SCRIPT_FILENAME']);
         $pathJson = file_get_contents($scriptName . "\Views\admin\layouts\sideBar.json");
         $structured_data = json_decode($pathJson, true);
 
         $data = $structured_data;
-        include('Modules/' . $path . '/Views/list.php');
+        if (!empty($_SESSION['email'])) {
+            include('Modules/' . $path . '/Views/list.php');
+        } else {
+            $this->error();
+        }
     }
+
 
     public function softDeleteHopDong()
     {
@@ -128,6 +156,5 @@ class QuanLyHopDong
         HopDongDB::softDeleteHopDong($id);
         $this->index();
     }
-
 
 }

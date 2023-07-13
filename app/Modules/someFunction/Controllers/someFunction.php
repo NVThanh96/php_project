@@ -1,4 +1,5 @@
 <?php
+include "Public/config/config.php";
 
 class  someFunction
 {
@@ -109,7 +110,7 @@ class  someFunction
         // Handle the file upload and get the message
         $someFunction->handleFileUpload();
 
-        $this->upload();
+        $this->listPlugin();
 
     }
 
