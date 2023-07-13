@@ -279,38 +279,40 @@ class HopDongDB
     {
         try {
             $db = \Connection::getDB();
-            $query = "UPDATE hop_dong SET `ten_hop_dong` = :ten_hop_dong, 
-                    `khach_hang` = :khach_hang, 
-                    `linh_vuc_id` = :linh_vuc_id, 
+            $query = "UPDATE hop_dong SET 
+                    `ten_hop_dong` = :ten_hop_dong, 
                     `so_hop_dong` = :so_hop_dong, 
-                    `ngay_ky` = :ngay_ky, `gia_tri` = :gia_tri, 
+                    `khach_hang` = :khach_hang, 
+                    `id_phong_ban` = :id_phong_ban, 
+                    `ngay_ky` = :ngay_ky,
+                    `kinh_phi` = :kinh_phi, 
                     `Thoi_gian_thuc_hien` = :Thoi_gian_thuc_hien,
-                    `file_hop_dong` = :file_hop_dong, 
-                    `tinh_trang_hop_dong` = :tinh_trang_hop_dong
+                    `ngay_ket_thuc` = :ngay_ket_thuc,
+                    `trang_thai` = :trang_thai
                     WHERE `id` = " . $id;
             $statement = $db->prepare($query);
 
             // Assuming you have retrieved the values from user input and stored them in variables
             $ten_hop_dong = $_POST['ten_hop_dong'];
-            $khach_hang = $_POST['khach_hang'];
-            $linh_vuc_id = $_POST['linh_vuc_id'];
             $so_hop_dong = $_POST['so_hop_dong'];
+            $khach_hang = $_POST['khach_hang'];
+            $id_phong_ban = $_POST['id_phong_ban'];
             $ngay_ky = $_POST['ngay_ky'];
-            $gia_tri = $_POST['gia_tri'];
+            $kinh_phi = $_POST['kinh_phi'];
             $Thoi_gian_thuc_hien = $_POST['Thoi_gian_thuc_hien'];
-            $file_hop_dong = $_POST['file_hop_dong'];
-            $tinh_trang_hop_dong = $_POST['tinh_trang_hop_dong'];
+            $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+            $trang_thai = $_POST['trang_thai'];
 
             // Bind the values to the prepared statement placeholders
             $statement->bindParam(':ten_hop_dong', $ten_hop_dong);
-            $statement->bindParam(':khach_hang', $khach_hang);
-            $statement->bindParam(':linh_vuc_id', $linh_vuc_id);
             $statement->bindParam(':so_hop_dong', $so_hop_dong);
+            $statement->bindParam(':khach_hang', $khach_hang);
+            $statement->bindParam(':id_phong_ban', $id_phong_ban);
             $statement->bindParam(':ngay_ky', $ngay_ky);
-            $statement->bindParam(':gia_tri', $gia_tri);
+            $statement->bindParam(':kinh_phi', $kinh_phi);
             $statement->bindParam(':Thoi_gian_thuc_hien', $Thoi_gian_thuc_hien);
-            $statement->bindParam(':file_hop_dong', $file_hop_dong);
-            $statement->bindParam(':tinh_trang_hop_dong', $tinh_trang_hop_dong);
+            $statement->bindParam(':ngay_ket_thuc', $ngay_ket_thuc);
+            $statement->bindParam(':trang_thai', $trang_thai);
 
             // Execute the prepared statement
             $statement->execute();
@@ -325,7 +327,7 @@ class HopDongDB
     {
         try {
             $db = \Connection::getDB();
-            $query = "UPDATE hop_dong SET `daxoa` = 0  WHERE Id=:id";
+            $query = "UPDATE hop_dong SET `daxoa` = 1  WHERE Id=:id";
             $statement = $db->prepare($query);
             $statement->bindValue('id', $id);
             $statement->execute();
@@ -369,22 +371,27 @@ class HopDongDB
         }
     }
 
-    public static function getRecordById($id)
+    public static function getRecordFileById($id)
     {
         try {
+            $records = [];
             $db = \Connection::getDB();
-            $query = "SELECT * FROM phong_ban WHERE id = :id"; // Modify the table name as per your database structure
-
+            $query = "SELECT * FROM file WHERE id_hop_dong = :id AND daxoa = 0"; // Modify the table name as per your database structure
             $statement = $db->prepare($query);
-            $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+            $statement->bindValue(':id', $id);
             $statement->execute();
-            $record = $statement->fetch(\PDO::FETCH_ASSOC);
 
-            return $record;
+            while ($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
+                $records[] = $row;
+            }
+
+            return $records;
+
         } catch (\PDOException $e) {
             echo "Database Invalid: " . $e->getMessage();
             return null;
         }
     }
+
 
 }

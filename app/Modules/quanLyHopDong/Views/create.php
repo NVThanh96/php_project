@@ -220,9 +220,9 @@ include "Views/admin/layouts/header.php";
                                 <label>Select</label>
                                 <select name="trang_thai" class="form-control">
                                     <option value="null">-- Chọn --</option>
-                                    <option value="1">Đang Thực Hiện</option>
-                                    <option value="2">Chưa Thực Hiện</option>
-                                    <option value="0">Hoàn Thành</option>
+                                    <option value="1">Đã Hoàn Thành</option>
+                                    <option value="2">Đang Thực Hiện</option>
+                                    <option value="3">Chưa Thực Hiện</option>
                                 </select>
                             </div>
                         </div>

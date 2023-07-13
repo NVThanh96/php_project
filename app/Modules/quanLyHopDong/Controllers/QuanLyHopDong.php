@@ -84,23 +84,21 @@ class QuanLyHopDong
 
     public function edit()
     {
+
         $id = filter_input(INPUT_GET, 'id');
         $_SESSION['id'] = $id;
 
-        $record = HopDongDB::getRecordById($id);
+        $list_hop_dong = HopDongDB::getValuesByID($id);
+        $list_phong_ban = HopDongDB::getListPhongBan();
+        $fileIDHD = HopDongDB::getRecordFileById($id);
 
-        // Get the selected "Lĩnh Vực" ID from the fetched record
-        $selected_linh_vuc_id = is_array($record) ? $record['id'] : null;
-
-        // Get the list of "Lĩnh Vực" to populate the dropdown
-        $list_linh_vuc = HopDongDB::getListPhongBan();
+        $fileIDHDJson = json_encode($fileIDHD);
 
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
-        $values = HopDongDB::getValuesByID($id);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/edit.php');
+            header('location: list');
         } else {
             $this->error();
         }

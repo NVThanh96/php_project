@@ -20,7 +20,7 @@ include "Views/admin/layouts/header.php";
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"><?php echo $node['ten'] ?></li>
+                        <li class="breadcrumb-item active"><?php echo $node['ten'] ?? ''  ?></li>
                     </ol>
                 </div><!-- /.col -->
 
@@ -28,7 +28,7 @@ include "Views/admin/layouts/header.php";
 
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title"><?php echo $node['ten'] ?></h1>
+                    <h1 class="card-title"><?php echo $node['ten'] ?? '' ?></h1>
                     <a href="create" type="button"
                        class="btn btn-outline-primary btn-flat"
                        style="margin: 0 20px;">
