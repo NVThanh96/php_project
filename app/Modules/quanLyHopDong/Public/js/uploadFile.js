@@ -1,4 +1,5 @@
-const dt = new DataTransfer(); // Permet de manipuler les fichiers de l'input file
+const dt = new DataTransfer();
+//cái ni dùng để lưu dữ liệu vào db nè trung
 
 $("#attachment").on('change', function(e){
     for(var i = 0; i < this.files.length; i++){
@@ -8,13 +9,12 @@ $("#attachment").on('change', function(e){
             .append(fileName);
         $("#filesList > #files-names").append(fileBloc);
     };
-    // Ajout des fichiers dans l'objet DataTransfer
+
     for (let file of this.files) {
         dt.items.add(file);
     }
-    // Mise à jour des fichiers de l'input file après ajout
-    this.files = dt.files;
 
+    this.files = dt.files;
     // EventListener pour le bouton de suppression créé
     $('span.file-delete').click(function(){
         let name = $(this).next('span.name').text();
@@ -28,8 +28,8 @@ $("#attachment").on('change', function(e){
                 continue;
             }
         }
-        // Mise à jour des fichiers de l'input file après suppression
-        document.getElementById('attachment').files = dt.files;
+
+        $('#attachment').prop('files', dt.files);
     });
 });
 

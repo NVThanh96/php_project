@@ -37,11 +37,18 @@ include "Views/admin/layouts/header.php";
                     </div>
 
                     <?php foreach ($list_hop_dong as $values): ?>
-                        <form action="edit" method="POST" enctype="multipart/form-data">
+                        <form action="update" method="POST" enctype="multipart/form-data">
                             <button type="submit" class="btn btn-success" style="float: right; padding: 5px 20px">Lưu
                             </button>
-                            <div class="card-body">
+                            <div class="card-body"  style="    margin-top: 17px;">
                                 <div style="display: flex">
+
+                                    <div class="form-group col-6">
+                                        <label for="exampleInputPassword1">Tên Hợp Đồng</label>
+                                        <input name="ten_hop_dong" id="ten_hop_dong" type="text" class="form-control"
+                                               placeholder="Nhập Tên Hợp Đồng" value="<?php echo $values['so_hop_dong'] ?>">
+                                    </div>
+
                                     <div style="margin-left: -5px; margin-right: 10px" class="form-group col-6">
                                         <label for="exampleInputPassword1">Số Hợp Đồng</label>
                                         <input name="so_hop_dong" id="so_hop_dong" type="text" class="form-control"
@@ -49,11 +56,6 @@ include "Views/admin/layouts/header.php";
                                                value="<?php echo $values['so_hop_dong'] ?>">
                                     </div>
 
-                                    <div class="form-group col-6">
-                                        <label for="exampleInputPassword1">Tên Hợp Đồng</label>
-                                        <input name="ten_hop_dong" id="ten_hop_dong" type="text" class="form-control"
-                                               placeholder="Nhập Tên Hợp Đồng" value="<?php echo $values['so_hop_dong'] ?>">
-                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -81,7 +83,7 @@ include "Views/admin/layouts/header.php";
                                     <label for="exampleInputEmail1">Kinh Phí</label>
                                     <div class="input-group">
                                         <input type='number' name="kinh_phi" id="kinh_phi" class="form-control"
-                                               placeholder="Nhập Kinh Phí" value="<?php echo $values['kinh_phi'] ?>"/>
+                                               placeholder="Nhập Kinh Phí" oninput="calculateRemainingValue(this)" value="<?php echo $values['kinh_phi'] ?>"/>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">đ</span>
                                         </div>
@@ -110,7 +112,7 @@ include "Views/admin/layouts/header.php";
                                         <div class="contentDate">
                                             <div class="input-group-prepend inputDate">
                                                 <input type="text" name="ngay_ky" id="ngay_ky" class="form-control"
-                                                       autocomplete="off" placeholder="dd/mm/yyyy" value="<?php echo $values['ngay_ky'] ?>">
+                                                       autocomplete="off" placeholder="dd/mm/yyyy" value="<?php echo date('d/m/Y', strtotime($values['ngay_ky'])); ?>">
                                                 <span type="button" style="left: -20px" class="input-group-text"
                                                       id="datepicker-trigger"><i class="far fa-calendar-alt"></i></span>
                                             </div>
@@ -136,7 +138,7 @@ include "Views/admin/layouts/header.php";
                                         <div class="contentDate">
                                             <div class="input-group-prepend inputDate">
                                                 <input type="text" name="ngay_ket_thuc" id="ngay_ket_thuc"
-                                                       class="form-control" autocomplete="off" placeholder="dd/mm/yyyy" value="<?php echo $values['ngay_ket_thuc'] ?>">
+                                                       class="form-control" autocomplete="off" placeholder="dd/mm/yyyy" value="<?php echo date('d/m/Y', strtotime($values['ngay_ket_thuc'])) ?>">
                                                 <span type="button" style="left: -20px"
                                                       class="input-group-text datepicker-trigger2"
                                                       id="datepicker-trigger2"><i
@@ -145,7 +147,7 @@ include "Views/admin/layouts/header.php";
                                         </div>
                                     </div>
                                 </div>
-
+<hr>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <h2 style="float: left">Thanh Toán
@@ -153,48 +155,51 @@ include "Views/admin/layouts/header.php";
                                                 <i class="fa-solid fa-plus"></i>
                                             </button>
                                         </h2>
-
                                         <div id="payment-section">
+                                            <?php for ($i = 0; $i < count($totalThanhToan); $i++): ?>
+                                                <?php $record = $totalThanhToan[$i]; ?>
+                                                <?php if($record['daxoa'] !== 1):?>
 
-                                            <div class="payment-group">
-                                                <hr style="margin-top: 35px">
-                                                <h4>Thanh Toán lần 1</h4>
+                                                    <div class="payment-group">
+                                                    <button style="font-size: 30px" class="close" type="button">&times;</button>
 
-                                                <div style="display: flex">
-                                                    <div class="form-group col-4">
-                                                        <label>Thời gian thanh toán</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i
-                                                                    class="far fa-calendar-alt"></i></span>
+                                                    <hr style="margin-top: 35px">
+                                                    <h4>Thanh Toán lần <?php echo $i + 1; ?></h4>
+
+                                                    <div style="display: flex">
+                                                        <div class="form-group col-4">
+                                                            <label>Thời gian thanh toán</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                                </div>
+                                                                <input type="text" name="thoi_gian_thanh_toan[]" id="thoi_gian_thanh_toan[]" class="form-control"
+                                                                       autocomplete="off" placeholder="dd/mm/yyyy" value="<?php echo date('d/m/Y', strtotime($record['thoi_gian'])) ?>">
                                                             </div>
-                                                            <input type="text" name="thoi_gian_thanh_toan[]"
-                                                                   id="thoi_gian_thanh_toan[]" class="form-control"
-                                                                   autocomplete="off" placeholder="dd/mm/yyyy">
                                                         </div>
-                                                    </div>
 
-                                                    <div class="form-group col-4">
-                                                        <label>Nội Dung Thanh Toán</label>
-                                                        <input type="text" name="noi_dung_thanh_toan[]"
-                                                               id="noi_dung_thanh_toan[]" class="form-control"
-                                                               placeholder="Nội Dung Thanh Toán">
-                                                    </div>
+                                                        <div class="form-group col-4">
+                                                            <label>Nội Dung Thanh Toán</label>
+                                                            <input type="text" name="noi_dung_thanh_toan[]" id="noi_dung_thanh_toan[]" class="form-control"
+                                                                   placeholder="Nội Dung Thanh Toán" value="<?php echo $record['noi_dung_thanh_toan']; ?>">
+                                                        </div>
 
-                                                    <div class="form-group col-4">
-                                                        <label>Giá Trị Thanh Toán</label>
-                                                        <div class="input-group">
-                                                            <input type="number" name="gia_tri_thanh_toan[]"
-                                                                   class="form-control"
-                                                                   placeholder="Nhập Giá Trị Thanh Toán"
-                                                                   oninput="calculateRemainingValue(this)">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">đ</span>
+                                                        <div class="form-group col-4">
+                                                            <label>Giá Trị Thanh Toán</label>
+                                                            <div class="input-group">
+                                                                <input type="number" name="gia_tri_thanh_toan[]" class="form-control"
+                                                                       placeholder="Nhập Giá Trị Thanh Toán" oninput="calculateRemainingValue(this)"
+                                                                       value="<?php echo $record['gia_tri_thanh_toan']; ?>"
+                                                                       data-database-value="<?php echo $record['gia_tri_thanh_toan']; ?>">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">đ</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <?php endif;?>
+                                            <?php endfor; ?>
                                         </div>
                                     </div>
 
@@ -234,6 +239,7 @@ include "Views/admin/layouts/header.php";
                                     </select>
                                 </div>
                             </div>
+                            <input id="sexoafile" hidden name="seXoaFile" >
 
                         </form>
                     <?php endforeach; ?>
@@ -248,55 +254,17 @@ include "Views/admin/layouts/header.php";
 
 </div>
 </body>
+
 <script>
-    <?php include "Modules/quanLyHopDong/Public/js/thanhToan.js"?>
-    <?php /*include "Modules/quanLyHopDong/Public/js/uploadFile.js"*/?>
+    <?php /*include "Modules/quanLyHopDong/Public/js/thanhToan.js"*/?>
+    <?php include "Modules/quanLyHopDong/Public/js/editThanhToan.js"?>
 
-    // Clear the existing file list
-    $("#files-names").empty();
-
-    // Iterate over each file record and add it to the file list
-    const fileIDHD = <?php echo $fileIDHDJson; ?>;
-
-    console.log(fileIDHD)
-
-    for (let i = 0; i < fileIDHD.length; i++) {
-        let fileBloc = $('<span/>', {class: 'file-block'}),
-            fileName = $('<span/>', {class: 'name', text: fileIDHD[i].ten});
-
-        fileBloc.append('<span class="file-delete"><span>+</span></span>')
-            .append(fileName);
-        $("#files-names").append(fileBloc);
-    }
-
-    // Event listener for the delete button
-    $('span.file-delete').click(function() {
-        let name = $(this).next('span.name').text();
-        // Remove the file display
-        $(this).parent().remove();
-
-        // Remove the corresponding file from the DataTransfer object
-        for (let i = 0; i < dt.items.length; i++) {
-            if (name === dt.items[i].getAsFile().name) {
-                dt.items.remove(i);
-                continue;
-            }
-        }
-
-        // Update the files of the input file after deletion
-        document.getElementById('attachment').files = dt.files;
-
-        // Set the daxoa value to 1 (deletion)
-        for (let i = 0; i < fileIDHD.length; i++) {
-            if (fileIDHD[i].ten === name) {
-                fileIDHD[i].daxoa = 1;
-                break;
-            }
-        }
-    });
-
+    <?php include "Modules/quanLyHopDong/Public/js/uploadFile.js"?>
+    <?php include "Modules/quanLyHopDong/Public/js/showAndDeleteFile.js"?>
     <?php include "Modules/quanLyHopDong/Public/js/datePicker.js"?>
+
 </script>
+
 
 <footer>
     <?php include "./Views/admin/layouts/footer.php" ?>

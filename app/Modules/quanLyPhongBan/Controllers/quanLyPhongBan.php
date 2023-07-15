@@ -1,6 +1,6 @@
 <?php
 
-class quanLyLinhVuc
+class QuanLyPhongBan
 {
     public function __construct()
     {
@@ -60,7 +60,7 @@ class quanLyLinhVuc
 
     public function add()
     {
-        LinhVucDB::createLinhVuc();
+        PhongBanDB::createLinhVuc();
         $this->index();
     }
 
@@ -68,7 +68,7 @@ class quanLyLinhVuc
     {
         $id = filter_input(INPUT_GET, 'id');
         $_SESSION['id'] = $id;
-        $values = LinhVucDB::getValuesByID($id);
+        $values = PhongBanDB::getValuesByID($id);
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
@@ -83,7 +83,7 @@ class quanLyLinhVuc
     function update()
     {
         $id = $_SESSION['id'];
-        LinhVucDB::editLinhVuc($id);
+        PhongBanDB::editLinhVuc($id);
         $this->index();
     }
 
@@ -98,7 +98,7 @@ class quanLyLinhVuc
         $items_per_page = 6;
         $flag_delete = 0;
 
-        $result = LinhVucDB::getLinhVucPage($page_number, $items_per_page, $flag_delete);
+        $result = PhongBanDB::getLinhVucPage($page_number, $items_per_page, $flag_delete);
 
         $list_linh_vuc = $result['linhVuc'];
         $total_pages = $result['total_pages'];
@@ -109,7 +109,7 @@ class quanLyLinhVuc
     function softDelete()
     {
         $id = filter_input(INPUT_GET, 'id');
-        LinhVucDB::softDelete($id);
+        PhongBanDB::softDelete($id);
         $this->index();
     }
 

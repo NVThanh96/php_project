@@ -1,6 +1,6 @@
 <?php
 
-class LinhVucDB
+class PhongBanDB
 {
 
     //có thêm paginate cho table

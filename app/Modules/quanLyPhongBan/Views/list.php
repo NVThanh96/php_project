@@ -119,7 +119,7 @@ include "Public/config/config.php";
 </div>
 
 <script>
-    <?php include('Modules/quanLyLinhVuc/Public/js/delete.js')?>
+    <?php include('Modules/quanLyPhongBan/Public/js/delete.js')?>
     <?php include('Public/js/showInformation.js') ?>
 </script>
 

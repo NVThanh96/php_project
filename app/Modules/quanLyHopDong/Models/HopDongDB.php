@@ -46,7 +46,7 @@ class HopDongDB
                 if (empty($searchOption)) {
                     throw new \InvalidArgumentException('Vui lòng chọn option trước khi thực hiện');
                 } else {
-                    $hopDong= self::searchDate($db, $offset, $items_per_page, $searchStart, $searchEnd, $searchOption);
+                    $hopDong = self::searchDate($db, $offset, $items_per_page, $searchStart, $searchEnd, $searchOption);
                     $total_hop_dong = self::getTotalHopDongWithSearch($db, $search, $searchPB, $searchTT);
                 }
             } elseif (empty($search) && empty($searchPB) && empty($searchTT)) {
@@ -159,7 +159,7 @@ class HopDongDB
             :kinh_phi, :thoi_gian_thuc_hien,:ngay_ket_thuc, :trang_thai, 0) ";
             $statement = $db->prepare($query);
 
-            if (!empty($ngay_ky) && !empty($ngay_ket_thuc)){
+            if (!empty($ngay_ky) && !empty($ngay_ket_thuc)) {
                 $formatNgayKy = DateTime::createFromFormat('d/m/Y', $ngay_ky)->format('Y-m-d');
                 $formatNgayKetThuc = DateTime::createFromFormat('d/m/Y', $ngay_ket_thuc)->format('Y-m-d');
                 $statement->bindParam(':ngay_ky', $formatNgayKy);
@@ -187,13 +187,19 @@ class HopDongDB
 
     public static function insertFile($db, $ten, $duong_dan, $id_hop_dong)
     {
+        date_default_timezone_set('Asia/Bangkok');
+        $timeInMillis = Strtotime('now');
+        $gio = date('H:i:s', $timeInMillis);
+
         try {
-            $query = "INSERT INTO file (`ten`, `duong_dan`, `id_hop_dong`) VALUES (:ten, :duong_dan, :id_hop_dong)";
+            $query = "INSERT INTO file (`ten`, `duong_dan`, `id_hop_dong`, `daxoa`, `gio`) 
+            VALUES (:ten, :duong_dan, :id_hop_dong, 0,:gio)";
             $statement = $db->prepare($query);
 
             $statement->bindParam(':ten', $ten);
             $statement->bindParam(':duong_dan', $duong_dan);
             $statement->bindParam(':id_hop_dong', $id_hop_dong);
+            $statement->bindParam(':gio', $gio);
 
             $statement->execute();
 
@@ -204,24 +210,32 @@ class HopDongDB
             echo "Database Error: " . $e->getMessage();
         }
     }
-    private static function insertThanhToan($db, $noi_dung_thanh_toan, $thoi_gian,$gia_tri_thanh_toan, $id_hop_dong)
+
+    private static function insertThanhToan($db, $noi_dung_thanh_toan, $thoi_gian, $gia_tri_thanh_toan, $id_hop_dong)
     {
-        $query = "INSERT INTO thanh_toan (noi_dung_thanh_toan, thoi_gian, gia_tri_thanh_toan, id_hop_dong) 
-              VALUES (:noi_dung_thanh_toan, :thoi_gian, :gia_tri_thanh_toan, :id_hop_dong)";
+        date_default_timezone_set('Asia/Bangkok');
+        $timeInMillis = Strtotime('now');
+        $gio = date('H:i:s', $timeInMillis); // Get the current time
+
+        $query = "INSERT INTO thanh_toan (noi_dung_thanh_toan, thoi_gian, gia_tri_thanh_toan, id_hop_dong, daxoa, gio) 
+              VALUES (:noi_dung_thanh_toan, :thoi_gian, :gia_tri_thanh_toan, :id_hop_dong, 0, :gio)";
         $statement = $db->prepare($query);
 
-        if (!empty($thoi_gian)){
+        if (!empty($thoi_gian)) {
             $format_thoi_gian = DateTime::createFromFormat('d/m/Y', $thoi_gian)->format('Y-m-d');
             $statement->bindParam(':thoi_gian', $format_thoi_gian);
         }
         $statement->bindParam(':noi_dung_thanh_toan', $noi_dung_thanh_toan);
         $statement->bindParam(':gia_tri_thanh_toan', $gia_tri_thanh_toan);
         $statement->bindParam(':id_hop_dong', $id_hop_dong);
+        $statement->bindParam(':gio', $gio);
 
         $statement->execute();
 
         return $db->lastInsertId();
     }
+
+
 
     public function createHopDong()
     {
@@ -248,16 +262,17 @@ class HopDongDB
             // Insert files
             foreach ($files['name'] as $key => $name) {
                 $file_temp = $files['tmp_name'][$key];
-                $file_path = "C:\wamp64\www\JobDnict\php_project\app\Modules\quanLyHopDong\Public\saveFile\/"; // Adjust this path to your desired location
+                $file_path = "C:\wamp64\www\JobDnict\php_project\app\Modules\quanLyHopDong\Public\saveFile"; // Adjust this path to your desired location
                 $file_name = $name;
-                $file_destination = $file_path . $file_name;
+                $file_destination = $file_path .'\\'. $file_name;
 
                 // Move the file to the destination
                 move_uploaded_file($file_temp, $file_destination);
-
+                $formatFilePath = str_replace('C:\wamp64\www','',$file_path) .'\\'. $file_name;
                 // Insert file information into the 'file' table
-                self::insertFile($db, $file_name, $file_destination, $id_hop_dong);
+                self::insertFile($db, $file_name, $formatFilePath, $id_hop_dong);
             }
+
 
             // Assuming you have retrieved the payment information and stored them in arrays
             $noi_dung_thanh_toan = $_POST['noi_dung_thanh_toan'];
@@ -282,46 +297,104 @@ class HopDongDB
             $query = "UPDATE hop_dong SET 
                     `ten_hop_dong` = :ten_hop_dong, 
                     `so_hop_dong` = :so_hop_dong, 
-                    `khach_hang` = :khach_hang, 
-                    `id_phong_ban` = :id_phong_ban, 
                     `ngay_ky` = :ngay_ky,
+                    `khach_hang` = :khach_hang, 
                     `kinh_phi` = :kinh_phi, 
-                    `Thoi_gian_thuc_hien` = :Thoi_gian_thuc_hien,
+                    `thoi_gian_thuc_hien` = :thoi_gian_thuc_hien,
                     `ngay_ket_thuc` = :ngay_ket_thuc,
-                    `trang_thai` = :trang_thai
+                    `trang_thai` = :trang_thai,
+                    `id_phong_ban` = :id_phong_ban 
                     WHERE `id` = " . $id;
             $statement = $db->prepare($query);
 
             // Assuming you have retrieved the values from user input and stored them in variables
             $ten_hop_dong = $_POST['ten_hop_dong'];
             $so_hop_dong = $_POST['so_hop_dong'];
-            $khach_hang = $_POST['khach_hang'];
-            $id_phong_ban = $_POST['id_phong_ban'];
             $ngay_ky = $_POST['ngay_ky'];
+            $khach_hang = $_POST['khach_hang'];
             $kinh_phi = $_POST['kinh_phi'];
-            $Thoi_gian_thuc_hien = $_POST['Thoi_gian_thuc_hien'];
+            $thoi_gian_thuc_hien = $_POST['thoi_gian_thuc_hien'];
             $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
             $trang_thai = $_POST['trang_thai'];
+            $id_phong_ban = $_POST['id_phong_ban'];
+
+            if (!empty($ngay_ky) && !empty($ngay_ket_thuc)) {
+                $formatNgayKy = DateTime::createFromFormat('d/m/Y', $ngay_ky)->format('Y-m-d');
+                $formatNgayKetThuc = DateTime::createFromFormat('d/m/Y', $ngay_ket_thuc)->format('Y-m-d');
+                $statement->bindParam(':ngay_ky', $formatNgayKy);
+                $statement->bindParam(':ngay_ket_thuc', $formatNgayKetThuc);
+            }
 
             // Bind the values to the prepared statement placeholders
             $statement->bindParam(':ten_hop_dong', $ten_hop_dong);
             $statement->bindParam(':so_hop_dong', $so_hop_dong);
             $statement->bindParam(':khach_hang', $khach_hang);
-            $statement->bindParam(':id_phong_ban', $id_phong_ban);
-            $statement->bindParam(':ngay_ky', $ngay_ky);
             $statement->bindParam(':kinh_phi', $kinh_phi);
-            $statement->bindParam(':Thoi_gian_thuc_hien', $Thoi_gian_thuc_hien);
-            $statement->bindParam(':ngay_ket_thuc', $ngay_ket_thuc);
+            $statement->bindParam(':thoi_gian_thuc_hien', $thoi_gian_thuc_hien);
             $statement->bindParam(':trang_thai', $trang_thai);
+            $statement->bindParam(':id_phong_ban', $id_phong_ban);
 
             // Execute the prepared statement
             $statement->execute();
-            // Handle success or any additional logic
+            // cập nhật file trong sql
+            $sexoaValue = $_POST['seXoaFile'];
+            $arr = explode(',', $sexoaValue);
+            if (!empty($arr)) {
+                $db = \Connection::getDB();
+                $query = "UPDATE file SET `daxoa` = 1 WHERE `id` IN (";
+
+                $params = array();
+                foreach ($arr as $index => $fileId) {
+                    $paramName = ":id{$index}";
+                    $query .= $paramName . ",";
+                    $params[$paramName] = $fileId;
+                }
+
+                $query = rtrim($query, ",") . ")";
+                $statement = $db->prepare($query);
+                $statement->execute($params);
+            }
+
+
+            $files = $_FILES['file'];
+
+            // Insert files vào folder savefile
+            if (isset($files)){
+                foreach ($files['name'] as $key => $name) {
+                    $file_temp = $files['tmp_name'][$key];
+                    $file_path = "C:\wamp64\www\JobDnict\php_project\app\Modules\quanLyHopDong\Public\saveFile"; // Adjust this path to your desired location
+                    $file_name = $name;
+                    $file_destination = $file_path .'\\'. $file_name;
+
+                    if(!empty($file_name) && !empty($file_destination)){
+                        // Move the file to the destination
+                        move_uploaded_file($file_temp, $file_destination);
+                        $formatFilePath = str_replace('C:\wamp64\www','',$file_path) .'\\'. $file_name;
+                        // Insert file information into the 'file' table
+                        self::insertFile($db, $file_name, $formatFilePath, $id);
+                    }
+                }
+            }
+            // Update daxoa column in thanh_toan table
+            $query = "UPDATE thanh_toan SET daxoa = 1 WHERE id_hop_dong = :id_hop_dong";
+            $statement = $db->prepare($query);
+            $statement->bindParam(':id_hop_dong', $id);
+            $statement->execute();
+
+            // Assuming you have retrieved the payment information and stored them in arrays
+            $thoi_gian_thanh_toan = $_POST['thoi_gian_thanh_toan'];
+            $noi_dung_thanh_toan = $_POST['noi_dung_thanh_toan'];
+            $gia_tri_thanh_toan = $_POST['gia_tri_thanh_toan'];
+
+            // Insert payment information into the 'thanh_toan' table
+            for ($i = 0; $i < count($thoi_gian_thanh_toan); $i++) {
+                self::insertThanhToan($db, $noi_dung_thanh_toan[$i], $thoi_gian_thanh_toan[$i], $gia_tri_thanh_toan[$i], $id);
+            }
         } catch (\PDOException $e) {
             echo "Database Invalid: " . $e->getMessage();
-
         }
     }
+
 
     public static function softDeleteHopDong($id)
     {
@@ -380,7 +453,6 @@ class HopDongDB
             $statement = $db->prepare($query);
             $statement->bindValue(':id', $id);
             $statement->execute();
-
             while ($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
                 $records[] = $row;
             }
@@ -393,5 +465,13 @@ class HopDongDB
         }
     }
 
+    public static function getRecordThanhToanById($id) {
+        $db = \Connection::getDB();
+        $query = "SELECT * FROM thanh_toan WHERE id_hop_dong = :id_hop_dong ORDER BY id ASC";
+        $statement = $db->prepare($query);
+        $statement->bindParam(':id_hop_dong', $id);
+        $statement->execute();
 
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

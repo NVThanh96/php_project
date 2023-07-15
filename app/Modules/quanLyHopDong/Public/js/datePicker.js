@@ -6,28 +6,24 @@ $(document).ready(function() {
     $("#ngay_ky").datepicker({
         dateFormat: "dd/mm/yy"
     });
-});
-
-/*
-$(document).ready(function() {
-    $("#datepicker-trigger1").on("click", function() {
-        $("#thoi_gian_thuc_hien").datepicker("show");
-    });
-
-    $("#thoi_gian_thuc_hien").datepicker({
+    $("#ngay_ket_thuc").datepicker({
         dateFormat: "dd/mm/yy"
     });
+
+    $(function() {
+        $("#ngay_ket_thuc").datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+    });
 });
-*/
+
 
 $(document).ready(function() {
     $("#datepicker-trigger2").on("click", function() {
         $("#ngay_ket_thuc").datepicker("show");
     });
 
-    $("#ngay_ket_thuc").datepicker({
-        dateFormat: "dd/mm/yy"
-    });
+
 });
 
 

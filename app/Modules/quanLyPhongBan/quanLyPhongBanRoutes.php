@@ -1,5 +1,4 @@
 <?php
-$title = 'Quản lý Lĩnh Vực';
 $folderName = basename(__DIR__) ?? '';
 
 // tự động thêm Controller
@@ -8,6 +7,7 @@ $controllerFiles = glob($controllerLink, GLOB_NOSORT | GLOB_BRACE);
 foreach ($controllerFiles as $value) {
     $a = explode('.', basename($value));
     if (array_search($folderName, $a) === 0) {
+
         include $value;
     }
 }

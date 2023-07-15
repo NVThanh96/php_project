@@ -84,13 +84,13 @@ class QuanLyHopDong
 
     public function edit()
     {
-
         $id = filter_input(INPUT_GET, 'id');
         $_SESSION['id'] = $id;
 
         $list_hop_dong = HopDongDB::getValuesByID($id);
         $list_phong_ban = HopDongDB::getListPhongBan();
         $fileIDHD = HopDongDB::getRecordFileById($id);
+        $totalThanhToan = HopDongDB::getRecordThanhToanById($id);
 
         $fileIDHDJson = json_encode($fileIDHD);
 
@@ -98,7 +98,7 @@ class QuanLyHopDong
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            header('location: list');
+            include('Modules/' . $path . '/Views/edit.php');
         } else {
             $this->error();
         }
@@ -108,7 +108,7 @@ class QuanLyHopDong
     {
         $id = $_SESSION['id'];
         HopDongDB::editHopDong($id);
-        $this->index();
+        header('location: list');
     }
 
     public function index()
