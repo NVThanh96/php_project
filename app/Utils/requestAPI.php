@@ -2,6 +2,25 @@
 
 class RequestAPI
 {
+    // lấy token từ api để xử lý
+    public static function getToken($username, $password)
+    {
+        $request = new RequestAPI();
+        $authUrl = 'https://api.dnict.vn/v1/auth/uaa/token';
+        $token = $request->getApi($username, $password, $authUrl, 'GET','');
+        return $token;
+    }
+
+    // get sidebar theo tài khoản đăng nhập vào
+    public static function getSideBar($token)
+    {
+        $request = new RequestAPI();
+        $authUrl = 'https://api.dnict.vn/v1/core/menu/getRouters?appCode=tts';
+        $result = $request->getApi('','',$authUrl,'',$token);
+        return $result;
+    }
+
+
     public function getApi($username, $password, $authUrl, $method, $token)
     {
         $curl = curl_init();
@@ -68,7 +87,6 @@ class RequestAPI
             $this->logError(new Exception($time), $errorLogFile);
         } else {
             $endTime = microtime(true);
-
             $executionTime = $endTime - $startTime;
             $time = PHP_EOL . "----False----" . PHP_EOL .'Vào lúc: '. $dateTime .PHP_EOL.  "Thời gian thực hiện: " . $executionTime . " giây" . PHP_EOL;
             $errorLogMessage = "Vui lòng kiểm tra lại username và password" . PHP_EOL;

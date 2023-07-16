@@ -21,13 +21,13 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img style="height: 300px" src="Public/images/slide/1.jpg" class="d-block w-100" alt="...">
+                <img style="height: 300px" src="Public\images\slide\1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item ">
-                <img style="height: 300px" src="Public/images/slide/2.jpg" class="d-block w-100" alt="...">
+                <img style="height: 300px" src="Public\images\slide\2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item ">
-                <img style="height: 300px" src="Public/images/slide/3.jpg" class="d-block w-100" alt="...">
+                <img style="height: 300px" src="Public\images\slide\3.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

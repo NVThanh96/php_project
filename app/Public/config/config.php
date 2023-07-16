@@ -8,7 +8,7 @@ $totalNhanVien = (new Utils\Util)->countNhanVien();
 
 // lấy file json rồi đọc file ra xử lý hiển thị trên view sideBar.php
 $token = $_SESSION['token']??''; // lấy token của người dùng đăng nhập vào
-$pathJson = LoginDB::getSideBar($token); // sử dụng token để đọc dữ liệu
+$pathJson = requestAPI::getSideBar($token); // sử dụng token để đọc dữ liệu
 $sideBar = json_decode($pathJson, true); // giải mã đoạn code json
 $readFileJson = $sideBar['coreMenuDatas'] ?? '' ; // đọc dữ liệu chỉ lấy trong 'coreMenuDatas
 $str = $_SERVER['PATH_INFO'] ?? ''; // lấy đường dẫn truy cập

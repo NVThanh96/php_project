@@ -42,8 +42,8 @@ class PhongBanDB
     {
         try {
             $db = \Connection::getDB();
-            $query = "INSERT INTO phong_ban (`ten_phong`, `ma_phong`,`sap_xep` `da_xoa`)";
-            $query .= "VALUES (:ten_phong, :ma_phong, 1, 1) ";
+            $query = "INSERT INTO phong_ban (`ten_phong`, `ma_phong`,`sap_xep`, `da_xoa`)";
+            $query .= "VALUES (:ten_phong, :ma_phong, 1, 0) ";
             $statement = $db->prepare($query);
 
             // Assuming you have retrieved the values from user input and stored them in variables

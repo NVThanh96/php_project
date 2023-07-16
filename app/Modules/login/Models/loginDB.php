@@ -15,51 +15,6 @@ class LoginDB
         }
     }
 
-    // kiếm tra người dùng đó có phải là admin không khi login vào
-    function isAdmin()
-    {
-        $level = $_SESSION['level'] ?? "";
-        $roleName = $this->getRoleNameById($level);
-        if ($roleName != null) {
-            if (isset($level) && $roleName == 'admin') {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // kiếm tra người dùng đó có phải là quản lý không khi login vào
-    function isManager()
-    {
-        $level = $_SESSION['level'] ?? "";
-        $roleName = $this->getRoleNameById($level);
-        if ($roleName !== null) {
-            $explode = explode(' ', $roleName);
-            if (isset($level) && $explode[0] == 'manager') {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // dựa vào role_id để lấy được tên của role đó
-    public function getRoleNameById($id)
-    {
-        try {
-            $db = \Connection::getDB();
-            $query = "SELECT role_name FROM roles WHERE role_id = :id";
-            $statement = $db->prepare($query);
-            $statement->bindValue(':id', $id);
-            $statement->execute();
-
-            $value = $statement->fetch(\PDO::FETCH_COLUMN);
-            return $value !== false ? $value : null;
-        } catch (\PDOException $e) {
-            echo "Database Invalid: " . $e->getMessage();
-            return null;
-        }
-    }
-
     // kt trong $_SESSION['username'] có tồn tại trong Database
     // nếu có thì lưu 1 số thông tin từ db vào session  để view ra
     public function getInformation()
@@ -82,35 +37,17 @@ class LoginDB
         }
     }
 
-    // lấy token từ api để xử lý
-    public static function getToken($username, $password)
-    {
-        $request = new RequestAPI();
-        $authUrl = 'https://api.dnict.vn/v1/auth/uaa/token';
-        $token = $request->getApi($username, $password, $authUrl, 'GET','');
-        return $token;
-    }
-
-    // get sidebar theo tài khoản đăng nhập vào
-    public static function getSideBar($token)
-    {
-        $request = new RequestAPI();
-        $authUrl = 'https://api.dnict.vn/v1/core/menu/getRouters?appCode=tts';
-        $result = $request->getApi('','',$authUrl,'',$token);
-        return $result;
-    }
-
 
     public static function getResponse($username, $password)
     {
         $startTime = microtime(true); // Record the start time
 
-        $token = self::getToken($username, $password);
+        $token = requestAPI::getToken($username, $password);
 
         $request = new RequestAPI();
-        $response  = $request->getApi('','','','',$token);
+        $response = $request->getApi('', '', '', '', $token);
 
-        $request->checkAPI($token,$startTime);
+        $request->checkAPI($token, $startTime);
 
         return $response;
     }
@@ -120,19 +57,18 @@ class LoginDB
     public
     static function loginWithApi($username, $password)
     {
-        $token = self::getToken($username, $password);
+        $token = requestAPI::getToken($username, $password);
         $responseData = json_decode($token, true);
-        if ($responseData['status']??'') {
+        if ($responseData['status'] ?? '') {
             self::getResponse($username, $password);
         } else if (empty($token)) {
             $message_error = 'Vui lòng nhập đúng username và password';
             self::check($username, $password, $message_error);
             self::getResponse($username, $password);
-        }
-        else {
+        } else {
             $startTime = microtime(true); // Record the start time
             $_SESSION['token'] = $token;
-            $sideBar = self::getSideBar($token);
+            $sideBar = requestAPI::getSideBar($token);
             $sideBarDecode = json_decode($sideBar, true);
             $_SESSION['email'] = $sideBarDecode['email'];
 
@@ -158,43 +94,16 @@ class LoginDB
         // Check if the username and password are provided
         if (!empty($username) && !empty($password)) {
             $loginDB = new LoginDB();
-            // Check if the user exists
-            if ($loginDB->checkUser($username)) {
-                // Hash the password and compare with the stored hash
-                if ($loginDB->verifyPassword($username, $password)) {
-                    // User authenticated, store session and redirect
-                    $_SESSION['username'] = $username;
-                    $_SESSION['password'] = $password;
-                    $getInfor = new LoginDB();
-                    $getInfor->getInformation();
-                }
-                if ((new LoginDB())->isAdmin()) {
-                    header('location: admin');
-                } elseif ((new LoginDB())->isManager()) {
-                    header('location: admin');
-                } else {
-                    header('location: ');
-                }
+            // Hash the password and compare with the stored hash
+            if ($loginDB->verifyPassword($username, $password)) {
+                // User authenticated, store session and redirect
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+                $getInfor = new LoginDB();
+                $getInfor->getInformation();
             }
         }
         include('Modules/login/Views/login.php');
-    }
-
-    public
-    static function checkUser($username)
-    {
-        $db = \Connection::getDB();
-        $query = 'SELECT * FROM users WHERE username = :username';
-        $stmt = $db->prepare($query);
-        $stmt->bindParam(':username', $username);
-        $stmt->execute();
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public
@@ -227,56 +136,6 @@ class LoginDB
         }
         return null; // User does not exist or hashed password not found
     }
-
-
-    public
-    static function saveApiToDB($nameApi, $usr, $role, $pass)
-    {
-        $db = \Connection::getDB();
-        $name = $nameApi;
-        $username = $usr;
-        $password = $pass;
-        $email = $username . "@gmail.com";
-        $phone = "0" . rand(100000000, 999999999);
-        $level = ($role == 'admin') ? 1 : 2;
-
-        $query = "INSERT INTO users (`name`, `username`, `password`, `email`, `phone`, `gender`, `level`, `flag_delete`,`nguon`) ";
-        $query .= "VALUES (:name, :username, :password, :email, :phone, 'nam', :level, 1,'API')";
-
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $statement = $db->prepare($query);
-        $statement->bindParam(':name', $name);
-        $statement->bindParam(':username', $username);
-        $statement->bindParam(':password', $hashedPassword);
-        $statement->bindParam(':email', $email);
-        $statement->bindParam(':phone', $phone);
-        $statement->bindParam(':level', $level, \PDO::PARAM_INT); // Add PDO::PARAM_INT flag
-        $statement->execute();
-    }
-
-    public
-    static function updateApiToDB($nameApi, $usr, $role, $pass)
-    {
-        $db = \Connection::getDB();
-
-        $name = $nameApi;
-        $username = $usr;
-        $password = $pass;
-        $level = ($role == 'admin') ? 1 : 2;
-
-        $query = "UPDATE users SET `name` = :name, `username` = :username, `password` = :password, `level` = :level WHERE `username` = :username";
-
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $statement = $db->prepare($query);
-        $statement->bindParam(':name', $name);
-        $statement->bindParam(':username', $username);
-        $statement->bindParam(':password', $hashedPassword);
-        $statement->bindParam(':level', $level, \PDO::PARAM_INT); // Add PDO::PARAM_INT flag
-        $statement->execute();
-    }
-
 
 }
 

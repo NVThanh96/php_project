@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "Utils/Util.php";
-include "Core/routes.php";
+include __DIR__ ."\Utils\Util.php";
+include __DIR__ ."\Core\Routes.php";
 
 $router->run();
 

@@ -18,32 +18,62 @@ $(document).ready(function () {
 
 
     $('#add-payment-btn').click(function () {
+        var paymentGroups = $('.payment-group'); // Get all existing payment groups
 
-        var clonedPaymentGroup = paymentGroup.clone(); // Create cloned form group
+        if (paymentGroups.length === 0) {
+            // Create the first payment group if none exists
+            var newPaymentGroup = createPaymentGroup(1);
+            $('#payment-section').append(newPaymentGroup);
+        } else {
+            var lastPaymentGroup = paymentGroups.last();
+            var lastPaymentGroupNumber = extractPaymentGroupNumber(lastPaymentGroup);
 
-        // Remove existing close buttons from the cloned group, if any
-        clonedPaymentGroup.find('.close').remove();
+            var newPaymentGroupNumber = lastPaymentGroupNumber + 1;
+            var newPaymentGroup = createPaymentGroup(newPaymentGroupNumber);
+            lastPaymentGroup.after(newPaymentGroup);
+        }
 
-        // Add close button to the cloned form group
-        var closeButton = $('<button style="font-size: 30px" class="close" type="button">&times;</button>');
-
-        clonedPaymentGroup.prepend(closeButton);
-        clonedPaymentGroup.find('h4').text('Thanh Toán lần ' + paymentCountNext);
-
-        // Event listener for closing the selected cloned form group
-        closeButton.click(function () {
-            var paymentGroup = $(this).closest('.payment-group');
-            paymentGroup.slideUp(400, function () {
-                paymentGroup.remove(); // Remove the cloned element after it's hidden
-                calculateRemainingValue(); // Recalculate the remaining value
-                paymentCountNext--;
-            });
-        });
-
-        $('#payment-section').append(clonedPaymentGroup);
-        clonedPaymentGroup.hide().slideDown(400); // Use slideDown animation to show the cloned element
         paymentCountNext++; // Increment the payment count
     });
+
+    function createPaymentGroup(number) {
+        var paymentGroup = $('<div class="payment-group">' +
+            '<hr style="margin-top: 35px">' +
+            '<h4>Thanh Toán lần ' + number + '</h4>' +
+            '<div style="display: flex">' +
+            '<div class="form-group col-4">' +
+            '<label>Thời gian thanh toán</label>' +
+            '<div class="input-group">' +
+            '<div class="input-group-prepend">' +
+            '<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>' +
+            '</div>' +
+            '<input type="text" name="thoi_gian_thanh_toan[]" id="thoi_gian_thanh_toan[]" class="form-control" autocomplete="off" placeholder="dd/mm/yyyy">' +
+            '</div>' +
+            '</div>' +
+            '<div class="form-group col-4">' +
+            '<label>Nội Dung Thanh Toán</label>' +
+            '<input type="text" name="noi_dung_thanh_toan[]" id="noi_dung_thanh_toan[]" class="form-control" placeholder="Nội Dung Thanh Toán">' +
+            '</div>' +
+            '<div class="form-group col-4">' +
+            '<label>Giá Trị Thanh Toán</label>' +
+            '<div class="input-group">' +
+            '<input type="number" name="gia_tri_thanh_toan[]" class="form-control" placeholder="Nhập Giá Trị Thanh Toán" oninput="calculateRemainingValue(this)">' +
+            '<div class="input-group-prepend">' +
+            '<span class="input-group-text">đ</span>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
+
+        return paymentGroup;
+    }
+
+    function extractPaymentGroupNumber(paymentGroup) {
+        var text = paymentGroup.find('h4').text();
+        var number = parseInt(text.match(/\d+/)[0]);
+        return number;
+    }
 
 });
 

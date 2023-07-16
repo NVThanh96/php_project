@@ -15,7 +15,6 @@ $path là tên các folder ở trong modules
 $Default = '/JobDnict/php_project/app/';
 
 $uriDefault = $Default;
-$router = new Router();
 // để lấy giá trị sau biến localhost '/project_php/app/'
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -70,6 +69,7 @@ foreach ($moduleFiles as $file) {
 
 $extendRoutes = $allRoutes;
 
+$router = new Router();
 /*dùng để gọp tất cả các mảng lại với nhau*/
 $combinedRoutes = array_merge($routes, $routeAdmin, $extendRoutes);
 
