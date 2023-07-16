@@ -33,23 +33,20 @@ include "Public/config/config.php"
                     <a style="margin-left:-15px;font-size: 24px" class="btn hover btn-flat float-left" href="list"><i class="fa-solid fa-arrow-left"></i></a>
                     <h1 class="card-title"><?php echo $node['ten'] ?? "" ?></h1>
                 </div>
-                <form action="create" method="post">
+                <form action="add" method="post">
                     <div class="card-body">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên Lĩnh Vực</label>
-                            <input name="ten_linh_vuc" type="text" class="form-control" id="exampleInputEmail1">
+                            <label for="exampleInputEmail1">Tên Phòng Ban</label>
+                            <input name="ten_phong" type="text" class="form-control" id="exampleInputEmail1">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mã Lĩnh Vực</label>
-                            <input name="ma_linh_vuc" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1">Mã Phòng Ban</label>
+                            <input name="ma_phong" type="text" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Trạng Thái</label>
-                            <input name="trang_thai" type="text" class="form-control" id="exampleInputPassword1">
-                        </div>
+
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success" style="float: right">Submit</button>
+                            <button type="submit" class="btn btn-success" style="float: right">Lưu</button>
                         </div>
                     </div>
                 </form>

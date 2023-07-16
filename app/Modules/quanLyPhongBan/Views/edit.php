@@ -36,21 +36,17 @@ include "Public/config/config.php"
                     <?php foreach ($values as $value): ?>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên Lĩnh Vực</label>
-                                <input name="ten_linh_vuc" value="<?php echo $value['ten_linh_vuc']?>" type="text" class="form-control" id="exampleInputEmail1">
+                                <label for="exampleInputEmail1">Tên Phòng Ban</label>
+                                <input name="ten_phong" value="<?php echo $value['ten_phong']?>" type="text" class="form-control" id="exampleInputEmail1">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Mã Lĩnh Vực</label>
-                                <input name="ma_linh_vuc" value="<?php echo $value['ma_linh_vuc']?>" type="text" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Trạng Thái</label>
-                                <input name="trang_thai" value="<?php echo $value['trang_thai']?>" type="text" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1">Mã Phòng Ban</label>
+                                <input name="ma_phong" value="<?php echo $value['ma_phong']?>" type="text" class="form-control" id="exampleInputPassword1">
                             </div>
                         </div>
                     <?php endforeach;?>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success" style="float: right">Submit</button>
+                        <button type="submit" class="btn btn-success" style="float: right">Lưu</button>
                     </div>
                 </form>
             </div>

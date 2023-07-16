@@ -60,7 +60,7 @@ class QuanLyPhongBan
 
     public function add()
     {
-        PhongBanDB::createLinhVuc();
+        PhongBanDB::createPhongBan();
         $this->index();
     }
 
@@ -83,7 +83,7 @@ class QuanLyPhongBan
     function update()
     {
         $id = $_SESSION['id'];
-        PhongBanDB::editLinhVuc($id);
+        PhongBanDB::editPhongBan($id);
         $this->index();
     }
 
@@ -96,11 +96,11 @@ class QuanLyPhongBan
         $page_number = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         // số lượng giá trị sẽ hiện thị trong 1 bảng
         $items_per_page = 6;
-        $flag_delete = 0;
+        $da_xoa = 0;
 
-        $result = PhongBanDB::getLinhVucPage($page_number, $items_per_page, $flag_delete);
+        $result = PhongBanDB::getPhongBanPage($page_number, $items_per_page, $da_xoa);
 
-        $list_linh_vuc = $result['linhVuc'];
+        $list_phong_ban = $result['phongBan'];
         $total_pages = $result['total_pages'];
         include('Modules/' . $path . '/Views/list.php');
     }

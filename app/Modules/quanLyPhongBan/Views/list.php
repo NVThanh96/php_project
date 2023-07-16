@@ -56,21 +56,19 @@ include "Public/config/config.php";
                         <thead>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Tên Lĩnh Vực</th>
-                            <th>Mã Lĩnh Vực</th>
-                            <th>Trạng Thái</th>
+                            <th>Tên Phòng Ban</th>
+                            <th>Mã Phòng Ban</th>
                             <th colspan="3" class="text-center">Tùy chọn</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if (isset($list_linh_vuc)): ?>
-                            <?php foreach ($list_linh_vuc as $key => $value): ?>
-                                <?php if ($value['flag_delete'] == 1): ?>
+                        <?php if (isset($list_phong_ban)):?>
+                            <?php foreach ($list_phong_ban as $key => $value): ?>
+                                <?php if ($value['da_xoa'] == 0): ?>
                                     <tr>
                                         <td><?php echo $key + 1 ?></td>
-                                        <td><?php echo $value['ten_linh_vuc']; ?></td>
-                                        <td><?php echo $value['ma_linh_vuc']; ?></td>
-                                        <td><?php echo $value['trang_thai']; ?></td>
+                                        <td><?php echo $value['ten_phong']; ?></td>
+                                        <td><?php echo $value['ma_phong']; ?></td>
 
                                             <td class="text-center">
                                                 <a href="edit?id=<?= $value['id'] ?>">
@@ -92,9 +90,8 @@ include "Public/config/config.php";
                                     <div class="popup" id="popup-<?php echo $value['id'] ?>" style="display:none">
                                         <div class="popup-content">
                                             <div class="container" style="margin-top: 20px">
-                                                <h2>Tên lĩnh vực: <?php echo $value['ten_linh_vuc']; ?> </h2>
-                                                <h2>Mã số lĩnh vực: <?php echo $value['ma_linh_vuc']; ?></h2>
-                                                <h2>Trạng thái lĩnh vực: <?php echo $value['trang_thai']; ?></h2>
+                                                <h2>Mã số phòng ban: <?php echo $value['ma_phong']; ?></h2>
+                                                <h2>Tên phòng ban: <?php echo $value['ten_phong']; ?> </h2>
                                             </div>
                                         </div>
                                     </div>
