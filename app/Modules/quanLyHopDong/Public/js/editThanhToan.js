@@ -2,20 +2,13 @@ $(document).ready(function () {
     var paymentGroup = $('.payment-group').first(); // Get the first payment group element
     var paymentCountNext = $('.payment-group').length + 1; // Initialize the payment count based on existing elements
 
-
-    // Add click event listener to the close buttons
-    var closeButtons = document.querySelectorAll(".payment-group .close");
-    closeButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            var paymentGroup = this.parentNode;
-            $(paymentGroup).slideUp(400, function () {
-                paymentGroup.remove(); // Remove the payment group when the slideUp animation is complete
-                calculateRemainingValue(); // Recalculate the remaining value
-            });
+    $('#payment-section').on('click', '.close', function () {
+        var paymentGroupElement = $(this).closest('.payment-group');
+        paymentGroupElement.slideUp(400, function () {
+            paymentGroupElement.remove(); // Remove the payment group when the slideUp animation is complete
+            calculateRemainingValue(); // Recalculate the remaining value
         });
     });
-
-
 
     $('#add-payment-btn').click(function () {
         var paymentGroups = $('.payment-group'); // Get all existing payment groups
@@ -35,10 +28,16 @@ $(document).ready(function () {
 
         paymentCountNext++; // Increment the payment count
     });
+    $("#thoi_gian_thanh_toan\\[\\]").datepicker({
+        dateFormat: "dd/mm/yy"
+    });
 
     function createPaymentGroup(number) {
         var paymentGroup = $('<div class="payment-group">' +
             '<hr style="margin-top: 35px">' +
+            '<button style="font-size: 30px" class="close" type="button">\n' +
+            '&times;\n' +
+            '</button>' +
             '<h4>Thanh Toán lần ' + number + '</h4>' +
             '<div style="display: flex">' +
             '<div class="form-group col-4">' +
@@ -65,7 +64,6 @@ $(document).ready(function () {
             '</div>' +
             '</div>' +
             '</div>');
-
         return paymentGroup;
     }
 
@@ -74,21 +72,14 @@ $(document).ready(function () {
         var number = parseInt(text.match(/\d+/)[0]);
         return number;
     }
-
 });
-
-
-
-const numberFormat = new Intl.NumberFormat('vi-VN', {  currency: 'VND' });
-
-
 
 function calculateRemainingValue() {
     var kinhPhiValue = parseFloat($('#kinh_phi').val());
     var totalgiaTriThanhToanValue = 0;
 
     // Calculate the total value of giaTriThanhToanInputs
-    $('input[name="gia_tri_thanh_toan[]"]').each(function() {
+    $('input[name="gia_tri_thanh_toan[]"]').each(function () {
         var giaTriThanhToanValue = parseFloat($(this).val());
 
         // Check if the value is empty, if so, use the value from the database
@@ -107,13 +98,14 @@ function calculateRemainingValue() {
     $('#gia_tri_con_lai').val(formattedGiaTriConLai);
 }
 
+const numberFormat = new Intl.NumberFormat('vi-VN', {currency: 'VND'});
 
 // Get the input element by its name
 var kinhPhiInput = document.querySelector('input[name="kinh_phi"]');
 var kinhPhiValue = kinhPhiInput['value']
-// Check if the input field has a value
-if (kinhPhiInput.value.trim() !== '' ) {
 
+// kiểm tra nên input có giá trị
+if (kinhPhiInput.value.trim() !== '') {
     $('#gia_tri_kinh_phi').val(numberFormat.format(kinhPhiInput['value']));
 } else {
     console.log('The input field is empty.');
@@ -121,10 +113,9 @@ if (kinhPhiInput.value.trim() !== '' ) {
 
 var giaTriThanhToanInputs = document.querySelectorAll('input[name="gia_tri_thanh_toan[]"]');
 var totalgiaTriThanhToanValue = 0;
-giaTriThanhToanInputs.forEach(function(input) {
+giaTriThanhToanInputs.forEach(function (input) {
     var giaTriThanhToanValue = parseFloat(input.value);
-
-    // Check if the value is a valid number
+    // kiểm tra nó có phải là số không
     if (!isNaN(giaTriThanhToanValue)) {
         totalgiaTriThanhToanValue += giaTriThanhToanValue;
     }
@@ -132,7 +123,7 @@ giaTriThanhToanInputs.forEach(function(input) {
 
 
 // Iterate over each input field
-giaTriThanhToanInputs.forEach(function(input) {
+giaTriThanhToanInputs.forEach(function (input) {
     // Check if the input field has a value
     if (input.value.trim() !== '') {
         $('#thanh_toan').val(numberFormat.format(totalgiaTriThanhToanValue));

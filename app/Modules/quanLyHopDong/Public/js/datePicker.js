@@ -22,8 +22,6 @@ $(document).ready(function() {
     $("#datepicker-trigger2").on("click", function() {
         $("#ngay_ket_thuc").datepicker("show");
     });
-
-
 });
 
 

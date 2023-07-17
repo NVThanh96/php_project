@@ -382,13 +382,15 @@ class HopDongDB
             $statement->execute();
 
             // Assuming you have retrieved the payment information and stored them in arrays
-            $thoi_gian_thanh_toan = $_POST['thoi_gian_thanh_toan'];
-            $noi_dung_thanh_toan = $_POST['noi_dung_thanh_toan'];
-            $gia_tri_thanh_toan = $_POST['gia_tri_thanh_toan'];
+            $thoi_gian_thanh_toan = $_POST['thoi_gian_thanh_toan'] ?? '';
+            $noi_dung_thanh_toan = $_POST['noi_dung_thanh_toan']?? '';
+            $gia_tri_thanh_toan = $_POST['gia_tri_thanh_toan']?? '';
 
             // Insert payment information into the 'thanh_toan' table
-            for ($i = 0; $i < count($thoi_gian_thanh_toan); $i++) {
-                self::insertThanhToan($db, $noi_dung_thanh_toan[$i], $thoi_gian_thanh_toan[$i], $gia_tri_thanh_toan[$i], $id);
+            if (!empty($thoi_gian_thanh_toan)){
+                for ($i = 0; $i < count($thoi_gian_thanh_toan); $i++) {
+                    self::insertThanhToan($db, $noi_dung_thanh_toan[$i], $thoi_gian_thanh_toan[$i], $gia_tri_thanh_toan[$i], $id);
+                }
             }
         } catch (\PDOException $e) {
             echo "Database Invalid: " . $e->getMessage();

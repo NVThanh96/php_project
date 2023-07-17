@@ -93,24 +93,29 @@ include "Views/admin/layouts/header.php";
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">File Đính Kèm</label>
-                                    <label for="attachment">
-                                        <a class="btn btn-primary text-light" role="button" aria-disabled="false">
-                                            <i class="fa fa-add"></i>
-                                        </a>
-                                    </label>
-                                    <input type="file" name="file[]" accept=".pdf,.docx,.xlsx" id="attachment"
-                                           style="visibility: hidden; position: absolute;" multiple/>
-                                    <p id="files-area">
+
+                                <hr>
+                                <div class="datepicker" style="display: flex;">
+
+                                    <div class="form-group col-3">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">File Đính Kèm</label>
+                                            <label for="attachment">
+                                                <a class="btn " role="button" aria-disabled="false">
+                                                    <i class="fa-solid fa-file-arrow-up" style="font-size: 20px"></i>
+                                                </a>
+                                            </label>
+                                            <input type="file" name="file[]" accept=".pdf,.docx,.xlsx" id="attachment"
+                                                   style="visibility: hidden; position: absolute;" multiple/>
+                                            <p id="files-area">
                                 <span id="filesList">
                                     <span id="files-names"></span>
                                 </span>
-                                    </p>
-                                </div>
+                                            </p>
+                                        </div>
+                                    </div>
 
-                                <div class="datepicker" style="display: flex;">
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-3">
                                         <label>Ngày ký</label>
                                         <div class="contentDate">
                                             <div class="input-group-prepend inputDate">
@@ -123,7 +128,7 @@ include "Views/admin/layouts/header.php";
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-3">
                                         <label>Thời gian thực hiện</label>
                                         <div class="contentDate">
                                             <div class="input-group-prepend inputDate">
@@ -138,7 +143,7 @@ include "Views/admin/layouts/header.php";
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-3">
                                         <label>Ngày kết thúc</label>
                                         <div class="contentDate">
                                             <div class="input-group-prepend inputDate">
@@ -220,11 +225,11 @@ include "Views/admin/layouts/header.php";
                                     </div>
 
                                     <div class="contentRight col-md-4">
-                                        <div style="margin-left: 5%; height: 20px" class="form-group">
+                                        <div  class="form-group content_TT">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Giá Trị Còn Lại</label>
                                             </div>
-                                            <div style="">
+                                            <div>
                                                 <div style="display: flex;">
                                                     <p> Kinh Phí</p>
                                                     <input style="background-color: transparent" id="gia_tri_kinh_phi"
@@ -246,7 +251,7 @@ include "Views/admin/layouts/header.php";
                                 </div>
 
 
-                                <div class="form-group" style="margin-top: 4%">
+                                <div class="form-group col-8">
                                     <label>Select</label>
                                     <select name="trang_thai" class="form-control">
                                         <option value="1" <?php echo ($values['trang_thai'] == '1') ? 'selected' : ''; ?>>

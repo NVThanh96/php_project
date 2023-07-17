@@ -75,7 +75,7 @@ include "Views/admin/layouts/header.php";
                                 <label for="exampleInputEmail1">Kinh Phí</label>
                                 <div class="input-group">
                                     <input type='number' name="kinh_phi" id="kinh_phi" class="form-control"
-                                           placeholder="Nhập Kinh Phí"/>
+                                           placeholder="Nhập Kinh Phí" oninput="calculateRemainingValue(this)"/>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">đ</span>
                                     </div>

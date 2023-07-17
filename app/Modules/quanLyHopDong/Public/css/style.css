@@ -20,9 +20,10 @@ input[type="number"] {
     align-items: center;
 }
 
-.container{
-margin: 0;
+.container {
+    margin: 0;
 }
+
 .contentRight input {
     font-size: 20px;
     width: 30%;
@@ -37,11 +38,6 @@ margin: 0;
     width: 100px;
 }
 
-
-/*upload file */
-#files-area {
-    border: 1px dashed black;
-}
 
 .file-block {
     border-radius: 10px;
@@ -77,3 +73,11 @@ margin: 0;
     transform: rotate(45deg);
 }
 
+.contentRight .content_TT {
+    margin-left: 5%;
+    height: 20px;
+    position: sticky;
+    top: 70%;
+    padding: 5px;
+    margin-bottom: 50px;
+}
