@@ -458,7 +458,6 @@ class HopDongDB
             while ($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
                 $records[] = $row;
             }
-
             return $records;
 
         } catch (\PDOException $e) {
@@ -469,7 +468,7 @@ class HopDongDB
 
     public static function getRecordThanhToanById($id) {
         $db = \Connection::getDB();
-        $query = "SELECT * FROM thanh_toan WHERE id_hop_dong = :id_hop_dong ORDER BY id ASC";
+        $query = "SELECT * FROM thanh_toan WHERE id_hop_dong = :id_hop_dong  AND daxoa = 0 ORDER BY id ASC";
         $statement = $db->prepare($query);
         $statement->bindParam(':id_hop_dong', $id);
         $statement->execute();

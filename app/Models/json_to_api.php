@@ -1,125 +1,103 @@
 <?php
 // Read the JSON file
-include '../Utils/requestAPI.php';
 /*require_once "C:\wamp64\www\JobDnict\php_project\app\Modules\quanLyHopDong\Views\config.php";*/
+class JsonToApi {
 
+    public function path()
+    {
+        $directory = dirname(__DIR__) . '\Modules\*';
+        $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+        $paths = [];
 
-function path()
-{
-    $directory = dirname(__DIR__) . '\Modules\*';
-    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    $paths = [];
-
-    foreach ($moduleFiles as $key => $value) {
-        if (basename($moduleFiles[$key]) !== 'Readme.txt' && basename(strpos($moduleFiles[$key], 'login') === false)) {
-            $paths[] = $value;
-        }
-    }
-
-    /*  $result = [];
-      foreach ($paths as $path) {
-          $foldername = basename($path);
-          $result[] = '/' . $foldername;
-      }*/
-    return $paths;
-}
-
-
-
-function getViewsFromModule($RootModule)
-{
-    $directory = dirname(__DIR__) . '\Modules' . $RootModule . '\Views\*';
-    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    $views = [];
-    $ModuleName = str_replace("/", "", $RootModule);
-    foreach ($moduleFiles as $key => $value) {
-        if (basename($moduleFiles[$key]) !== 'Readme.txt' && strpos($moduleFiles[$key], 'login') === false) {
-            $baseName = baseName($value);
-            if (strpos($baseName, '.php')) {
-                /*  $a =str_replace(".php", "",$baseName);
-                  var_dump($ModuleName . "_".$a);*/
-                $views[] = $value;
+        foreach ($moduleFiles as $key => $value) {
+            if (basename($moduleFiles[$key]) !== 'Readme.txt' && basename(strpos($moduleFiles[$key], 'login') === false)) {
+                $paths[] = $value;
             }
+        }
+        return $paths;
+    }
 
+    public function pathFromParent($parent)
+    {
+        $directory = $parent . '/*';
+        $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+        $paths = [];
+        foreach ($moduleFiles as $key => $value) {
+            if (basename($moduleFiles[$key]) !== 'Readme.txt' && strpos($moduleFiles[$key], 'login') === false) {
+                $paths[] = $value;
+            }
+        }
+        return $paths;
+    }
+
+    public function getConfig($path)
+    {
+        $directory = $path . '/config.json';
+        $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+        foreach ($moduleFiles as $value) {
+            $json = file_get_contents($value);
+            return json_decode($json, true);
+        }
+        return null;
+    }
+
+    public function writeToJson($formattedOutput)
+    {
+        // Extract the JSON data from the formatted output
+        $jsonData = $formattedOutput;
+
+        // Specify the folder path
+        $folderPath = __DIR__ . '/writeToJson/';
+
+        // Create the folder if it doesn't exist
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+
+        // Specify the file path within the folder
+        $filePath = $folderPath . 'test.json';
+
+        // Open the file in write mode ('w' flag)
+        $file = fopen($filePath, 'w');
+
+        if ($file) {
+            // Write the JSON data to the file
+            fwrite($file, $jsonData);
+
+            // Close the file handle
+            fclose($file);
+
+            /*echo 'Data has been written to ' . $filePath;*/
+        } else {
+            echo 'Unable to open file for writing.';
         }
     }
-    return $views;
-}
 
-/*var_dump(path());
-$arrPathRoot = path();
-foreach ($arrPathRoot as $str_obj) {
-    $arrViewByModule = getViewsFromModule($str_obj);
-   /* var_dump($arrViewByModule);*/
+    public function processJsonData()
+    {
+        $baseFolder = dirname(__DIR__) . '/Modules';
+        $arrB = $this->pathFromParent($baseFolder);
 
-function pathFromParent($parent)
-{
-    $directory = $parent . '/*';
-    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    $paths = [];
-    foreach ($moduleFiles as $key => $value) {
-        if (basename($moduleFiles[$key]) !== 'Readme.txt' && strpos($moduleFiles[$key], 'login') === false) {
-            $paths[] = $value;
+        $result = [];
+
+        foreach ($arrB as $item) {
+            // Only process files with config
+            $config = $this->getConfig($item);
+            if ($config !== null) {
+                $result[] = $config;
+            }
         }
+
+        $output = json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        $formattedOutput = $output;
+
+        $this->writeToJson($formattedOutput);
     }
-    return $paths;
+
 }
 
-function getConfig($path)
-{
-    $directory = $path . '/config.json';
-    $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-    foreach ($moduleFiles as $value) {
-        $json = file_get_contents($value);
-        return json_decode($json, true);
-    }
-    return null;
-}
-
-$baseFolder = dirname(__DIR__) . '/Modules';
-$arrB = pathFromParent($baseFolder);
-
-$result = [];
-
-foreach ($arrB as $item) {
-    // chỉ lấy những file có config ở trong
-    $config = getConfig($item);
-    if ($config !== null) {
-        $result[] = $config;
-    }
-}
-
-$output = json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-$formattedOutput = '<pre>' . $output . '</pre>';
-
-echo $formattedOutput;
 
 
-/*function writeToJson()
-{
-
-    $aav = [];
-
-    $jsonData = json_encode($aav, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-
-    // Specify the file path
-    $filePath = 'test.json';
-
-    // Open the file in write mode ('w' flag)
-    $file = fopen($filePath, 'w');
-
-    if ($file) {
-        // Write the JSON data to the file
-        fwrite($file, $jsonData);
-
-        // Close the file handle
-        fclose($file);
-
-        echo 'Data has been written to ' . $filePath;
-    } else {
-        echo 'Unable to open file for writing.';
-    }
-}*/
 
 
 /*function doRegister() {

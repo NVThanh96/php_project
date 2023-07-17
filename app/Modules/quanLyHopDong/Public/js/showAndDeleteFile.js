@@ -5,6 +5,7 @@ $("#files-names").empty();
 // Iterate over each file record and add it to the file list
 const fileIDHD = <?php echo $fileIDHDJson; ?>;
 
+
 for (let i = 0; i < fileIDHD.length; i++) {
     let fileBloc = $('<span/>', { class: 'file-block' });
     let fileName = $('<span/>').append(

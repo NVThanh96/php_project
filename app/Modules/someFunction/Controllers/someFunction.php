@@ -1,5 +1,6 @@
 <?php
 include "Public/config/config.php";
+include "Models\json_to_api.php";
 
 class  someFunction
 {
@@ -25,6 +26,9 @@ class  someFunction
                 break;
             case 'showLog':
                 $this->showLog();
+                break;
+            case 'reloadPlugin':
+                $this->reloadPlugin();
                 break;
             default:
                 break;
@@ -53,12 +57,12 @@ class  someFunction
         $json = file_get_contents($file);
         $json_data = json_decode($json, true);
         if ($json_data[0]['hidden'] === true) {
-            $json_data[0]['hidden'] = false ;
+            $json_data[0]['hidden'] = false;
         } else {
             $json_data[0]['hidden'] = true;
         }
 
-        file_put_contents($file, json_encode($json_data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+        file_put_contents($file, json_encode($json_data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
         $this->listPlugin();
     }
@@ -118,5 +122,44 @@ class  someFunction
     {
         include('Modules/someFunction/Views/showLog.php');
     }
+
+    public function reloadPlugin()
+    {
+        $sourceApiUrl = 'C:\wamp64\www\JobDnict\php_project\app\Models\writeToJson\test.json';
+        /*$sourceApiUrl = 'C:\wamp64\www\JobDnict\php_project\app\Models\json_to_api.php';*/
+        $targetApiUrl = 'https://api.dnict.vn/v1/core/menu/setRouters?appCode=tts';
+        $token = $_SESSION['token'];
+        $jsonToApi = new JsonToApi();
+        $jsonToApi->processJsonData();
+        // Get the data from the source API
+        $data = file_get_contents($sourceApiUrl);
+
+
+        // Create a POST request to the target API using cURL
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $targetApiUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'X-Token: ' . $token
+        ]);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        // Handle the response from the target API
+        if ($result !== false) {
+            // Success
+
+            $this->listPlugin();
+        } else {
+            // Error
+            echo "Error pushing values to the target API.";
+        }
+    }
+
+
 
 }

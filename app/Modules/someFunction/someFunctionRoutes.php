@@ -40,5 +40,6 @@ ${$folderName . 'Routes'} = [
     $uriDefault . '/listPlugin'  =>  $controller . '::listPlugin',
     $uriDefault . "/removePlugin"   => $controller . '::removePlugin',
     $uriDefault . '/showLog'  =>  $controller . '::showLog',
+    $uriDefault . '/reloadPlugin'  =>  $controller . '::reloadPlugin',
 ];
 

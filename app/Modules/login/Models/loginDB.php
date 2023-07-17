@@ -106,18 +106,21 @@ class LoginDB
         include('Modules/login/Views/login.php');
     }
 
-    public
-    function verifyPassword($username, $password)
+    public function verifyPassword($username, $password)
     {
         // Retrieve the hashed password from the database for the given username
         $hashedPassword = $this->getHashedPassword($username);
 
-        // Verify the provided password against the stored hashed password
-        if (password_verify($password, $hashedPassword)) {
-            return true; // Passwords match
+        if ($hashedPassword !== null) {
+            // Verify the provided password against the stored hashed password
+            if (password_verify($password, $hashedPassword)) {
+                return true; // Passwords match
+            }
         }
-        return false; // Passwords do not match
+
+        return false; // Passwords do not match or hashed password is null
     }
+
 
     private
     function getHashedPassword($username)

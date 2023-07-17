@@ -92,6 +92,7 @@ class QuanLyHopDong
         $fileIDHD = HopDongDB::getRecordFileById($id);
         $totalThanhToan = HopDongDB::getRecordThanhToanById($id);
 
+        $fileThanhToanJson = json_encode($totalThanhToan);
         $fileIDHDJson = json_encode($fileIDHD);
 
         $folderPath = __DIR__;

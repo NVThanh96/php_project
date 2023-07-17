@@ -9,7 +9,7 @@ include "Public/config/config.php";
             display: flex
         }
 
-        .title i {
+        .title .fa-add {
             margin-top: -5px;
             padding: 5px;
             border: 1px solid black;
@@ -29,6 +29,9 @@ include "Public/config/config.php";
                 <h1 style="margin-left: 30px">Plugin</h1>
                 <a href="<?php echo $DefaultSomeFunction; ?>/upload" class="nav-link">
                     <i class="fa-solid fa-add"></i>
+                </a>
+                <a href="<?php echo $DefaultSomeFunction; ?>/reloadPlugin" class="nav-link">
+                    <i class="fa-solid fa-upload"></i>
                 </a>
             </div>
 

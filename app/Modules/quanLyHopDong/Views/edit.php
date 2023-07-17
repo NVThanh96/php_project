@@ -169,7 +169,6 @@ include "Views/admin/layouts/header.php";
                                             <div id="payment-section">
                                             <?php for ($i = 0; $i < count($totalThanhToan); $i++): ?>
                                                 <?php $record = $totalThanhToan[$i]; ?>
-                                                <?php if ($record['daxoa'] !== 1): ?>
 
                                                     <div class="payment-group">
                                                         <button style="font-size: 30px" class="close" type="button">
@@ -219,7 +218,6 @@ include "Views/admin/layouts/header.php";
                                                             </div>
                                                         </div>
                                                     </div>
-                                                <?php endif; ?>
                                             <?php endfor; ?>
                                         </div>
                                     </div>

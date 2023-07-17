@@ -1,3 +1,5 @@
+const fileThanhToanJson = <?php echo $fileThanhToanJson;?>;
+
 $(document).ready(function () {
     var paymentGroup = $('.payment-group').first(); // Get the first payment group element
     var paymentCountNext = $('.payment-group').length + 1; // Initialize the payment count based on existing elements
@@ -12,24 +14,38 @@ $(document).ready(function () {
 
     $('#add-payment-btn').click(function () {
         var paymentGroups = $('.payment-group'); // Get all existing payment groups
+        console.log(paymentGroups)
 
         if (paymentGroups.length === 0) {
             // Create the first payment group if none exists
             var newPaymentGroup = createPaymentGroup(1);
             $('#payment-section').append(newPaymentGroup);
         } else {
-            var lastPaymentGroup = paymentGroups.last();
-            var lastPaymentGroupNumber = extractPaymentGroupNumber(lastPaymentGroup);
+            if (Array.isArray(fileThanhToanJson)) {
+                let foundDeleted = false;
 
-            var newPaymentGroupNumber = lastPaymentGroupNumber + 1;
-            var newPaymentGroup = createPaymentGroup(newPaymentGroupNumber);
-            lastPaymentGroup.after(newPaymentGroup);
+                for (let i = 0; i < fileThanhToanJson.length; i++) {
+                    const $checkDaXoa = fileThanhToanJson[i]['daxoa'];
+
+                    if ($checkDaXoa === 0) {
+                        foundDeleted = true;
+                        break;
+                    }
+                }
+
+                if (foundDeleted) {
+                    var lastPaymentGroup = paymentGroups.last();
+                    var lastPaymentGroupNumber = extractPaymentGroupNumber(lastPaymentGroup);
+                    var newPaymentGroupNumber = lastPaymentGroupNumber + 1;
+                    var newPaymentGroup = createPaymentGroup(newPaymentGroupNumber);
+                    lastPaymentGroup.after(newPaymentGroup);
+                }
+            } else {
+                console.log('fileThanhToanJson is not an array.');
+            }
         }
 
         paymentCountNext++; // Increment the payment count
-    });
-    $("#thoi_gian_thanh_toan\\[\\]").datepicker({
-        dateFormat: "dd/mm/yy"
     });
 
     function createPaymentGroup(number) {
