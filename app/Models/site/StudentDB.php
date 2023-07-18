@@ -1,7 +1,7 @@
 <?php
 
 namespace models;
-include "DB/Connection.php";
+include dirname(dirname(dirname(__FILE__))). "/DB/Connection.php";
 
 class StudentDB
 {

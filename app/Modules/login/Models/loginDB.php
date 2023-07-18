@@ -1,7 +1,8 @@
 <?php
 
 require_once 'vendor/autoload.php';
-include "Utils/requestAPI.php";
+include dirname(dirname(dirname(dirname(__FILE__))))."/Utils/requestAPI.php";
+
 
 class LoginDB
 {

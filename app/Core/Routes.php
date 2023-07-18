@@ -1,13 +1,13 @@
 <?php
-include "Router.php";
-include "Controllers/site/Home.php";
-include "Controllers/site/Student.php";
-include "Controllers/site/API.php";
-include "Controllers/site/Information.php";
-include "Controllers/admin/Admin.php";
-include "Models/admin/UserDB.php";
-require_once 'Utils/Util.php';
 
+include dirname(__FILE__) . "/Router.php";
+include dirname(dirname(__FILE__)) . "/Controllers/site/Home.php";
+include dirname(dirname(__FILE__)) . "/Controllers/site/Student.php";
+include dirname(dirname(__FILE__)) . "/Controllers/site/API.php";
+include dirname(dirname(__FILE__)) . "/Controllers/site/Information.php";
+include dirname(dirname(__FILE__)) . "/Controllers/admin/Admin.php";
+include dirname(dirname(__FILE__)). "/Models/admin/UserDB.php";
+require_once dirname(dirname(__FILE__)) . '/Utils/Util.php';
 /*
 mục đích include 'Modules/'.$path.'/Controllers/'.ucfirst($path).'.php'
 $path là tên các folder ở trong modules

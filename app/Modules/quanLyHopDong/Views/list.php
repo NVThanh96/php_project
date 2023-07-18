@@ -119,21 +119,29 @@ include "Views/admin/layouts/header.php";
                                     </tr>
                                     <div class="popup" id="popup-<?php echo $value['id'] ?>" style="display:none">
                                         <div class="popup-content">
-                                            <div class="container">
-                                                <h3><?php echo $key + 1 ?></h3>
-                                                <h3><?php echo $value['ten_hop_dong']; ?></h3>
-                                                <h3><?php echo $value['so_hop_dong']; ?></h3>
-                                                <h3><?php echo date('d/m/Y', strtotime($value['ngay_ky'])); ?></h3>
-                                                <h3><?php echo $value['id_phong_ban']; ?></h3>
-                                                <h3><?php echo $value['khach_hang']; ?></h3>
-                                                <h3><?php echo number_format($value['kinh_phi'], 0, ',', '.') . ' VND'; ?></h3>
-                                                <h3><?php echo $value['thoi_gian_thuc_hien']; ?></h3>
-                                                <h3><?php echo date('d/m/Y', strtotime($value['ngay_ket_thuc'])); ?></h3>
-                                                <h3>
-                                                    <?php echo $value['trang_thai'] == '1' ?
-                                                        "Đã Hoàn Thành" : ($value['trang_thai'] == '2' ?
-                                                            "Đang Thực Hiện" : ($value['trang_thai'] == '3' ? "Tạm Dừng" : '')); ?>
-                                                </h3>
+                                            <div style="display: flex">
+                                                <div class="left col-6">
+                                                    <h3>Hợp Đồng Thứ: <?php echo $value['id'] ?></h3>
+                                                    <h3>Tên Hợp Đồng: <?php echo $value['ten_hop_dong']; ?></h3>
+                                                    <h3>Số Hợp Đồng: <?php echo $value['so_hop_dong']; ?></h3>
+                                                    <h3>Ngày Ký: <?php echo date('d/m/Y', strtotime($value['ngay_ky'])); ?></h3>
+                                                    <h3>Phòng Ban: <?php echo $value['id_phong_ban']; ?></h3>
+                                                    <h3>Tên Khách Hàng: <?php echo $value['khach_hang']; ?></h3>
+                                                    <h3>Kinh Phí: <?php echo number_format($value['kinh_phi'], 0, ',', '.') . ' VND'; ?></h3>
+                                                    <h3>Thời Gian Thực Hiện: <?php echo $value['thoi_gian_thuc_hien']; ?></h3>
+                                                    <h3>Ngày Kết Thúc: <?php echo date('d/m/Y', strtotime($value['ngay_ket_thuc'])); ?></h3>
+                                                    <h3>
+                                                        <?php echo $value['trang_thai'] == '1' ?
+                                                            "<span style='color: green;'>Đã Hoàn Thành</span>" :
+                                                            ($value['trang_thai'] == '2' ?
+                                                                "<span style='color: yellow;'>Đang Thực Hiện</span>" :
+                                                                ($value['trang_thai'] == '3' ? "<span style='color: Red;'>Tạm Dừng</span>" : '')); ?>
+                                                    </h3>
+
+                                                </div>
+                                                <div class="right col-6">
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

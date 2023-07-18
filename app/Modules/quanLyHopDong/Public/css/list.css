@@ -7,3 +7,10 @@
     .rotate-animation {
         animation: rotate 2s ease-in-out;
     }
+
+    .popup-content .left{
+        float: left;
+    }
+    .popup-content .left h3{
+        text-align: left;
+    }

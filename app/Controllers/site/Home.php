@@ -1,5 +1,6 @@
 <?php
-include('Models/site/HomeDB.php');
+include(dirname(dirname(dirname(__FILE__))).'/Models/site/HomeDB.php');
+
 class Home{
     public function __construct()
     {

@@ -1,6 +1,6 @@
 <?php
-include "Public/config/config.php";
-include "Models\json_to_api.php";
+include dirname(dirname(dirname(dirname(__FILE__)))). "/Public/config/config.php";
+include dirname(dirname(dirname(dirname(__FILE__)))). "/Models\json_to_api.php";
 
 class  someFunction
 {

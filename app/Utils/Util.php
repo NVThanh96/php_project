@@ -208,7 +208,7 @@ class Util
     //là chức năng nếu sai đường dẫn thì trả về
     public static function abort()
     {
-        require 'Views/errors/404.php';
+        require dirname(dirname(__FILE__)) . '/Views/errors/404.php';
         die();
     }
 
