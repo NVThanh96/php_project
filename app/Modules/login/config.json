@@ -1,0 +1,87 @@
+[
+  {
+    "path": "/login",
+    "controller": "Login::",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/login?action=btnLogin",
+    "controller": "Login::btnLogin",
+    "redirect": null,
+    "hidden": false,
+    "alwaysShow": false
+  },
+  {
+    "path": "/btnLogout",
+    "controller": "Login::btnLogout",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/admin",
+    "controller": "Admin::home",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction",
+    "controller": "SomeFunction::show",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/upload",
+    "controller": "SomeFunction::upload",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/uploadPlugin",
+    "controller": "SomeFunction::uploadPlugin",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/changeActive",
+    "controller": "SomeFunction::changeActive",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/listPlugin",
+    "controller": "SomeFunction::listPlugin",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "name": "/someFunction/removePlugin",
+    "path": "/someFunction/removePlugin",
+    "controller": "SomeFunction::removePlugin",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/showLog",
+    "controller": "SomeFunction::showLog",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
+    "path": "/someFunction/reloadPlugin",
+    "controller": "SomeFunction::reloadPlugin",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  }
+]

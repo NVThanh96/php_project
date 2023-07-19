@@ -52,7 +52,6 @@ foreach ($configArray as $value) {
             }
         }
     }
-
     if ($result !== false) {
         $route = $uriDefault . '/' . $children[$result]['path'];
         ${$folderName . 'Routes'} = [

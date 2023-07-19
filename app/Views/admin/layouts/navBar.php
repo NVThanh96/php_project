@@ -6,18 +6,13 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <!--<li class="nav-item d-none d-sm-inline-block">
-            <a href="/project_php/app/admin/quanLyHopDong" class="nav-link">Home</a>
-        </li>-->
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">
                 <i class="fa-solid fa-house"></i>
             </a>
-            <!--<a href="<?php /*echo ($_SESSION['level'] == 'admin') ? '/project_php/app/admin/quanLyHeThong' : '/project_php/app/admin/quanLyHopDong'; */?>" class="nav-link"></a>-->
-
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo $Default; ?>" class="nav-link">
+            <a href="/home" class="nav-link">
                 <i class="fa-solid fa-tv"></i>
             </a>
         </li>
@@ -27,12 +22,12 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo $DefaultSomeFunction; ?>/upload" class="nav-link">
+            <a href="/someFunction/upload" class="nav-link">
                 <i class="fa-solid fa-upload"></i>
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo $DefaultSomeFunction; ?>/listPlugin" class="nav-link">
+            <a href="/someFunction/listPlugin" class="nav-link">
                 <i class="fa-solid fa-cloud"></i>
             </a>
         </li>
@@ -156,7 +151,7 @@
 
 
         <li <?php echo ($_SESSION['role'] !== 'ROLE_ADMIN') ? 'hidden' : ''; ?> class="nav-item">
-            <a class="nav-link" href="<?php echo $Default; ?>/someFunction/showLog" role="button">
+            <a class="nav-link" href=" /someFunction/showLog" role="button">
                 <i class="fas fa-exclamation"></i>
             </a>
         </li>
@@ -164,7 +159,7 @@
 
 
         <div class="d-lg-flex col-lg-3 justify-content-lg-end" style="margin-left: 20px">
-            <a class="btn btn-danger" href="<?php echo $Default?>/login?action=btnLogout">Logout</a>
+            <a class="btn btn-danger" href="/btnLogout">Logout</a>
         </div>
     </ul>
 </nav>

@@ -1,6 +1,5 @@
 <?php
 $Default = '/JobDnict/php_project/app';
-$DefaultSomeFunction = '/JobDnict/php_project/app/someFunction';
 
 $totalHopDong = (new Utils\Util)->countHopDong();
 $totalUser = (new Utils\Util)->countUser();

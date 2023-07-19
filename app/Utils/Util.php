@@ -160,7 +160,7 @@ class Util
     mục đích là lấy đường dẫn quanLyNhanVien || quanLyHopDong
     ở trong file modules
     */
-    public static function exportPath($foldername ='')
+    public static function exportPath($foldername = '')
     {
         if (isset($_SERVER['PATH_INFO'])) {
             $pathINFO = $_SERVER['PATH_INFO'];
@@ -170,9 +170,9 @@ class Util
         $explode = explode('/', $pathINFO);
 
         /*var_dump($explode);*/
-        $search = array_search($foldername,$explode);
+        $search = array_search($foldername, $explode);
 
-        if ($search == true){
+        if ($search == true) {
             if (isset($explode[$search])) {
                 $path = $explode[$search];
             }
@@ -208,7 +208,7 @@ class Util
     //là chức năng nếu sai đường dẫn thì trả về
     public static function abort()
     {
-        require dirname(dirname(__FILE__)) . '/Views/errors/404.php';
+        require self::dir2(__FILE__) . '/Views/errors/404.php';
         die();
     }
 
@@ -217,7 +217,6 @@ class Util
         echo "<h1>404</h1>";
         echo "<p>Bạn không có quyền truy cập vào</p>";
     }
-
 
     /*public static function getButton()
     {
@@ -282,22 +281,22 @@ class Util
         }
     }*/
 
-/*
-    public static function find_match($data, $path) {
-        foreach ($data as $item) {
-            $a = $item[0]['children'];
-            $count = Count($a);
-            $explodePath = explode('/',$path);
-            for ($i=0;$i<$count;$i++){
-                if($a[$i]['name'] == $explodePath[2]){
-                    if ($a[$i]['role'] == Role::getRoleName($_SESSION['level'])){
-                        return true;
+    /*
+        public static function find_match($data, $path) {
+            foreach ($data as $item) {
+                $a = $item[0]['children'];
+                $count = Count($a);
+                $explodePath = explode('/',$path);
+                for ($i=0;$i<$count;$i++){
+                    if($a[$i]['name'] == $explodePath[2]){
+                        if ($a[$i]['role'] == Role::getRoleName($_SESSION['level'])){
+                            return true;
+                        }
                     }
                 }
             }
-        }
-        return null;
-    }*/
+            return null;
+        }*/
 
     public static function checkAccess()
     {
@@ -323,5 +322,43 @@ class Util
         }
     }
 
+    public static function getDirectoryPath($value, $levels)
+    {
+        $directory = $value;
+        for ($i = 0; $i < $levels; $i++) {
+            $directory = dirname($directory);
+        }
+        return $directory;
+    }
 
+
+    public static function getFileConfig()
+    {
+
+        $directoryConfig = self::getDirectoryPath(__FILE__, 2) . '/Modules/*/config.json';
+        $moduleFilesConfig = glob($directoryConfig, GLOB_NOSORT | GLOB_BRACE);
+        $arr = [];
+        $getLogin = [];
+
+        // [ {pathj: "", controller = ""} , {pathj: "", controller = ""} ]
+        foreach ($moduleFilesConfig as $value) {
+            $json = file_get_contents($value);
+            $json_data = json_decode($json, true);
+            if (!isset($json_data['children'])) {
+                foreach ($json_data as $item) {
+                    $b = ["path" => $item['path'], "controller" => $item['controller']];
+                    array_push($getLogin, $b);
+                }
+            } else if (isset($json_data['controller'])) {
+                $a = ["path" => $json_data['path'], "controller" => $json_data['controller']];
+                array_push($arr, $a);
+            } else {
+                $a = ["path" => $json_data['path'], "controller" => ""];
+                array_push($arr, $a);
+            }
+        }
+        $arr = array_merge($arr, $getLogin);
+
+        return $arr;
+    }
 }

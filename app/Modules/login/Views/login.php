@@ -21,10 +21,8 @@
     <style>
         <?php include "Modules/login/Public/css/style.css"?>
     </style>
-
 </head>
 <body>
-
 
     <div <div class="row login">
 
@@ -96,3 +94,4 @@ width: 100%" type="submit" name="submit" class="btn btn-success" onclick="execut
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
+

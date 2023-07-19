@@ -2,7 +2,7 @@
     {
         "name": "QlHopDong",
         "path": "\/quanLyHopDong",
-        "component": null,
+        "controller": null,
         "redirect": "noRedirect",
         "hidden": false,
         "alwaysShow": false,
@@ -24,6 +24,7 @@
                 "name": "QlHopDongList",
                 "path": "list",
                 "component": "\/quanLyHopDong\/list",
+                "controller": "QuanLyHopDong::List",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -442,6 +443,9 @@
                 },
                 "children": []
             }
-        ]
+        ],
+        "0": {
+            "hidden": false
+        }
     }
 ]

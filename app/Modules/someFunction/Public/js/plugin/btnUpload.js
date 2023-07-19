@@ -48,7 +48,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (event
             });
             setTimeout(() => {
                 messageContainer.style.display = "none";
-                window.location.replace("http://localhost:8080/JobDnict/php_project/app/someFunction/listPlugin");
+                window.location.replace("http://localhost:8080/JobDnict/listPlugin");
             }, 4000);
         })
         .catch(error => {

@@ -1010,4 +1010,186 @@ Stack trace:
 #4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
 #5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(85): Login->__construct()
 #6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:06:06
+Thời gian thực hiện: 0.38764309883118 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689671166.0348)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689671166.0348)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:43:12
+Thời gian thực hiện: 0.39257001876831 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673391.6589)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673391.6589)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:43:21
+Thời gian thực hiện: 0.40834999084473 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673401.3015)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673401.3015)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:43:42
+Thời gian thực hiện: 0.33258295059204 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673422.4657)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673422.4657)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:43:44
+Thời gian thực hiện: 0.38481998443604 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673423.7875)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673423.7875)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:45:59
+Thời gian thực hiện: 0.63758397102356 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673558.9808)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673558.9808)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 16:47:31
+Thời gian thực hiện: 0.36035108566284 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689673651.2856)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689673651.2856)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 17:12:18
+Thời gian thực hiện: 0.37204504013062 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689675138.3101)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689675138.3101)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 17:12:36
+Thời gian thực hiện: 0.35094904899597 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689675155.6687)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689675155.6687)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(89): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 21:09:08
+Thời gian thực hiện: 0.34295511245728 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689689348.1949)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689689348.1949)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(75): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 21:14:09
+Thời gian thực hiện: 0.38787603378296 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689689649.1752)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689689649.1752)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(75): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 21:35:08
+Thời gian thực hiện: 0.36496210098267 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689690908.4763)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689690908.4763)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(75): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 21:40:47
+Thời gian thực hiện: 0.33746600151062 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689691246.9668)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689691246.9668)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(75): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
+#7 {main}Exception: 
+----Thành Công----
+Vào lúc: 08:04:11
+Thời gian thực hiện: 16.205893993378 giây
+ in C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php:87
+Stack trace:
+#0 C:\wamp64\www\JobDnict\php_project\app\Utils\requestAPI.php(54): RequestAPI->processErrorLog('C:\\wamp64\\www\\J...', 'eyJ0eXAiOiJKV1Q...', 1689728635.6732)
+#1 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(51): RequestAPI->checkAPI('eyJ0eXAiOiJKV1Q...', 1689728635.6732)
+#2 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Models\loginDB.php(84): LoginDB::getResponse('trungtamso_admi...', 'Abc@1234')
+#3 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(32): LoginDB::loginWithApi('trungtamso_admi...', 'Abc@1234')
+#4 C:\wamp64\www\JobDnict\php_project\app\Modules\login\Controllers\login.php(13): Login->login()
+#5 C:\wamp64\www\JobDnict\php_project\app\Core\Router.php(75): Login->__construct()
+#6 C:\wamp64\www\JobDnict\php_project\app\index.php(7): Router->run()
 #7 {main}

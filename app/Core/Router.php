@@ -2,7 +2,7 @@
 
 class Router
 {
-    protected array $routes;
+    protected $routes = [];
     protected $noFoundRoutes;
     protected const METHOD_GET = 'GET';
     protected const METHOD_POST = 'POST';
@@ -16,7 +16,6 @@ class Router
             'method' => $method,
             'path' => $path,
             'controller' => $controller,
-            'middleware' => ''
         ];
         return $this;
     }
@@ -42,11 +41,6 @@ class Router
         $this->noFoundRoutes = $handler;
     }
 
-    public function only($key){
-        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
-        return $this;
-    }
-
     protected function abort($code = 404)
     {
         http_response_code($code);
@@ -55,56 +49,34 @@ class Router
     }
 
     public function run(){
-        $requestURI = parse_url($_SERVER['REQUEST_URI']);
-        $requestPath =$requestURI['path'];
-        $method = $_SERVER['REQUEST_METHOD'];
-
-        $callback = null;
-        foreach ($this->routes as $route){
-            if (isset($route['path']) && $route['path'] == $requestPath && $method == $route['method']) {
-                $callback = $route['controller'];
-                $middleware = $route['middleware'];
-                break;
+        $requestURI = parse_url($_SERVER['REQUEST_URI'])['path'];
+        $arrConfigPath = \Utils\Util::getFileConfig();
+        $checkPageNotFound = true;
+        $callback = '';
+        foreach ($arrConfigPath as $value){
+            if($value['path'] == $requestURI && isset($value['controller'])){
+                $checkPageNotFound = false;
+                $callback = $value['controller'];
             }
         }
+
+        /*if ($checkPageNotFound === true){
+            \Utils\Util::abort();
+        }*/
 
         // kiểm tra nếu $callback là 1 chuỗi string (result $callback = Contact::execute)
         if (is_string($callback)){
+
             // thì cắt chuối sau dấu '::'
             $parts = explode('::', $callback);
-            /*kết quả: $parts (http://localhost/project_php/app/admin/quanLyHopDong/list)
-                array (size=2)
-                    0 => string 'QuanLyHopDong' (length=7)
-                    1 => string 'list' (length=7)
-            */
 
-            //kiểm tra nếu $parts là 1 mảng
             if (is_array($parts)){
                 $className = array_shift($parts);
-                //var_dump($className); lấy được "QuanLyHopDong"
                 $controller = new $className;
-
-
-                // dùng để lấy method theo đường dẫn trên sẽ lấy được list
                 $method = array_shift($parts);
-
-                // sau đó dùng $call back để chứa $handler và $method
                 $callback = [$controller,$method];
-                /*Result var_dump($callback)
-                    array (size=2)
-                      0 => object(QuanLyHopDong)[2]
-                      1 => string 'list' (length=4)
-                */
             }
         }
-
-        /*if ($middleware === 'admin') {
-            // Perform your login check here
-            if (!isset($_SESSION['admin'])) {
-                header("Location: /project_php/app/login");
-                exit;
-            }
-        }*/
 
         if (!$callback){
             header("HTTP/1.0 404 NOT FOUND");

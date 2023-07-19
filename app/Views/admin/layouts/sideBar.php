@@ -50,7 +50,7 @@ include "Public/config/config.php"
                         <ul class="nav nav-treeview">
                             <?php foreach ($child['children'] as $child1) : ?>
                                 <li class="nav-item">
-                                    <a href="<?php echo $Default .  $child1['component']; ?>" class="nav-link">
+                                    <a href="<?php echo $child1['component']; ?>" class="nav-link">
                                         <i class="<?php echo $child1['icon']; ?>"></i>
                                         <p><?php echo $child1['moTa']; ?></p>
                                     </a>

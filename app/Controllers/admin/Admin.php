@@ -24,5 +24,6 @@ class Admin
             $message_error = "Vui lòng đăng nhập trước!";
             include("Modules/login/Views/login.php");
         }
+
     }
 }

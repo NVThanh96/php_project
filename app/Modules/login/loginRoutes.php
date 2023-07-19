@@ -27,7 +27,8 @@ $uriDefault =  $Default . $folderName;
 $controller = ucfirst($folderName);
 
 ${$folderName . 'Routes'} = [
-    $uriDefault                 => 'Login::',
+    $uriDefault                 => 'Login::login',
     $uriDefault . '/btnLogin'   => 'Login::btnLogin',
     $uriDefault . '/btnLogout'  => 'Login::btnLogout',
 ];
+

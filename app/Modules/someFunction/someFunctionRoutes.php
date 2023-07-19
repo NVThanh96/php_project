@@ -29,7 +29,7 @@ foreach ($searchResults as $value){
     include $value;
 }
 
-$uriDefault = $Default .'/'.$folderName;
+$uriDefault = '/'.$folderName;
 $controller = ucfirst($folderName);
 
 ${$folderName . 'Routes'} = [

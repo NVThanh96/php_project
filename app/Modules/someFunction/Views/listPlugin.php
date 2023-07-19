@@ -27,10 +27,10 @@ include "Public/config/config.php";
         <div class="flex-container">
             <div class="title col-10">
                 <h1 style="margin-left: 30px">Plugin</h1>
-                <a href="<?php echo $DefaultSomeFunction; ?>/upload" class="nav-link">
+                <a href="/someFunction/upload" class="nav-link">
                     <i class="fa-solid fa-add"></i>
                 </a>
-                <a href="<?php echo $DefaultSomeFunction; ?>/reloadPlugin" class="nav-link">
+                <a href="/someFunction/reloadPlugin" class="nav-link">
                     <i class="fa-solid fa-upload"></i>
                 </a>
             </div>
@@ -88,7 +88,7 @@ include "Public/config/config.php";
                                         <td class="text-center">
                                             <?php
                                             foreach ($getFileConfig as $value) {
-                                                $folderConfig = basename(dirname($value));
+                                                    $folderConfig = basename(dirname($value));
                                                 if ($folderMota == $folderConfig) {
                                                     $json = file_get_contents($value);
                                                     $json_data = json_decode($json, true);
@@ -104,7 +104,8 @@ include "Public/config/config.php";
 
                                         <td class="text-center">
                                             <?php $a = dirname($item) ?>
-                                            <?php $escapedFolderPath = rawurlencode($a); ?>
+                                            <?php $escapedFolderPath = rawurlencode($a);
+                                            ?>
 
                                             <button style="color:red; border: none;background-color: transparent;"
                                                     onclick="deleteFolder('<?php echo $escapedFolderPath ?>')">

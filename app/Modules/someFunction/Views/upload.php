@@ -18,7 +18,7 @@ include "Public/config/config.php";
         <div class="content-header">
             <a style="color:black;display: block; margin: 20px; font-size:15px"
                class="animate__animated animate__fadeInLeft"
-               href="<?php echo $DefaultSomeFunction; ?>/listPlugin">
+               href="/someFunction/listPlugin">
                 <i class="fa-solid fa-arrow-left"> Back</i>
             </a>
 
