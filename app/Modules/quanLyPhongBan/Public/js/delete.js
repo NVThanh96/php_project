@@ -21,7 +21,7 @@ deleteButtons.forEach(btn => {
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = `?controller=quanLyLinhVuc&action=deleteSoft&id=${linhVucID}`;
-                window.location.href = '/project_php/app/admin/quanLyLinhVuc/list';
+                window.location.href = '/quanLyPhongBan/list';
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
             ) {

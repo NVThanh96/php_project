@@ -24,7 +24,8 @@
                 "name": "QlHopDongList",
                 "path": "list",
                 "component": "\/quanLyHopDong\/list",
-                "controller": "QuanLyHopDong::List",
+                "controller": "QuanLyHopDong::list",
+                "views": "Modules\/quanLyHopDong\/Views\/list.php",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -47,6 +48,7 @@
                 "name": "QlHopDongCreate",
                 "path": "create",
                 "component": "\/quanLyHopDong\/create",
+                "controller": "QuanLyHopDong::create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -66,15 +68,108 @@
                 "children": []
             },
             {
+                "name": "QlHopDongAdd",
+                "path": "add",
+                "component": "\/quanLyHopDong\/add",
+                "controller": "QuanLyHopDong::add",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlHopDongCreate\",\"formTitle\":\"Đăng ký Hợp Đồng\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Thêm Hợp Đồng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHopDong\/list",
+                    "component": "\/quanLyHopDong\/create",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
                 "name": "QlHopDongEdit",
-                "path": "edit",
+                "path": "edit?id=",
                 "component": "\/quanLyHopDong\/edit",
+                "controller": "QuanLyHopDong::edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
                 "props": "{\"backRouter\":\"QlHopDongEdit\",\"formTitle\":\"Cập nhật Hợp Đồng\",\"formType\":\"edit\"}",
                 "meta": {
                     "title": "Cập nhật Hợp Đồng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHopDong\/list",
+                    "component": "\/quanLyHopDong\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlHopDongUpdate",
+                "path": "update?id=",
+                "component": "\/quanLyHopDong\/update",
+                "controller": "QuanLyHopDong::update",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlHopDongEdit\",\"formTitle\":\"Cập nhật Hợp Đồng\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Sửa Hợp Đồng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHopDong\/list",
+                    "component": "\/quanLyHopDong\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlHopDongUpdate",
+                "path": "search",
+                "component": "\/quanLyHopDong\/list?",
+                "controller": "QuanLyHopDong::search",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlHopDongEdit\",\"formTitle\":\"Cập nhật Hợp Đồng\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Tìm kiếm Hợp Đồng",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHopDong\/list",
+                    "component": "\/quanLyHopDong\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlHopDongUpdate",
+                "path": "searchHD",
+                "component": "\/quanLyHopDong\/list?searchHD",
+                "controller": "QuanLyHopDong::searchHD",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlHopDongEdit\",\"formTitle\":\"Cập nhật Hợp Đồng\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Tìm kiếm  Hợp Đồng",
                     "icon": null,
                     "noCache": false,
                     "affix": false,
@@ -114,6 +209,7 @@
                 "name": "QlLinhVucList",
                 "path": "list",
                 "component": "\/quanLyLinhVuc\/list",
+                "controller": "quanLyLinhVuc::list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -136,6 +232,7 @@
                 "name": "QlLinhVucCreate",
                 "path": "create",
                 "component": "\/quanLyLinhVuc\/create",
+                "controller": "quanLyLinhVuc::create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -155,9 +252,33 @@
                 "children": []
             },
             {
+                "name": "QlLinhVucAdd",
+                "path": "add",
+                "component": "\/quanLyLinhVuc\/add",
+                "controller": "quanLyLinhVuc::add",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlLinhVucCreate\",\"formTitle\":\"Thêm Lĩnh Vực\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Thêm Lĩnh Vực",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyLinhVuc\/list",
+                    "component": "\/quanLyLinhVuc\/add",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
                 "name": "QlLinhVucEdit",
                 "path": "edit",
                 "component": "\/quanLyLinhVuc\/edit",
+                "controller": "quanLyLinhVuc::edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -170,6 +291,29 @@
                     "breadcrumb": false,
                     "activeMenu": "\/quanLyHeThong\/list",
                     "component": "\/quanLyLinhVuc\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlLinhVucUpdate",
+                "path": "update",
+                "component": "\/quanLyLinhVuc\/update",
+                "controller": "quanLyLinhVuc::update",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlLinhVucEdit\",\"formTitle\":\"Sửa Lĩnh Vực\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Sửa Lĩnh Vực",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyHeThong\/list",
+                    "component": "\/quanLyLinhVuc\/update",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -203,6 +347,7 @@
                 "name": "QlNhanVienList",
                 "path": "list",
                 "component": "\/quanLyNhanVien\/list",
+                "controller": "quanLyNhanVien::list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -225,6 +370,7 @@
                 "name": "QlNhanVienCreate",
                 "path": "create",
                 "component": "\/quanLyNhanVien\/create",
+                "controller": "quanLyNhanVien::create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -244,9 +390,33 @@
                 "children": []
             },
             {
+                "name": "QlNhanVienAdd",
+                "path": "add",
+                "component": "\/quanLyNhanVien\/add",
+                "controller": "quanLyNhanVien::add",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlNhanVienCreate\",\"formTitle\":\"Đăng ký Nhân Viên\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Thêm Nhân Viên",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyNhanVien\/list",
+                    "component": "\/quanLyNhanVien\/add",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
                 "name": "QlNhanVienEdit",
-                "path": "edit",
+                "path": "edit?id=",
                 "component": "\/quanLyNhanVien\/edit",
+                "controller": "quanLyNhanVien::edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -259,6 +429,29 @@
                     "breadcrumb": false,
                     "activeMenu": "\/quanLyNhanVien\/list",
                     "component": "\/quanLyNhanVien\/edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlNhanVienUpdate",
+                "path": "update?id=",
+                "component": "\/quanLyNhanVien\/update",
+                "controller": "quanLyNhanVien::update",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlNhanVienEdit\",\"formTitle\":\"Cập nhật Nhân Viên\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Cập nhật Nhân Viên",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyNhanVien\/list",
+                    "component": "\/quanLyNhanVien\/update",
                     "link": null,
                     "isIframe": false,
                     "roles": []
@@ -292,6 +485,7 @@
                 "name": "QlPhongBanList",
                 "path": "list",
                 "component": "\/quanLyPhongBan\/list",
+                "controller": "QuanLyPhongBan::list",
                 "redirect": null,
                 "hidden": false,
                 "alwaysShow": false,
@@ -314,6 +508,7 @@
                 "name": "QlPhongBanCreate",
                 "path": "create",
                 "component": "\/quanLyPhongBan\/create",
+                "controller": "QuanLyPhongBan::create",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -333,9 +528,33 @@
                 "children": []
             },
             {
+                "name": "QlPhongBanAdd",
+                "path": "add",
+                "component": "\/quanLyPhongBan\/add",
+                "controller": "QuanLyPhongBan::add",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlPhongBanCreate\",\"formTitle\":\"Thêm Phòng Ban\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Thêm Phòng Ban",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "\/quanLyPhongBan\/list",
+                    "component": "\/quanLyPhongBan\/create",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
                 "name": "QlPhongBanEdit",
                 "path": "edit",
                 "component": "\/quanLyPhongBan\/edit",
+                "controller": "QuanLyPhongBan::edit",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
@@ -353,99 +572,30 @@
                     "roles": []
                 },
                 "children": []
-            }
-        ]
-    },
-    {
-        "name": "QlThongTin",
-        "path": "\/quanLyThongTin",
-        "component": null,
-        "redirect": "noRedirect",
-        "hidden": true,
-        "alwaysShow": false,
-        "props": null,
-        "meta": {
-            "title": "Quản Lý Thông Tin",
-            "icon": null,
-            "noCache": false,
-            "affix": false,
-            "breadcrumb": false,
-            "activeMenu": null,
-            "component": null,
-            "link": null,
-            "isIframe": false,
-            "roles": []
-        },
-        "children": [
-            {
-                "name": "QlThongTinList",
-                "path": "list",
-                "component": "\/quanLyThongTin\/list",
-                "redirect": null,
-                "hidden": false,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlThongTinList\",\"formTitle\":\"Danh sách Thông Tin\",\"formType\":\"list\"}",
-                "meta": {
-                    "title": "Danh sách Thông Tin",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/list",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
             },
             {
-                "name": "QlThongTinCreate",
-                "path": "create",
-                "component": "\/quanLyThongTin\/create",
+                "name": "QlPhongBanUpdate",
+                "path": "update",
+                "component": "\/quanLyPhongBan\/update",
+                "controller": "QuanLyPhongBan::update",
                 "redirect": null,
                 "hidden": true,
                 "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlThongTinCreate\",\"formTitle\":\"Đăng ký Thông Tin\",\"formType\":\"create\"}",
+                "props": "{\"backRouter\":\"QlPhongBanEdit\",\"formTitle\":\"Sửa Phòng Ban\",\"formType\":\"edit\"}",
                 "meta": {
-                    "title": "Đăng ký Thông Tin",
+                    "title": "Sửa Phòng Ban",
                     "icon": null,
                     "noCache": false,
                     "affix": false,
                     "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/create",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
-            },
-            {
-                "name": "QlThongTinEdit",
-                "path": "edit",
-                "component": "\/quanLyThongTin\/edit",
-                "redirect": null,
-                "hidden": true,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlThongTinEdit\",\"formTitle\":\"Cập nhật Thông Tin\",\"formType\":\"edit\"}",
-                "meta": {
-                    "title": "Cập nhật Thông Tin",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "\/quanLyThongTin\/list",
-                    "component": "\/quanLyThongTin\/edit",
+                    "activeMenu": "\/quanLyPhongBan\/list",
+                    "component": "\/quanLyPhongBan\/edit",
                     "link": null,
                     "isIframe": false,
                     "roles": []
                 },
                 "children": []
             }
-        ],
-        "0": {
-            "hidden": false
-        }
+        ]
     }
 ]

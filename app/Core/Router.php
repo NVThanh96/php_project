@@ -57,6 +57,7 @@ class Router
             if($value['path'] == $requestURI && isset($value['controller'])){
                 $checkPageNotFound = false;
                 $callback = $value['controller'];
+
             }
         }
 
@@ -69,7 +70,6 @@ class Router
 
             // thì cắt chuối sau dấu '::'
             $parts = explode('::', $callback);
-
             if (is_array($parts)){
                 $className = array_shift($parts);
                 $controller = new $className;

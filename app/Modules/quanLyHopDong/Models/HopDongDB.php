@@ -78,7 +78,7 @@ class HopDongDB
         $query = "SELECT hop_dong.* 
               FROM hop_dong 
               WHERE hop_dong.daxoa = 0
-              ORDER BY hop_dong.so_hop_dong ASC LIMIT :limit OFFSET :offset";
+              ORDER BY hop_dong.id desc LIMIT :limit OFFSET :offset";
         $stmt = $db->prepare($query);
         $stmt->bindValue(':limit', $items_per_page, \PDO::PARAM_INT);
         $stmt->bindValue(':offset', $offset, \PDO::PARAM_INT);

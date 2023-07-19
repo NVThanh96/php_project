@@ -77,7 +77,7 @@ class LoginDB
                 $_SESSION['role'] = $role;
             }
             $_SESSION['rolelinhvuc'] = $sideBarDecode['roles'][0] ?? '';
-            header('location: admin');
+            header('location: /admin');
             $endTime = microtime(true); // Record the end time
             $executionTime = $endTime - $startTime; // Calculate the execution time
 

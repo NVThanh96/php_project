@@ -1,7 +1,7 @@
 <section class="content" style="margin-bottom: 0">
     <div class="container-fluid">
         <h2 class="text-center display-5">TÌM KIẾM</h2>
-        <form action="list" data-select2-id="10">
+        <form action="list?" data-select2-id="10">
             <div class="row">
                 <div class="col-1">
                 </div>

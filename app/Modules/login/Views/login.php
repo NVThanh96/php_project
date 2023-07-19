@@ -37,7 +37,7 @@
         </div>
         <div class="col-sm-3">
             <div class="input-login">
-                <a type="reset" href="/JobDnict/php_project/app/"><i class="fa-solid fa-arrow-left"></i></a>
+                <a type="reset" href="/"><i class="fa-solid fa-arrow-left"></i></a>
 
                 <form name="frmUser" id="frmUser" method="post" action="login?action=btnLogin">
                     <div class="message">

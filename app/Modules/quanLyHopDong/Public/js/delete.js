@@ -21,7 +21,7 @@ deleteButtons.forEach(btn => {
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = `?controller=hopDong&action=deleteSoft&id=${hopDongId}`;
-                window.location.href = '/project_php/app/admin/quanLyHopDong/list';
+                window.location.href = '/quanLyHopDong/list';
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
             ) {

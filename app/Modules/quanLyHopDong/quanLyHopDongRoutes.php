@@ -33,7 +33,7 @@ foreach ($searchResults as $value){
 
 $uriDefault = $Default . $folderName;
 $controller = ucfirst($folderName);
-
+/*
 $configLink = dirname(__FILE__) . '\*.json';
 $configArray = glob($configLink, GLOB_NOSORT | GLOB_BRACE);
 foreach ($configArray as $value) {
@@ -66,4 +66,4 @@ foreach ($configArray as $value) {
         ];
     }
 }
-
+*/

@@ -114,8 +114,6 @@ class  someFunction
         // Handle the file upload and get the message
         $someFunction->handleFileUpload();
 
-        $this->listPlugin();
-
     }
 
     public function showLog()
@@ -152,14 +150,11 @@ class  someFunction
         // Handle the response from the target API
         if ($result !== false) {
             // Success
-
             $this->listPlugin();
         } else {
             // Error
             echo "Error pushing values to the target API.";
         }
     }
-
-
 
 }

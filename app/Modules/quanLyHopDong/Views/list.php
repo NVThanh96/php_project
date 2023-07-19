@@ -99,7 +99,7 @@ include "Views/admin/layouts/header.php";
                                         </td>
 
                                         <td class="text-center">
-                                            <a href="edit?id=<?= $value['id'] ?>"><i
+                                            <a href="/quanLyHopDong/edit?id=<?= $value['id'] ?>"><i
                                                         class="fa-solid fa-pen"></i></a>
                                         </td>
 

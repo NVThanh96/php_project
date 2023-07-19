@@ -208,7 +208,7 @@ class Util
     //là chức năng nếu sai đường dẫn thì trả về
     public static function abort()
     {
-        require self::dir2(__FILE__) . '/Views/errors/404.php';
+        require self::getDirectoryPath(__FILE__,2) . '/Views/errors/404.php';
         die();
     }
 
@@ -353,6 +353,13 @@ class Util
                 $a = ["path" => $json_data['path'], "controller" => $json_data['controller']];
                 array_push($arr, $a);
             } else {
+                if (isset($json_data['children']) ){
+                    foreach ($json_data['children'] as $item)
+                    if (isset($item['controller'])) {
+                        $c = ["path" => $item['component'], "controller" => $item['controller']];
+                        array_push($arr, $c);
+                    }
+                }
                 $a = ["path" => $json_data['path'], "controller" => ""];
                 array_push($arr, $a);
             }

@@ -52,7 +52,7 @@ class quanLyLinhVuc
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/create.php');
+            include('Modules/quanLyLinhVuc/Views/create.php');
         } else {
             $this->error();
         }
@@ -73,7 +73,7 @@ class quanLyLinhVuc
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/edit.php');
+            include('Modules/quanLyLinhVuc/Views/edit.php');
         } else {
             $this->error();
         }
@@ -102,7 +102,7 @@ class quanLyLinhVuc
 
         $list_linh_vuc = $result['linhVuc'];
         $total_pages = $result['total_pages'];
-        include('Modules/' . $path . '/Views/list.php');
+        include('Modules/quanLyLinhVuc/Views/list.php');
     }
 
     public

@@ -21,8 +21,15 @@
     "alwaysShow": false
   },
   {
+    "path": "/",
+    "controller": "Home::",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },
+  {
     "path": "/admin",
-    "controller": "Admin::home",
+    "controller": "Admin::",
     "redirect": null,
     "hidden": true,
     "alwaysShow": false

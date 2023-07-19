@@ -20,7 +20,7 @@ class quanLyNhanVien
                 $this->edit();
                 break;
             case 'update':
-                $this->updateNhanVien();
+                $this->update();
                 break;
             case 'deleteSoft':
                 $this->softDeleteNhanVien();
@@ -51,7 +51,7 @@ class quanLyNhanVien
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/create.php');
+            include('Modules/quanLyNhanVien/Views/create.php');
         } else {
             $this->error();
         }
@@ -73,13 +73,13 @@ class quanLyNhanVien
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
 
-            include('Modules/' . $path . '/Views/edit.php');
+            include('Modules/quanLyNhanVien/Views/edit.php');
         } else {
             $this->error();
         }
     }
 
-    public function updateNhanVien()
+    public function update()
     {
         $id = $_SESSION['id'];
         NhanVienDB::editNhanVien($id);
@@ -100,7 +100,7 @@ class quanLyNhanVien
 
         $list_nhan_vien = $result['nhanVien'];
         $total_pages = $result['total_pages'];
-        include('Modules/' . $path . '/Views/list.php');
+        include('Modules/quanLyNhanVien/Views/list.php');
     }
 
     public function softDeleteNhanVien()

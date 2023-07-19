@@ -14,18 +14,14 @@ $path là tên các folder ở trong modules
 $Default = '/';
 $uriDefault = $Default;
 // để lấy giá trị sau biến localhost '/project_php/app/'
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-// Get the portion of the URI after "app/"
-$afterApp = strstr($uri, '/app');
-if ($afterApp !== false) {
-    $uri = substr($afterApp, strlen('/app'));
-} else {
-    $uri = '';
-}
+$uri = $_SERVER['REQUEST_URI'];
+
+$router = new Router();
+
 
 // sau đó bỏ vào trong $routes để lấy được controller
 $routes = [
-    $uriDefault . 'home' => 'Home::',
+    $uriDefault . 'home' => 'Home::show',
     $uriDefault . 'student' => 'Student::',
     $uriDefault . 'api' => 'API::',
     $uriDefault . 'information' => 'Information::',
@@ -71,7 +67,6 @@ foreach ($moduleFiles as $file) {
 
 $extendRoutes = $allRoutes;
 
-$router = new Router();
 /*dùng để gọp tất cả các mảng lại với nhau*/
 $combinedRoutes = array_merge($routes, $routeAdmin, $extendRoutes);
 

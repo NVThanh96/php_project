@@ -6,7 +6,7 @@ class QuanLyHopDong
 {
     public function __construct()
     {
-        $action = filter_input(INPUT_POST, 'action') ?? filter_input(INPUT_GET, 'action') ?? 'login';
+        $action = filter_input(INPUT_POST, 'action') ?? filter_input(INPUT_GET, 'action') ?? '';
         switch ($action) {
             case 'show':
                 $this->show();
@@ -59,7 +59,7 @@ class QuanLyHopDong
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/create.php');
+            include('Modules/quanLyHopDong/Views/create.php');
         } else {
             $this->error();
         }
@@ -99,7 +99,7 @@ class QuanLyHopDong
         $folderName = basename(dirname($folderPath));
         $path = \Utils\Util::exportPath($folderName);
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/edit.php');
+            include('Modules/quanLyHopDong/Views/edit.php');
         } else {
             $this->error();
         }
@@ -135,14 +135,14 @@ class QuanLyHopDong
 
         $list_hop_dong = $result['hopDong'] ?? '';
         $total_pages = $result['total_pages'] ?? '';
-        $pathInfor = $_SERVER['PATH_INFO'];
+        $pathInfor = $_SERVER['PATH_INFO'] ?? '';
         $scriptName = dirname($_SERVER['SCRIPT_FILENAME']);
         $pathJson = file_get_contents($scriptName . "\Views\admin\layouts\sideBar.json");
         $structured_data = json_decode($pathJson, true);
 
         $data = $structured_data;
         if (!empty($_SESSION['email'])) {
-            include('Modules/' . $path . '/Views/list.php');
+            include('Modules/quanLyHopDong/Views/list.php');
         } else {
             $this->error();
         }

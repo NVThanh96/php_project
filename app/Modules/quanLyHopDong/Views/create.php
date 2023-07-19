@@ -32,6 +32,7 @@ include "Views/admin/layouts/header.php";
                            class="btn hover btn-flat float-left" href="list"><i
                                     class="fa-solid fa-arrow-left"></i></a>
                         <h1 class="card-title"><?php echo $node['ten'] ?? "" ?></h1>
+
                     </div>
                     <form action="add" method="POST" enctype="multipart/form-data">
                         <button type="submit" class="btn btn-success" style="float: right; padding: 5px 20px">Lưu

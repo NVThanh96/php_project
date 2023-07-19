@@ -33,7 +33,7 @@ include "Public/config/config.php"
                     <a style="margin-left:-15px;font-size: 24px" class="btn hover btn-flat float-left" href="list"><i class="fa-solid fa-arrow-left"></i></a>
                     <h1 class="card-title"><?php echo $node['ten'] ?? "" ?></h1>
                 </div>
-                <form action="create" method="post">
+                <form action="add" method="post">
                     <div class="card-body">
 
                         <div class="form-group">

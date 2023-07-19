@@ -4,7 +4,7 @@ class Admin
 {
     public function __construct()
     {
-        $action = filter_input(INPUT_POST, 'action') ?? filter_input(INPUT_GET, 'action') ?? '';
+        $action = filter_input(INPUT_POST, 'action') ?? filter_input(INPUT_GET, 'action') ?? 'home';
 
             switch ($action) {
                 case 'home':
