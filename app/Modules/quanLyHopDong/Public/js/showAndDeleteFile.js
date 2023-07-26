@@ -5,12 +5,11 @@ $("#files-names").empty();
 // Iterate over each file record and add it to the file list
 const fileIDHD = <?php echo $fileIDHDJson; ?>;
 
-
 for (let i = 0; i < fileIDHD.length; i++) {
     let fileBloc = $('<span/>', { class: 'file-block' });
     let fileName = $('<span/>').append(
         $('<a/>', {
-            href: fileIDHD[i].duong_dan,
+            href: fileIDHD[i].duong_dan.replace(/^\\JobDnict\\php_project\\app/, ''),
             text: fileIDHD[i].ten,
             click: function(e) {
                 e.preventDefault();
@@ -47,7 +46,11 @@ $(document).on('click', 'span.file-delete', function() {
     $('#sexoafile').val(xoaArray);
 });
 
+
+
+
 $(document).ready(function() {
+
     // Function to update the database with the files to be deleted
     function updateDeletedFiles(files) {
         $.ajax({
@@ -79,4 +82,7 @@ $(document).ready(function() {
         // Submit the form
         this.submit();
     });
+
 });
+
+

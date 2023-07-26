@@ -346,17 +346,15 @@ class Util
             $json_data = json_decode($json, true);
             if (!isset($json_data['children'])) {
                 foreach ($json_data as $item) {
-                    $b = ["path" => $item['path'], "controller" => $item['controller']];
-                    array_push($getLogin, $b);
+                    // dùng để lấy path và 1 ố controller của web
+                    $someFunction = ["path" => $item['path'], "controller" => $item['controller']];
+                    array_push($getLogin, $someFunction);
                 }
-            } else if (isset($json_data['controller'])) {
-                $a = ["path" => $json_data['path'], "controller" => $json_data['controller']];
-                array_push($arr, $a);
-            } else {
+            }else {
                 if (isset($json_data['children']) ){
                     foreach ($json_data['children'] as $item)
-                    if (isset($item['controller'])) {
-                        $c = ["path" => $item['component'], "controller" => $item['controller']];
+                    if (isset($item['meta']['component'])) {
+                        $c = ["path" => $item['component'], "controller" => $item['meta']['component']];
                         array_push($arr, $c);
                     }
                 }

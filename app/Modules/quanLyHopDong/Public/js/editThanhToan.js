@@ -14,39 +14,20 @@ $(document).ready(function () {
 
     $('#add-payment-btn').click(function () {
         var paymentGroups = $('.payment-group'); // Get all existing payment groups
-        console.log(paymentGroups)
 
         if (paymentGroups.length === 0) {
             // Create the first payment group if none exists
             var newPaymentGroup = createPaymentGroup(1);
             $('#payment-section').append(newPaymentGroup);
         } else {
-            if (Array.isArray(fileThanhToanJson)) {
-                let foundDeleted = false;
-
-                for (let i = 0; i < fileThanhToanJson.length; i++) {
-                    const $checkDaXoa = fileThanhToanJson[i]['daxoa'];
-
-                    if ($checkDaXoa === 0) {
-                        foundDeleted = true;
-                        break;
-                    }
-                }
-
-                if (foundDeleted) {
-                    var lastPaymentGroup = paymentGroups.last();
-                    var lastPaymentGroupNumber = extractPaymentGroupNumber(lastPaymentGroup);
-                    var newPaymentGroupNumber = lastPaymentGroupNumber + 1;
-                    var newPaymentGroup = createPaymentGroup(newPaymentGroupNumber);
-                    lastPaymentGroup.after(newPaymentGroup);
-                }
-            } else {
-                console.log('fileThanhToanJson is not an array.');
-            }
+            var lastPaymentGroup = paymentGroups.last();
+            var lastPaymentGroupNumber = parseInt(lastPaymentGroup.find('h4').text().match(/\d+/)[0]);
+            var newPaymentGroupNumber = lastPaymentGroupNumber + 1;
+            var newPaymentGroup = createPaymentGroup(newPaymentGroupNumber);
+            lastPaymentGroup.after(newPaymentGroup);
         }
-
-        paymentCountNext++; // Increment the payment count
     });
+
 
     function createPaymentGroup(number) {
         var paymentGroup = $('<div class="payment-group">' +

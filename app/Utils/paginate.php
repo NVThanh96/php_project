@@ -29,15 +29,10 @@
     $prevPage = $page_number - 1;
     $nextPage = $page_number + 1;
     $searchParams = http_build_query($_GET); // Get the current search parameters
-
     $url = 'list?' . $searchParams;
 
     // Remove the existing page parameter from the URL if it exists
     $url = preg_replace('/([&\?])page=[^&]*&?/', '$1', $url);
-
-    // Remove the search parameter if it is empty
-    $url = preg_replace('/([&\?])search=&?/', '$1', $url);
-
     if ($page_number > 1) {
         $pageURL .= "<a href='$url&page=$prevPage'>Prev</a>";
     }
@@ -57,3 +52,5 @@
     echo $pageURL;
     ?>
 </div>
+
+

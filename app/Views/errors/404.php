@@ -1165,6 +1165,6 @@
         <div class="number">4</div>
     </div>
     <div class="subtitle">Oops. Looks like you took a wrong turn.</div>
-    <a class="btn btn-back" href="/JobDnict/php_project/app/admin">Go back</a>
+    <a class="btn btn-back" href="/admin">Go back</a>
 </div>
 

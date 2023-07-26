@@ -1,4 +1,8 @@
 
+<?php
+include "Public/config/config.php"
+?>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="content-wrapper">
     <div class="content-header">
@@ -18,7 +22,27 @@
     </div>
 
     <!-- Main content -->
-    <section class="content">
-        <?php include "chart.php" ?>
-    </section>
+    <?php if (isset($readFileJson)):?>
+        <?php
+        foreach ($readFileJson as $child):
+            $getName = str_replace('/', '', $child['path']);
+            $directory = dirname(__DIR__) . '\layouts\chart\*';
+            $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
+            $paths = [];
+
+            foreach ($moduleFiles as $key => $value) {
+                $folderName = str_replace('.php', '', basename($value));
+                $paths[] = $folderName;
+            }
+            ?>
+
+            <?php if (in_array($getName, $paths)): ?>
+            <section class="content">
+                <?php include "chart/quanLyHopDong.php"; ?>
+            </section>
+        <?php endif; ?>
+
+        <?php endforeach; ?>
+    <?php endif;?>
+
 </body>

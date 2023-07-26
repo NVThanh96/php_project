@@ -1,0 +1,134 @@
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+input[type="text"],
+input[type="number"],
+select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.card-body {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin: 10px 0;
+}
+#filesList {
+    border: dashed 1px rgba(213, 205, 205, 0.84);
+    padding: 10px;
+    border-radius: 5px;
+}
+.payment-group {
+    margin-bottom: 20px;
+}
+
+.payment-group h4 {
+    margin-bottom: 10px;
+}
+
+.payment-group .form-group {
+    margin-bottom: 15px;
+}
+
+.payment-group .form-group:last-child {
+    margin-bottom: 0;
+}
+.contentRight {
+    text-align: center;
+}
+
+.content_TT input {
+    border: none;
+    background-color: transparent;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content_TT p {
+    margin-right: 10px;
+}
+
+/* Primary blue color */
+:root {
+    --primary-color: #007bff;
+}
+
+/* Secondary gray color */
+:root {
+    --secondary-color: #ccc;
+}
+
+/* Button hover color */
+button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* File attachment area border color */
+#filesList {
+    border: dashed 1px var(--secondary-color);
+}
+
+button {
+    /* Existing styles */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    /* Existing styles */
+    transform: scale(1.05);
+}
+
+.card-body {
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+}
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.payment-group {
+    position: relative;
+}
+
+.payment-group.slide-up {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+.payment-group .close:hover {
+    color: var(--primary-color);
+}

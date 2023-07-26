@@ -28,11 +28,11 @@
 
         <!--<i class="infinity"></i>-->
         <div class="col-sm-9 left">
-            <img style="width: 100%" class="img" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\img1.png")); ?>'>
-            <img class="icon1" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\icon11.png")); ?>'>
-            <img class="icon2" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\icon22.png")); ?>'>
-            <img class="icon3" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\global.png")); ?>'>
-            <img class="icon4" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("C:\wamp64\www\JobDnict\php_project\app\Modules\login\Public\img\chart.png")); ?>'>
+            <img style="width: 100%" class="img" src="\Modules\login\Public\img\img1.png">
+            <img class="icon1" src="\Modules\login\Public\img\icon11.png">
+            <img class="icon2" src="\Modules\login\Public\img\icon22.png">
+            <img class="icon3" src=" \Modules\login\Public\img\global.png">
+            <img class="icon4" src="\Modules\login\Public\img\chart.png">
 
         </div>
         <div class="col-sm-3">

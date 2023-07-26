@@ -45,7 +45,7 @@
 
     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
         <li>
-            <a href="/JobDnict/php_project/app" class="nav-link text-secondary">
+            <a href="/" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#home"></use>
                 </svg>
@@ -54,7 +54,7 @@
         </li>
         <li>
 
-            <a href="student" class="nav-link text-secondary">
+            <a href="/student" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#speedometer2"></use>
                 </svg>

@@ -1,0 +1,133 @@
+    {
+        "name": "QlThongTin",
+        "path": "/QuanLyThongTin",
+        "component": null,
+        "redirect": "noRedirect",
+        "hidden": true,
+        "alwaysShow": false,
+        "props": null,
+        "meta": {
+            "title": "Quản Lý Thông Tin",
+            "icon": null,
+            "noCache": false,
+            "affix": false,
+            "breadcrumb": false,
+            "activeMenu": null,
+            "component": null,
+            "link": null,
+            "isIframe": false,
+            "roles": []
+        },
+        "children": [
+            {
+                "name": "QlThongTinList",
+                "path": "list",
+                "component": "/QuanLyThongTin/list",
+                "redirect": null,
+                "hidden": false,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlThongTinList\",\"formTitle\":\"Danh sách Thông Tin\",\"formType\":\"list\"}",
+                "meta": {
+                    "title": "Danh sách Thông Tin",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "/QuanLyThongTin/list",
+                    "component": "quanLyThongTin::list",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlThongTinCreate",
+                "path": "create",
+                "component": "/QuanLyThongTin/create",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlThongTinCreate\",\"formTitle\":\"Đăng ký Thông Tin\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Đăng ký Thông Tin",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "/QuanLyThongTin/create",
+                    "component": "quanLyThongTin::create",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlThongTinAdd",
+                "path": "add",
+                "component": "/QuanLyThongTin/add",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlThongTinCreate\",\"formTitle\":\"Theem Thông Tin\",\"formType\":\"create\"}",
+                "meta": {
+                    "title": "Thêm Thông Tin",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "/QuanLyThongTin/add",
+                    "component": "quanLyThongTin::add",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlThongTinEdit",
+                "path": "edit",
+                "component": "/QuanLyThongTin/edit",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlThongTinEdit\",\"formTitle\":\"Cập nhật Thông Tin\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Cập nhật Thông Tin",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "/QuanLyThongTin/edit",
+                    "component": "quanLyThongTin::edit",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            },
+            {
+                "name": "QlThongTinUpdate",
+                "path": "update",
+                "component": "/QuanLyThongTin/update",
+                "redirect": null,
+                "hidden": true,
+                "alwaysShow": false,
+                "props": "{\"backRouter\":\"QlThongTinEdit\",\"formTitle\":\"Cập nhật Thông Tin\",\"formType\":\"edit\"}",
+                "meta": {
+                    "title": "Cập nhật Thông Tin",
+                    "icon": null,
+                    "noCache": false,
+                    "affix": false,
+                    "breadcrumb": false,
+                    "activeMenu": "/QuanLyThongTin/update",
+                    "component": "quanLyThongTin::update",
+                    "link": null,
+                    "isIframe": false,
+                    "roles": []
+                },
+                "children": []
+            }
+        ]
+    }

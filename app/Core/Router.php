@@ -57,17 +57,15 @@ class Router
             if($value['path'] == $requestURI && isset($value['controller'])){
                 $checkPageNotFound = false;
                 $callback = $value['controller'];
-
             }
         }
 
-        /*if ($checkPageNotFound === true){
+        if ($checkPageNotFound === true){
             \Utils\Util::abort();
-        }*/
+        }
 
         // kiểm tra nếu $callback là 1 chuỗi string (result $callback = Contact::execute)
         if (is_string($callback)){
-
             // thì cắt chuối sau dấu '::'
             $parts = explode('::', $callback);
             if (is_array($parts)){
@@ -75,6 +73,7 @@ class Router
                 $controller = new $className;
                 $method = array_shift($parts);
                 $callback = [$controller,$method];
+
             }
         }
 

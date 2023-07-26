@@ -12,7 +12,7 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/home" class="nav-link">
+            <a href="/" class="nav-link">
                 <i class="fa-solid fa-tv"></i>
             </a>
         </li>

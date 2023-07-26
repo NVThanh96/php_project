@@ -21,6 +21,9 @@ class Login
     }
     public function index($message_error = null)
     {
+        /*var_dump(dirname(__FILE__));
+        var_dump(dirname(__DIR__));
+        var_dump(dirname($_SERVER));*/
         include('Modules/login/Views/login.php');
     }
 

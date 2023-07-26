@@ -1,139 +1,133 @@
-    {
-        "name": "QlPhongBan",
-        "path": "/quanLyPhongBan",
+{
+    "name": "QlPhongBan",
+    "path": "\/quanLyPhongBan",
+    "component": null,
+    "redirect": "noRedirect",
+    "hidden": false,
+    "alwaysShow": false,
+    "props": null,
+    "meta": {
+        "title": "Quản Lý Phòng Ban",
+        "icon": null,
+        "noCache": false,
+        "affix": false,
+        "breadcrumb": false,
+        "activeMenu": null,
         "component": null,
-        "redirect": "noRedirect",
-        "hidden": false,
-        "alwaysShow": false,
-        "props": null,
-        "meta": {
-            "title": "Quản Lý Phòng Ban",
-            "icon": null,
-            "noCache": false,
-            "affix": false,
-            "breadcrumb": false,
-            "activeMenu": null,
-            "component": null,
-            "link": null,
-            "isIframe": false,
-            "roles": []
+        "link": null,
+        "isIframe": false,
+        "roles": []
+    },
+    "children": [
+        {
+            "name": "QlPhongBanList",
+            "path": "list",
+            "component": "\/quanLyPhongBan\/list",
+            "redirect": null,
+            "hidden": false,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"QlPhongBanList\",\"formTitle\":\"Danh sách Phòng Ban\",\"formType\":\"list\"}",
+            "meta": {
+                "title": "Danh sách Phòng Ban",
+                "icon": null,
+                "noCache": false,
+                "affix": false,
+                "breadcrumb": false,
+                "activeMenu": "\/quanLyPhongBan\/list",
+                "component": "QuanLyPhongBan::list",
+                "link": null,
+                "isIframe": false,
+                "roles": []
+            },
+            "children": []
         },
-        "children": [
-            {
-                "name": "QlPhongBanList",
-                "path": "list",
-                "component": "/quanLyPhongBan/list",
-                "controller": "QuanLyPhongBan::list",
-                "redirect": null,
-                "hidden": false,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlPhongBanList\",\"formTitle\":\"Danh sách Phòng Ban\",\"formType\":\"list\"}",
-                "meta": {
-                    "title": "Danh sách Phòng Ban",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "/quanLyPhongBan/list",
-                    "component": "/quanLyPhongBan/list",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
+        {
+            "name": "QlPhongBanCreate",
+            "path": "create",
+            "component": "\/quanLyPhongBan\/create",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"QlPhongBanCreate\",\"formTitle\":\"Đăng ký Phòng Ban\",\"formType\":\"create\"}",
+            "meta": {
+                "title": "Đăng ký Phòng Ban",
+                "icon": null,
+                "noCache": false,
+                "affix": false,
+                "breadcrumb": false,
+                "activeMenu": "\/quanLyPhongBan\/create",
+                "component": "QuanLyPhongBan::create",
+                "link": null,
+                "isIframe": false,
+                "roles": []
             },
-            {
-                "name": "QlPhongBanCreate",
-                "path": "create",
-                "component": "/quanLyPhongBan/create",
-                "controller": "QuanLyPhongBan::create",
-
-                "redirect": null,
-                "hidden": true,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlPhongBanCreate\",\"formTitle\":\"Đăng ký Phòng Ban\",\"formType\":\"create\"}",
-                "meta": {
-                    "title": "Đăng ký Phòng Ban",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "/quanLyPhongBan/list",
-                    "component": "/quanLyPhongBan/create",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
+            "children": []
+        },
+        {
+            "name": "QlPhongBanAdd",
+            "path": "add",
+            "component": "\/quanLyPhongBan\/add",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"QlPhongBanCreate\",\"formTitle\":\"Thêm Phòng Ban\",\"formType\":\"create\"}",
+            "meta": {
+                "title": "Thêm Phòng Ban",
+                "icon": null,
+                "noCache": false,
+                "affix": false,
+                "breadcrumb": false,
+                "activeMenu": "\/quanLyPhongBan\/add",
+                "component": "QuanLyPhongBan::add",
+                "link": null,
+                "isIframe": false,
+                "roles": []
             },
-            {
-                "name": "QlPhongBanAdd",
-                "path": "add",
-                "component": "/quanLyPhongBan/add",
-                "controller": "QuanLyPhongBan::add",
-                "redirect": null,
-                "hidden": true,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlPhongBanCreate\",\"formTitle\":\"Thêm Phòng Ban\",\"formType\":\"create\"}",
-                "meta": {
-                    "title": "Thêm Phòng Ban",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "/quanLyPhongBan/list",
-                    "component": "/quanLyPhongBan/create",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
+            "children": []
+        },
+        {
+            "name": "QlPhongBanEdit",
+            "path": "edit",
+            "component": "\/quanLyPhongBan\/edit",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"QlPhongBanEdit\",\"formTitle\":\"Cập nhật Phòng Ban\",\"formType\":\"edit\"}",
+            "meta": {
+                "title": "Cập nhật Phòng Ban",
+                "icon": null,
+                "noCache": false,
+                "affix": false,
+                "breadcrumb": false,
+                "activeMenu": "\/quanLyPhongBan\/edit",
+                "component": "QuanLyPhongBan::edit",
+                "link": null,
+                "isIframe": false,
+                "roles": []
             },
-            {
-                "name": "QlPhongBanEdit",
-                "path": "edit",
-                "component": "/quanLyPhongBan/edit",
-                "controller": "QuanLyPhongBan::edit",
-                "redirect": null,
-                "hidden": true,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlPhongBanEdit\",\"formTitle\":\"Cập nhật Phòng Ban\",\"formType\":\"edit\"}",
-                "meta": {
-                    "title": "Cập nhật Phòng Ban",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "/quanLyPhongBan/list",
-                    "component": "/quanLyPhongBan/edit",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
+            "children": []
+        },
+        {
+            "name": "QlPhongBanUpdate",
+            "path": "update",
+            "component": "\/quanLyPhongBan\/update",
+            "redirect": null,
+            "hidden": true,
+            "alwaysShow": false,
+            "props": "{\"backRouter\":\"QlPhongBanEdit\",\"formTitle\":\"Sửa Phòng Ban\",\"formType\":\"edit\"}",
+            "meta": {
+                "title": "Sửa Phòng Ban",
+                "icon": null,
+                "noCache": false,
+                "affix": false,
+                "breadcrumb": false,
+                "activeMenu": "\/quanLyPhongBan\/update",
+                "component": "QuanLyPhongBan::update",
+                "link": null,
+                "isIframe": false,
+                "roles": []
             },
-            {
-                "name": "QlPhongBanUpdate",
-                "path": "update",
-                "component": "/quanLyPhongBan/update",
-                "controller": "QuanLyPhongBan::update",
-                "redirect": null,
-                "hidden": true,
-                "alwaysShow": false,
-                "props": "{\"backRouter\":\"QlPhongBanEdit\",\"formTitle\":\"Sửa Phòng Ban\",\"formType\":\"edit\"}",
-                "meta": {
-                    "title": "Sửa Phòng Ban",
-                    "icon": null,
-                    "noCache": false,
-                    "affix": false,
-                    "breadcrumb": false,
-                    "activeMenu": "/quanLyPhongBan/list",
-                    "component": "/quanLyPhongBan/edit",
-                    "link": null,
-                    "isIframe": false,
-                    "roles": []
-                },
-                "children": []
-            }
-        ]
-    }
+            "children": []
+        }
+    ]
+}

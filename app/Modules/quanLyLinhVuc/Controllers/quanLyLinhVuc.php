@@ -1,6 +1,6 @@
 <?php
 
-class quanLyLinhVuc
+class QuanLyLinhVuc
 {
     public function __construct()
     {

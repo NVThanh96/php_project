@@ -8,7 +8,7 @@ if (isset($_POST['delete'])) {
     // Open the file in write mode to clear its contents
     file_put_contents($baseFolder, '');
     // Redirect to the same page to refresh the content
-    header('Location: ' . $Default . '/someFunction/showLog');
+    header('Location: /someFunction/showLog');
 
     exit();
 }

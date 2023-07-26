@@ -26,6 +26,24 @@
     "redirect": null,
     "hidden": true,
     "alwaysShow": false
+  },{
+    "path": "/student",
+    "controller": "Student::",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },{
+    "path": "/api",
+    "controller": "API::",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
+  },{
+    "path": "/information",
+    "controller": "Information::",
+    "redirect": null,
+    "hidden": true,
+    "alwaysShow": false
   },
   {
     "path": "/admin",

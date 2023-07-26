@@ -113,7 +113,6 @@ class  someFunction
 
         // Handle the file upload and get the message
         $someFunction->handleFileUpload();
-
     }
 
     public function showLog()

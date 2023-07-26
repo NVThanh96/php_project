@@ -100,6 +100,7 @@ class JsonToApi {
 
 
 
+
 /*function doRegister() {
     $username = getPOST('username');
     $fullname = getPOST('fullname');

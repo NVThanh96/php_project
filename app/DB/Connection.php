@@ -1,7 +1,7 @@
 <?php
 class Connection
 {
-    private static $dsn = 'mysql:host=localhost;dbname=project_php';
+    private static $dsn = 'mysql:host=localhost;dbname=trungtamso';
     private static $username = "root";
     private static $password = "";
     private static $options = [

@@ -1,12 +1,14 @@
 <?php
 include dirname(__FILE__) . "/Router.php";
-require_once \Utils\Util::getDirectoryPath(__FILE__,2) . '/Utils/Util.php';
-include \Utils\Util::getDirectoryPath(__FILE__,2) . "/Controllers/site/Home.php";
-include \Utils\Util::getDirectoryPath(__FILE__,2) . "/Controllers/site/Student.php";
-include \Utils\Util::getDirectoryPath(__FILE__,2) . "/Controllers/site/API.php";
-include \Utils\Util::getDirectoryPath(__FILE__,2) . "/Controllers/site/Information.php";
-include \Utils\Util::getDirectoryPath(__FILE__,2) . "/Controllers/admin/Admin.php";
-include \Utils\Util::getDirectoryPath(__FILE__,2). "/Models/admin/UserDB.php";
+$path = \Utils\Util::getDirectoryPath(__FILE__, 2);
+require_once $path . '/Utils/Util.php';
+include $path . "/Controllers/site/Home.php";
+include $path . "/Controllers/site/Student.php";
+include $path . "/Controllers/site/API.php";
+include $path . "/Controllers/site/Information.php";
+include $path . "/Controllers/admin/Admin.php";
+include $path . "/Models/admin/UserDB.php";
+
 /*
 mục đích include 'Modules/'.$path.'/Controllers/'.ucfirst($path).'.php'
 $path là tên các folder ở trong modules
@@ -21,13 +23,8 @@ $router = new Router();
 
 // sau đó bỏ vào trong $routes để lấy được controller
 $routes = [
-    $uriDefault . 'home' => 'Home::show',
-    $uriDefault . 'student' => 'Student::',
-    $uriDefault . 'api' => 'API::',
-    $uriDefault . 'information' => 'Information::',
 ];
 $routeAdmin = [
-    $uriDefault .'admin' => 'Admin::home',
 ];
 
 $directoryConfig = dirname(__DIR__) . '/Modules/*/config.json';
@@ -35,7 +32,6 @@ $moduleFilesConfig = glob($directoryConfig, GLOB_NOSORT | GLOB_BRACE);
 
 $directory = dirname(__DIR__) . '\Modules\*/*.php';
 $moduleFiles = glob($directory, GLOB_NOSORT | GLOB_BRACE);
-
 $arrSearch = [];
 $allRoutes = [];
 
@@ -68,9 +64,8 @@ foreach ($moduleFiles as $file) {
 $extendRoutes = $allRoutes;
 
 /*dùng để gọp tất cả các mảng lại với nhau*/
-$combinedRoutes = array_merge($routes, $routeAdmin, $extendRoutes);
 
-if (array_key_exists($uri, $combinedRoutes)) {
+if (array_key_exists($uri, $extendRoutes)) {
     //lấy đường dẫn và so sánh với mảng và trả về controller
     $handler = $combinedRoutes[$uri];
 

@@ -26,6 +26,9 @@ class QuanLyHopDong
             case 'update':
                 $this->update();
                 break;
+            case 'search':
+                $this->search();
+                break;
             case 'deleteSoft':
                 $this->softDeleteHopDong();
                 break;
@@ -73,13 +76,8 @@ class QuanLyHopDong
 
     public function add()
     {
-        // Create an instance of the SomeFunctionDB class
-        $createHopDong = new HopDongDB();
-
-        // Handle the file upload and get the message
-        $createHopDong->createHopDong();
-
-        header('location:list' );
+        HopDongDB::createHopDong();
+        header('location:list');
     }
 
     public function edit()
@@ -116,31 +114,18 @@ class QuanLyHopDong
     {
         $folderPath = __DIR__;
         $folderName = basename(dirname($folderPath));
-        $path = \Utils\Util::exportPath($folderName);
 
         $page_number = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         // số lượng giá trị sẽ hiển thị trong 1 bảng
         $items_per_page = 6;
         $daxoa = 0;
-        $search = isset($_GET['search']) ? $_GET['search'] : '';
-        $searchPB = isset($_GET['search_phong_ban']) ? $_GET['search_phong_ban'] : '';
-        $searchTT = isset($_GET['search_trang_thai']) ? $_GET['search_trang_thai'] : '';
-        $searchOption = isset($_GET['thoi_gian_ket_thuc']) ? $_GET['thoi_gian_ket_thuc'] : '';
 
-        $searchStart = isset($_GET['thoi_gian_thuc_hien']) ? $_GET['thoi_gian_thuc_hien'] : '';
-        $searchEnd = isset($_GET['thoi_gian_ket_thuc']) ? $_GET['thoi_gian_ket_thuc'] : '';
-        $searchOption = isset($_GET['option']) ? $_GET['option'] : '';
+        $result = HopDongDB::get_hop_dong_page($page_number, $items_per_page, $daxoa);
 
-        $result = HopDongDB::get_hop_dong_page($page_number, $items_per_page, $daxoa, $search, $searchPB, $searchTT, $searchStart, $searchEnd, $searchOption);
-
-        $list_hop_dong = $result['hopDong'] ?? '';
         $total_pages = $result['total_pages'] ?? '';
+        $list_hop_dong = $result['hopDong'] ?? '';
         $pathInfor = $_SERVER['PATH_INFO'] ?? '';
         $scriptName = dirname($_SERVER['SCRIPT_FILENAME']);
-        $pathJson = file_get_contents($scriptName . "\Views\admin\layouts\sideBar.json");
-        $structured_data = json_decode($pathJson, true);
-
-        $data = $structured_data;
         if (!empty($_SESSION['email'])) {
             include('Modules/quanLyHopDong/Views/list.php');
         } else {
@@ -148,6 +133,10 @@ class QuanLyHopDong
         }
     }
 
+    public function search()
+    {
+        HopDongDB::search();
+    }
 
     public function softDeleteHopDong()
     {
